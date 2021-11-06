@@ -37,5 +37,18 @@
  * Main function
  ***************/
 void main(void) {
-    return;
+    // Set up pin for output (connected to LED)
+    LATHbits.LATH3 = 0;             // Set initial output state for LED on RH3 (low/off)
+    TRISHbits.TRISH3 = 0;           // Set TRIS value for RH3 pin (output)
+    
+    // Call your initialisation functions to set up the hardware modules
+    ADC_init();         // Function used to initialise ADC module and set it up to sample on pin RA3
+    Comp1_init();       // Function to set up comparator to compare RF7 to the DAC output voltage
+    Interrupts_init();  // Function to turn on interrupts and set if priority is used
+    LEDarray_init();    // Function to initialise pins to drive the LED array
+    Timer0_init();      // Function to set up timer 0
+    
+    while (1) {
+        
+    }
 }

@@ -5,4 +5,9 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.
 
+#define _XTAL_FREQ 64000000
+
+void Interrupts_init(void);
+void __interrupt(high_priority) HighISR();
+
 #endif	/* _interrupts_H */
