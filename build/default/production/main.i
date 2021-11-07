@@ -24206,24 +24206,21 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-struct dateandtime;
-struct dateandtime {
-    unsigned int year;
-    unsigned char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
-};
-extern struct dateandtime current;
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
 
-struct dateandtime time_incre(struct dateandtime current);
-struct dateandtime daylightsavingstime_toggle(struct dateandtime current);
-struct dateandtime date_check(struct dateandtime current);
-struct dateandtime sunrise(struct dateandtime current);
-struct dateandtime sun_sync(struct dateandtime current);
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
 # 21 "main.c" 2
 
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
-unsigned int ADC_getval(void);
 # 22 "main.c" 2
 
 # 1 "./comparator.h" 1
@@ -24246,24 +24243,23 @@ void __attribute__((picinterrupt(("low_priority")))) LowISR();
 # 12 "./LED.h"
 void LED1_init(void);
 void LED2_init(void);
-void LED_toggle (struct dateandtime current);
+void LED_toggle (dateandtime current);
 # 26 "main.c" 2
 
 # 1 "./LEDarray.h" 1
 # 11 "./LEDarray.h"
 void LEDarray_init(void);
-void LEDarray_disp_bin(unsigned int number);
+void LEDarray_disp_bin(signed char number);
 # 27 "main.c" 2
 
 # 1 "./timers.h" 1
 # 11 "./timers.h"
 void Timer0_init(void);
-unsigned int get16bitTMR0val(void);
 # 28 "main.c" 2
 # 41 "main.c"
 void main(void) {
 
-    struct dateandtime init;
+    dateandtime init;
     init.year = 2021;
     init.month = 11;
     init.date = 7;
@@ -24284,8 +24280,9 @@ void main(void) {
     LEDarray_init();
     Timer0_init();
 
-    struct dateandtime current;
+    volatile dateandtime current;
     current = init;
+
     while (1) {
         LEDarray_disp_bin(current.hour);
         LED_toggle(current);

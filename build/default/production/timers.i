@@ -24180,7 +24180,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./timers.h" 1
 # 11 "./timers.h"
 void Timer0_init(void);
-unsigned int get16bitTMR0val(void);
 # 2 "timers.c" 2
 
 
@@ -24196,22 +24195,4 @@ void Timer0_init(void) {
     TMR0H=0b1011;
     TMR0L=0b11011011;
     T0CON0bits.T0EN=1;
-}
-
-
-
-
-
-unsigned int get16bitTMR0val(void) {
-
-    unsigned int tmpval;
-
-
-
-
-
-    tmpval = TMR0L;
-    tmpval = tmpval | (unsigned int)(TMR0H<<8);
-
-    return tmpval;
 }

@@ -24177,6 +24177,44 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
 # 1 "LED.c" 2
 
+# 1 "./LED.h" 1
+
+
+
+
+
+
+# 1 "./dateandtime.h" 1
+
+
+
+
+
+
+
+
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
+
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
+# 7 "./LED.h" 2
+
+
+
+
+
+void LED1_init(void);
+void LED2_init(void);
+void LED_toggle (dateandtime current);
+# 2 "LED.c" 2
+
+
 
 void LED1_init(void) {
 
@@ -24190,7 +24228,7 @@ void LED2_init(void) {
     TRISHbits.TRISH3 = 0;
 }
 
-void LED_toggle (struct dateandtime current) {
+void LED_toggle (dateandtime current) {
     if (current.hour==1) {
         PIE2bits.C1IE = 0;
         LATDbits.LATD7 = 0;

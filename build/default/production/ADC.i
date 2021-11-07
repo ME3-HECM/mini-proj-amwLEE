@@ -24180,7 +24180,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
-unsigned int ADC_getval(void);
 # 2 "ADC.c" 2
 
 
@@ -24201,21 +24200,4 @@ void ADC_init(void)
     ADCON0bits.ADFM = 0;
     ADCON0bits.ADCS = 1;
     ADCON0bits.ADON = 1;
-}
-
-unsigned int ADC_getval(void)
-{
-    unsigned int tmpval;
-
-    ADCON0bits.GO = 1;
-
-    while (ADCON0bits.GO);
-
-    tmpval = ADRESH;
-
-
-
-    tmpval = 255 - tmpval;
-
-    return tmpval;
 }

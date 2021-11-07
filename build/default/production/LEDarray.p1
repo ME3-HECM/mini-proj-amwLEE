@@ -2144,21 +2144,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 2019 ]
 }
 "38
-[; ;LEDarray.c: 38: void LEDarray_disp_bin(unsigned int number)
-[v _LEDarray_disp_bin `(v ~T0 @X0 1 ef1`ui ]
+[; ;LEDarray.c: 38: void LEDarray_disp_bin(signed char number)
+[v _LEDarray_disp_bin `(v ~T0 @X0 1 ef1`c ]
 "39
 [; ;LEDarray.c: 39: {
 {
 [e :U _LEDarray_disp_bin ]
 "38
-[; ;LEDarray.c: 38: void LEDarray_disp_bin(unsigned int number)
-[v _number `ui ~T0 @X0 1 r1 ]
+[; ;LEDarray.c: 38: void LEDarray_disp_bin(signed char number)
+[v _number `c ~T0 @X0 1 r1 ]
 "39
 [; ;LEDarray.c: 39: {
 [f ]
 "43
 [; ;LEDarray.c: 43:     if (number & 0b000000001) {LATGbits.LATG0 = 1;} else {LATGbits.LATG0 = 0;}
-[e $ ! != & _number -> -> 1 `i `ui -> -> 0 `i `ui 2021  ]
+[e $ ! != & -> _number `i -> 1 `i -> 0 `i 2021  ]
 {
 [e = . . _LATGbits 0 0 -> -> 1 `i `uc ]
 }
@@ -2170,7 +2170,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2022 ]
 "44
 [; ;LEDarray.c: 44:     if (number & 0b000000010) {LATGbits.LATG1 = 1;} else {LATGbits.LATG1 = 0;}
-[e $ ! != & _number -> -> 2 `i `ui -> -> 0 `i `ui 2023  ]
+[e $ ! != & -> _number `i -> 2 `i -> 0 `i 2023  ]
 {
 [e = . . _LATGbits 0 1 -> -> 1 `i `uc ]
 }
@@ -2182,7 +2182,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2024 ]
 "45
 [; ;LEDarray.c: 45:     if (number & 0b000000100) {LATAbits.LATA2 = 1;} else {LATAbits.LATA2 = 0;}
-[e $ ! != & _number -> -> 4 `i `ui -> -> 0 `i `ui 2025  ]
+[e $ ! != & -> _number `i -> 4 `i -> 0 `i 2025  ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
@@ -2194,7 +2194,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2026 ]
 "46
 [; ;LEDarray.c: 46:     if (number & 0b000001000) {LATFbits.LATF6 = 1;} else {LATFbits.LATF6 = 0;}
-[e $ ! != & _number -> -> 8 `i `ui -> -> 0 `i `ui 2027  ]
+[e $ ! != & -> _number `i -> 8 `i -> 0 `i 2027  ]
 {
 [e = . . _LATFbits 0 6 -> -> 1 `i `uc ]
 }
@@ -2206,7 +2206,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2028 ]
 "47
 [; ;LEDarray.c: 47:     if (number & 0b000010000) {LATAbits.LATA4 = 1;} else {LATAbits.LATA4 = 0;}
-[e $ ! != & _number -> -> 16 `i `ui -> -> 0 `i `ui 2029  ]
+[e $ ! != & -> _number `i -> 16 `i -> 0 `i 2029  ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
@@ -2218,7 +2218,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2030 ]
 "48
 [; ;LEDarray.c: 48:     if (number & 0b000100000) {LATAbits.LATA5 = 1;} else {LATAbits.LATA5 = 0;}
-[e $ ! != & _number -> -> 32 `i `ui -> -> 0 `i `ui 2031  ]
+[e $ ! != & -> _number `i -> 32 `i -> 0 `i 2031  ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
@@ -2230,7 +2230,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2032 ]
 "49
 [; ;LEDarray.c: 49:     if (number & 0b001000000) {LATFbits.LATF0 = 1;} else {LATFbits.LATF0 = 0;}
-[e $ ! != & _number -> -> 64 `i `ui -> -> 0 `i `ui 2033  ]
+[e $ ! != & -> _number `i -> 64 `i -> 0 `i 2033  ]
 {
 [e = . . _LATFbits 0 0 -> -> 1 `i `uc ]
 }
@@ -2242,7 +2242,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2034 ]
 "50
 [; ;LEDarray.c: 50:     if (number & 0b010000000) {LATBbits.LATB0 = 1;} else {LATBbits.LATB0 = 0;}
-[e $ ! != & _number -> -> 128 `i `ui -> -> 0 `i `ui 2035  ]
+[e $ ! != & -> _number `i -> 128 `i -> 0 `i 2035  ]
 {
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 }
@@ -2254,7 +2254,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2036 ]
 "51
 [; ;LEDarray.c: 51:     if (number & 0b100000000) {LATBbits.LATB1 = 1;} else {LATBbits.LATB1 = 0;}
-[e $ ! != & _number -> -> 256 `i `ui -> -> 0 `i `ui 2037  ]
+[e $ ! != & -> _number `i -> 256 `i -> 0 `i 2037  ]
 {
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 }

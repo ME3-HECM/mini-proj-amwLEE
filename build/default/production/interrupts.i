@@ -24193,18 +24193,16 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-struct dateandtime;
-struct dateandtime {
-    unsigned int year;
-    unsigned char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
-};
-extern struct dateandtime current;
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
 
-struct dateandtime time_incre(struct dateandtime current);
-struct dateandtime daylightsavingstime_toggle(struct dateandtime current);
-struct dateandtime date_check(struct dateandtime current);
-struct dateandtime sunrise(struct dateandtime current);
-struct dateandtime sun_sync(struct dateandtime current);
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
 # 7 "./interrupts.h" 2
 
 
@@ -24214,6 +24212,7 @@ void Interrupts_init(void);
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 void __attribute__((picinterrupt(("low_priority")))) LowISR();
 # 2 "interrupts.c" 2
+
 
 
 
@@ -24237,11 +24236,13 @@ void Interrupts_init(void) {
 
 
 
+extern volatile dateandtime current;
+
 void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 
     if (PIR2bits.C1IF) {
-        if (LATDbits.LATD7) {sunrise(current);}
-        else {sun_sync(current);}
+
+
 
         LATDbits.LATD7 = !LATDbits.LATD7;
         PIR2bits.C1IF = 0;
@@ -24259,7 +24260,7 @@ void __attribute__((picinterrupt(("low_priority")))) LowISR() {
         TMR0H = 0b1011;
         TMR0L = 0b11011011;
 
-        time_incre(current);
+
         LATHbits.LATH3 = !LATHbits.LATH3;
         PIR0bits.TMR0IF = 0;
     }

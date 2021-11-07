@@ -8,6 +8,6 @@
 #define _XTAL_FREQ 64000000
 
 void ADC_init(void);
-unsigned int ADC_getval(void);
+//unsigned int ADC_getval(void);
 
 #endif	/* _ADC_H */

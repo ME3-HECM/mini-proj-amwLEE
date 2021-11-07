@@ -24180,7 +24180,3 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./LCD.h" 1
 # 2 "LCD.c" 2
 
-
-void LCD(void) {
-    return;
-}

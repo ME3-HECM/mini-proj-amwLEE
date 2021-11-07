@@ -1,9 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"10 ./dateandtime.h
-[; ;./dateandtime.h: 10: struct dateandtime {
-[s S2020 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S2020 dateandtime year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
+"9 ./dateandtime.h
+[; ;./dateandtime.h: 9: typedef struct {
+[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
+[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "10 ./ADC.h
 [; ;./ADC.h: 10: void ADC_init(void);
 [v _ADC_init `(v ~T0 @X0 0 ef ]
@@ -26,11 +26,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./timers.h: 11: void Timer0_init(void);
 [v _Timer0_init `(v ~T0 @X0 0 ef ]
 "12 ./LEDarray.h
-[; ;./LEDarray.h: 12: void LEDarray_disp_bin(unsigned int number);
-[v _LEDarray_disp_bin `(v ~T0 @X0 0 ef1`ui ]
+[; ;./LEDarray.h: 12: void LEDarray_disp_bin(signed char number);
+[v _LEDarray_disp_bin `(v ~T0 @X0 0 ef1`c ]
 "14 ./LED.h
-[; ;./LED.h: 14: void LED_toggle (struct dateandtime current);
-[v _LED_toggle `(v ~T0 @X0 0 ef1`S2020 ]
+[; ;./LED.h: 14: void LED_toggle (dateandtime current);
+[v _LED_toggle `(v ~T0 @X0 0 ef1`S2019 ]
 "5 main.c
 [; ;main.c: 5: 
 [p x FEXTOSC  =  HS          ]
@@ -2020,38 +2020,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "43
-[; ;main.c: 43:     struct dateandtime init;
-[v _init `S2020 ~T0 @X0 1 a ]
+[; ;main.c: 43:     dateandtime init;
+[v _init `S2019 ~T0 @X0 1 a ]
 "44
 [; ;main.c: 44:     init.year = 2021;
-[e = . _init 0 -> -> 2021 `i `ui ]
+[e = . _init 0 -> 2021 `i ]
 "45
 [; ;main.c: 45:     init.month = 11;
-[e = . _init 1 -> -> 11 `i `uc ]
+[e = . _init 1 -> -> 11 `i `c ]
 "46
 [; ;main.c: 46:     init.date = 7;
-[e = . _init 2 -> -> 7 `i `uc ]
+[e = . _init 2 -> -> 7 `i `c ]
 "47
 [; ;main.c: 47:     init.day = 7;
-[e = . _init 3 -> -> 7 `i `uc ]
+[e = . _init 3 -> -> 7 `i `c ]
 "48
 [; ;main.c: 48:     init.hour = 17;
-[e = . _init 4 -> -> 17 `i `uc ]
+[e = . _init 4 -> -> 17 `i `c ]
 "49
 [; ;main.c: 49:     init.minute = 0;
-[e = . _init 5 -> -> 0 `i `uc ]
+[e = . _init 5 -> -> 0 `i `c ]
 "50
 [; ;main.c: 50:     init.second = 0;
-[e = . _init 6 -> -> 0 `i `uc ]
+[e = . _init 6 -> -> 0 `i `c ]
 "51
 [; ;main.c: 51:     init.sunrise_hour = 7;
-[e = . _init 7 -> -> 7 `i `uc ]
+[e = . _init 7 -> -> 7 `i `c ]
 "52
 [; ;main.c: 52:     init.sunrise_minute = 0;
-[e = . _init 8 -> -> 0 `i `uc ]
+[e = . _init 8 -> -> 0 `i `c ]
 "53
 [; ;main.c: 53:     init.sunrise_second = 0;
-[e = . _init 9 -> -> 0 `i `uc ]
+[e = . _init 9 -> -> 0 `i `c ]
 "56
 [; ;main.c: 56:     ADC_init();
 [e ( _ADC_init ..  ]
@@ -2074,28 +2074,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 62:     Timer0_init();
 [e ( _Timer0_init ..  ]
 "64
-[; ;main.c: 64:     struct dateandtime current;
-[v _current `S2020 ~T0 @X0 1 a ]
+[; ;main.c: 64:     volatile dateandtime current;
+[v _current `VS2019 ~T0 @X0 1 a ]
 "65
 [; ;main.c: 65:     current = init;
 [e = _current _init ]
-"66
-[; ;main.c: 66:     while (1) {
-[e :U 2023 ]
-{
 "67
-[; ;main.c: 67:         LEDarray_disp_bin(current.hour);
-[e ( _LEDarray_disp_bin (1 -> . _current 4 `ui ]
-"68
-[; ;main.c: 68:         LED_toggle(current);
-[e ( _LED_toggle (1 _current ]
-"69
-[; ;main.c: 69:     }
-}
+[; ;main.c: 67:     while (1) {
 [e :U 2022 ]
-[e $U 2023  ]
-[e :U 2024 ]
+{
+"68
+[; ;main.c: 68:         LEDarray_disp_bin(current.hour);
+[e ( _LEDarray_disp_bin (1 . _current 4 ]
+"69
+[; ;main.c: 69:         LED_toggle(current);
+[e ( _LED_toggle (1 _current ]
 "70
-[; ;main.c: 70: }
-[e :UE 2021 ]
+[; ;main.c: 70:     }
+}
+[e :U 2021 ]
+[e $U 2022  ]
+[e :U 2023 ]
+"71
+[; ;main.c: 71: }
+[e :UE 2020 ]
 }

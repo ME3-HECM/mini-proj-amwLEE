@@ -11,6 +11,6 @@
 //function prototypes
 void LED1_init(void);
 void LED2_init(void);
-void LED_toggle (struct dateandtime current);
+void LED_toggle (dateandtime current);
 
 #endif	/* _LED_H */

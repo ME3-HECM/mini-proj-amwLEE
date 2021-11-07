@@ -1,4 +1,6 @@
 #include <xc.h>
+#include "LED.h"
+#include "dateandtime.h"
 
 void LED1_init(void) {
     // Set up pin for output (connected to LED)
@@ -12,7 +14,7 @@ void LED2_init(void) {
     TRISHbits.TRISH3 = 0;           // Set TRIS value for RH3 pin (output)
 }
 
-void LED_toggle (struct dateandtime current) {
+void LED_toggle (dateandtime current) {
     if (current.hour==1) {
         PIE2bits.C1IE = 0;
         LATDbits.LATD7 = 0;

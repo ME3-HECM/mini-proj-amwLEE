@@ -70,9 +70,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26733
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 26733: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xF60)));
 [v _ADCON0bits `VS1261 ~T0 @X0 0 e@3936 ]
-"27017
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 27017: extern volatile unsigned char ADRESH __attribute__((address(0xF64)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@3940 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2082,39 +2079,4 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;ADC.c: 21: }
 [e :UE 2019 ]
-}
-"23
-[; ;ADC.c: 23: unsigned int ADC_getval(void)
-[v _ADC_getval `(ui ~T0 @X0 1 ef ]
-"24
-[; ;ADC.c: 24: {
-{
-[e :U _ADC_getval ]
-[f ]
-"25
-[; ;ADC.c: 25:     unsigned int tmpval;
-[v _tmpval `ui ~T0 @X0 1 a ]
-"27
-[; ;ADC.c: 27:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-"29
-[; ;ADC.c: 29:     while (ADCON0bits.GO);
-[e $U 2021  ]
-[e :U 2022 ]
-[e :U 2021 ]
-[e $ != -> . . _ADCON0bits 1 0 `i -> 0 `i 2022  ]
-[e :U 2023 ]
-"31
-[; ;ADC.c: 31:     tmpval = ADRESH;
-[e = _tmpval -> _ADRESH `ui ]
-"35
-[; ;ADC.c: 35:     tmpval = 255 - tmpval;
-[e = _tmpval - -> -> 255 `i `ui _tmpval ]
-"37
-[; ;ADC.c: 37:     return tmpval;
-[e ) _tmpval ]
-[e $UE 2020  ]
-"38
-[; ;ADC.c: 38: }
-[e :UE 2020 ]
 }

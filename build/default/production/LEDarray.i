@@ -24180,7 +24180,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./LEDarray.h" 1
 # 11 "./LEDarray.h"
 void LEDarray_init(void);
-void LEDarray_disp_bin(unsigned int number);
+void LEDarray_disp_bin(signed char number);
 # 2 "LEDarray.c" 2
 
 
@@ -24218,7 +24218,7 @@ void LEDarray_init(void)
 
 
 
-void LEDarray_disp_bin(unsigned int number)
+void LEDarray_disp_bin(signed char number)
 {
 
 

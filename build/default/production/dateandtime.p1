@@ -1,156 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"4548 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4548:     struct {
-[s S262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S262 . INT0IE INT1IE INT2IE INT3IE IOCIE TMR0IE ]
-"4547
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4547: typedef union {
-[u S261 `S262 1 ]
-[n S261 . . ]
-"4557
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4557: extern volatile PIE0bits_t PIE0bits __attribute__((address(0xE29)));
-[v _PIE0bits `VS261 ~T0 @X0 0 e@3625 ]
-"4646
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4646:     struct {
-[s S267 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S267 . C1IE C2IE C3IE . ZCDIE HLVDIE ]
-"4654
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4654:     struct {
-[s S268 :6 `uc 1 :1 `uc 1 ]
-[n S268 . . CMIE ]
-"4645
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4645: typedef union {
-[u S266 `S267 1 `S268 1 ]
-[n S266 . . . ]
-"4659
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4659: extern volatile PIE2bits_t PIE2bits __attribute__((address(0xE2B)));
-[v _PIE2bits `VS266 ~T0 @X0 0 e@3627 ]
-"4000
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4000:     struct {
-[s S237 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S237 . INT0IP INT1IP INT2IP INT3IP IOCIP TMR0IP ]
-"3999
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 3999: typedef union {
-[u S236 `S237 1 ]
-[n S236 . . ]
-"4009
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4009: extern volatile IPR0bits_t IPR0bits __attribute__((address(0xE1F)));
-[v _IPR0bits `VS236 ~T0 @X0 0 e@3615 ]
-"4098
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4098:     struct {
-[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S242 . C1IP C2IP C3IP . ZCDIP HLVDIP ]
-"4106
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4106:     struct {
-[s S243 :6 `uc 1 :1 `uc 1 ]
-[n S243 . . CMIP ]
-"4097
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4097: typedef union {
-[u S241 `S242 1 `S243 1 ]
-[n S241 . . . ]
-"4111
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4111: extern volatile IPR2bits_t IPR2bits __attribute__((address(0xE21)));
-[v _IPR2bits `VS241 ~T0 @X0 0 e@3617 ]
-"40532
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40532:     struct {
-[s S1989 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1989 . INT0EDG INT1EDG INT2EDG INT3EDG . IPEN PEIE_GIEL GIE_GIEH ]
-"40542
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40542:     struct {
-[s S1990 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1990 . . PEIE GIE ]
-"40547
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40547:     struct {
-[s S1991 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1991 . . GIEL GIEH ]
-"40531
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40531: typedef union {
-[u S1988 `S1989 1 `S1990 1 `S1991 1 ]
-[n S1988 . . . . ]
-"40553
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40553: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS1988 ~T0 @X0 0 e@4082 ]
-[t ~ __interrupt . k ]
-[t T3 __interrupt high_priority ]
-"5191
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5191:     struct {
-[s S291 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S291 . C1IF C2IF C3IF . ZCDIF HLVDIF ]
-"5199
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5199:     struct {
-[s S292 :6 `uc 1 :1 `uc 1 ]
-[n S292 . . CMIF ]
-"5190
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5190: typedef union {
-[u S290 `S291 1 `S292 1 ]
-[n S290 . . . ]
-"5204
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5204: extern volatile PIR2bits_t PIR2bits __attribute__((address(0xE35)));
-[v _PIR2bits `VS290 ~T0 @X0 0 e@3637 ]
-"28855
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28855:     struct {
-[s S1352 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1352 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"28865
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28865:     struct {
-[s S1353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1353 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"28854
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28854: typedef union {
-[u S1351 `S1352 1 `S1353 1 ]
-[n S1351 . . . ]
-"28876
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28876: extern volatile LATDbits_t LATDbits __attribute__((address(0xF7C)));
-[v _LATDbits `VS1351 ~T0 @X0 0 e@3964 ]
-[t T4 __interrupt low_priority ]
-"5093
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5093:     struct {
-[s S286 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S286 . INT0IF INT1IF INT2IF INT3IF IOCIF TMR0IF ]
-"5092
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5092: typedef union {
-[u S285 `S286 1 ]
-[n S285 . . ]
-"5102
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 5102: extern volatile PIR0bits_t PIR0bits __attribute__((address(0xE33)));
-[v _PIR0bits `VS285 ~T0 @X0 0 e@3635 ]
-"39380
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 39380: extern volatile unsigned char TMR0H __attribute__((address(0xFD4)));
-[v _TMR0H `Vuc ~T0 @X0 0 e@4052 ]
-"39242
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 39242: extern volatile unsigned char TMR0L __attribute__((address(0xFD3)));
-[v _TMR0L `Vuc ~T0 @X0 0 e@4051 ]
-"29280
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29280:     struct {
-[s S1364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1364 . LATH0 LATH1 LATH2 LATH3 ]
-"29286
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29286:     struct {
-[s S1365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1365 . LH0 LH1 LH2 LH3 ]
-"29292
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29292:     struct {
-[s S1366 :4 `uc 1 :1 `uc 1 ]
-[n S1366 . . LH4 ]
-"29296
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29296:     struct {
-[s S1367 :5 `uc 1 :1 `uc 1 ]
-[n S1367 . . LH5 ]
-"29300
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29300:     struct {
-[s S1368 :6 `uc 1 :1 `uc 1 ]
-[n S1368 . . LH6 ]
-"29304
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29304:     struct {
-[s S1369 :7 `uc 1 :1 `uc 1 ]
-[n S1369 . . LH7 ]
-"29279
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29279: typedef union {
-[u S1363 `S1364 1 `S1365 1 `S1366 1 `S1367 1 `S1368 1 `S1369 1 ]
-[n S1363 . . . . . . . ]
-"29309
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29309: extern volatile LATHbits_t LATHbits __attribute__((address(0xF80)));
-[v _LATHbits `VS1363 ~T0 @X0 0 e@3968 ]
+"9 ./dateandtime.h
+[; ;./dateandtime.h: 9: typedef struct {
+[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
+[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2125,90 +1977,253 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 interrupts.c
-[; ;interrupts.c: 9: void Interrupts_init(void) {
-[v _Interrupts_init `(v ~T0 @X0 1 ef ]
+"7 dateandtime.c
+[; ;dateandtime.c: 7: dateandtime daylightsavingstime_toggle(dateandtime current) {
+[v _daylightsavingstime_toggle `(S2019 ~T0 @X0 1 ef1`S2019 ]
 {
-[e :U _Interrupts_init ]
+[e :U _daylightsavingstime_toggle ]
+[v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
+"9
+[; ;dateandtime.c: 9:     if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1) {
+[e $ ! && && && == -> . _current 1 `i -> 3 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 4 `i -> 1 `i 2021  ]
+{
+"10
+[; ;dateandtime.c: 10:         current.hour = current.hour+1;
+[e = . _current 4 -> + -> . _current 4 `i -> 1 `i `c ]
+"11
+[; ;dateandtime.c: 11:     } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2) {
+}
+[e $U 2022  ]
+[e :U 2021 ]
+[e $ ! && && && == -> . _current 1 `i -> 10 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 4 `i -> 2 `i 2023  ]
+{
 "12
-[; ;interrupts.c: 12:     PIE0bits.TMR0IE = 1;
-[e = . . _PIE0bits 0 5 -> -> 1 `i `uc ]
+[; ;dateandtime.c: 12:         current.hour = current.hour-1;
+[e = . _current 4 -> - -> . _current 4 `i -> 1 `i `c ]
 "13
-[; ;interrupts.c: 13:     PIE2bits.C1IE = 1;
-[e = . . _PIE2bits 0 0 -> -> 1 `i `uc ]
-"14
-[; ;interrupts.c: 14:     IPR0bits.TMR0IP = 0;
-[e = . . _IPR0bits 0 5 -> -> 0 `i `uc ]
+[; ;dateandtime.c: 13:     }
+}
+[e :U 2023 ]
+[e :U 2022 ]
 "15
-[; ;interrupts.c: 15:     IPR2bits.C1IP = 1;
-[e = . . _IPR2bits 0 0 -> -> 1 `i `uc ]
+[; ;dateandtime.c: 15:     return current;
+[e ) _current ]
+[e $UE 2020  ]
 "16
-[; ;interrupts.c: 16:     INTCONbits.IPEN = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"17
-[; ;interrupts.c: 17:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
-"18
-[; ;interrupts.c: 18:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
-"19
-[; ;interrupts.c: 19: }
+[; ;dateandtime.c: 16: }
 [e :UE 2020 ]
 }
-[v $root$_HighISR `(v ~T0 @X0 0 e ]
-"28
-[; ;interrupts.c: 28: void __attribute__((picinterrupt(("high_priority")))) HighISR() {
-[v _HighISR `(v ~T3 @X0 1 ef ]
+"22
+[; ;dateandtime.c: 22: dateandtime date_check(dateandtime current) {
+[v _date_check `(S2019 ~T0 @X0 1 ef1`S2019 ]
 {
-[e :U _HighISR ]
+[e :U _date_check ]
+[v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
-"30
-[; ;interrupts.c: 30:     if (PIR2bits.C1IF) {
-[e $ ! != -> . . _PIR2bits 0 0 `i -> 0 `i 2022  ]
+"24
+[; ;dateandtime.c: 24:     if ((current.year%4==0 && current.month==2 && current.date>29) || (current.year%4!=0 && current.month==2 && current.date>28) || ((current.month==1 || current.month==3 || current.month==5 || current.month==7 || current.month==8 || current.month==10 || current.month==12) && current.date>31) || ((current.month==4 || current.month==6 || current.month==9 || current.month==11) && current.date>30)) {
+[e $ ! || || || && && == % . _current 0 -> 4 `i -> 0 `i == -> . _current 1 `i -> 2 `i > -> . _current 2 `i -> 29 `i && && != % . _current 0 -> 4 `i -> 0 `i == -> . _current 1 `i -> 2 `i > -> . _current 2 `i -> 28 `i && || || || || || || == -> . _current 1 `i -> 1 `i == -> . _current 1 `i -> 3 `i == -> . _current 1 `i -> 5 `i == -> . _current 1 `i -> 7 `i == -> . _current 1 `i -> 8 `i == -> . _current 1 `i -> 10 `i == -> . _current 1 `i -> 12 `i > -> . _current 2 `i -> 31 `i && || || || == -> . _current 1 `i -> 4 `i == -> . _current 1 `i -> 6 `i == -> . _current 1 `i -> 9 `i == -> . _current 1 `i -> 11 `i > -> . _current 2 `i -> 30 `i 2025  ]
+"27
+[; ;dateandtime.c: 27: 
 {
+"28
+[; ;dateandtime.c: 28:         current.month = current.month+1;
+[e = . _current 1 -> + -> . _current 1 `i -> 1 `i `c ]
+"29
+[; ;dateandtime.c: 29:         current.date = 1;
+[e = . _current 2 -> -> 1 `i `c ]
+"31
+[; ;dateandtime.c: 31:         if (current.month>12) {
+[e $ ! > -> . _current 1 `i -> 12 `i 2026  ]
+{
+"32
+[; ;dateandtime.c: 32:             current.year = current.year+1;
+[e = . _current 0 + . _current 0 -> 1 `i ]
+"33
+[; ;dateandtime.c: 33:             current.month = 1;
+[e = . _current 1 -> -> 1 `i `c ]
 "34
-[; ;interrupts.c: 34:         LATDbits.LATD7 = !LATDbits.LATD7;
-[e = . . _LATDbits 0 7 -> -> ! != -> . . _LATDbits 0 7 `i -> 0 `i `i `uc ]
+[; ;dateandtime.c: 34:         }
+}
+[e :U 2026 ]
 "35
-[; ;interrupts.c: 35:         PIR2bits.C1IF = 0;
-[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"36
-[; ;interrupts.c: 36:     }
+[; ;dateandtime.c: 35:     }
 }
-[e :U 2022 ]
+[e :U 2025 ]
 "37
-[; ;interrupts.c: 37: }
-[e :UE 2021 ]
+[; ;dateandtime.c: 37:     return current;
+[e ) _current ]
+[e $UE 2024  ]
+"38
+[; ;dateandtime.c: 38: }
+[e :UE 2024 ]
 }
-[v $root$_LowISR `(v ~T0 @X0 0 e ]
 "44
-[; ;interrupts.c: 44: void __attribute__((picinterrupt(("low_priority")))) LowISR() {
-[v _LowISR `(v ~T4 @X0 1 ef ]
+[; ;dateandtime.c: 44: dateandtime time_incre(dateandtime current){
+[v _time_incre `(S2019 ~T0 @X0 1 ef1`S2019 ]
 {
-[e :U _LowISR ]
+[e :U _time_incre ]
+[v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
 "46
-[; ;interrupts.c: 46:     if (PIR0bits.TMR0IF) {
-[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2024  ]
-{
+[; ;dateandtime.c: 46:     current.second = current.second+1;
+[e = . _current 6 -> + -> . _current 6 `i -> 1 `i `c ]
 "47
-[; ;interrupts.c: 47:         TMR0H = 0b1011;
-[e = _TMR0H -> -> 11 `i `uc ]
+[; ;dateandtime.c: 47:     if (current.second>59) {
+[e $ ! > -> . _current 6 `i -> 59 `i 2028  ]
+{
 "48
-[; ;interrupts.c: 48:         TMR0L = 0b11011011;
-[e = _TMR0L -> -> 219 `i `uc ]
+[; ;dateandtime.c: 48:         current.second = 0;
+[e = . _current 6 -> -> 0 `i `c ]
+"49
+[; ;dateandtime.c: 49:         current.minute = current.minute+1;
+[e = . _current 5 -> + -> . _current 5 `i -> 1 `i `c ]
+"50
+[; ;dateandtime.c: 50:         if (current.minute>59) {
+[e $ ! > -> . _current 5 `i -> 59 `i 2029  ]
+{
 "51
-[; ;interrupts.c: 51:         LATHbits.LATH3 = !LATHbits.LATH3;
-[e = . . _LATHbits 0 3 -> -> ! != -> . . _LATHbits 0 3 `i -> 0 `i `i `uc ]
+[; ;dateandtime.c: 51:             current.minute = 0;
+[e = . _current 5 -> -> 0 `i `c ]
 "52
-[; ;interrupts.c: 52:         PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
+[; ;dateandtime.c: 52:             current.hour = current.hour+1;
+[e = . _current 4 -> + -> . _current 4 `i -> 1 `i `c ]
 "53
-[; ;interrupts.c: 53:     }
-}
-[e :U 2024 ]
+[; ;dateandtime.c: 53:             current = daylightsavingstime_toggle(current);
+[e = _current ( _daylightsavingstime_toggle (1 _current ]
 "54
-[; ;interrupts.c: 54: }
-[e :UE 2023 ]
+[; ;dateandtime.c: 54:             if (current.hour>23) {
+[e $ ! > -> . _current 4 `i -> 23 `i 2030  ]
+{
+"55
+[; ;dateandtime.c: 55:                 current.hour = 0;
+[e = . _current 4 -> -> 0 `i `c ]
+"56
+[; ;dateandtime.c: 56:                 current.date = current.date+1;
+[e = . _current 2 -> + -> . _current 2 `i -> 1 `i `c ]
+"57
+[; ;dateandtime.c: 57:                 current = date_check(current);
+[e = _current ( _date_check (1 _current ]
+"58
+[; ;dateandtime.c: 58:                 current.day = current.day+1;
+[e = . _current 3 -> + -> . _current 3 `i -> 1 `i `c ]
+"59
+[; ;dateandtime.c: 59:                 if (current.day>7) {
+[e $ ! > -> . _current 3 `i -> 7 `i 2031  ]
+{
+"60
+[; ;dateandtime.c: 60:                     current.day = 1;
+[e = . _current 3 -> -> 1 `i `c ]
+"61
+[; ;dateandtime.c: 61:                 }
+}
+[e :U 2031 ]
+"62
+[; ;dateandtime.c: 62:             }
+}
+[e :U 2030 ]
+"63
+[; ;dateandtime.c: 63:         }
+}
+[e :U 2029 ]
+"64
+[; ;dateandtime.c: 64:     }
+}
+[e :U 2028 ]
+"66
+[; ;dateandtime.c: 66:     return current;
+[e ) _current ]
+[e $UE 2027  ]
+"67
+[; ;dateandtime.c: 67: }
+[e :UE 2027 ]
+}
+"73
+[; ;dateandtime.c: 73: dateandtime sunrise(dateandtime current) {
+[v _sunrise `(S2019 ~T0 @X0 1 ef1`S2019 ]
+{
+[e :U _sunrise ]
+[v _current `S2019 ~T0 @X0 1 r1 ]
+[f ]
+"74
+[; ;dateandtime.c: 74:     current.sunrise_hour = current.hour;
+[e = . _current 7 . _current 4 ]
+"75
+[; ;dateandtime.c: 75:     current.sunrise_minute = current.minute;
+[e = . _current 8 . _current 5 ]
+"76
+[; ;dateandtime.c: 76:     current.sunrise_second = current.second;
+[e = . _current 9 . _current 6 ]
+"78
+[; ;dateandtime.c: 78:     return current;
+[e ) _current ]
+[e $UE 2032  ]
+"79
+[; ;dateandtime.c: 79: }
+[e :UE 2032 ]
+}
+"85
+[; ;dateandtime.c: 85: dateandtime sun_sync(dateandtime current) {
+[v _sun_sync `(S2019 ~T0 @X0 1 ef1`S2019 ]
+{
+[e :U _sun_sync ]
+[v _current `S2019 ~T0 @X0 1 r1 ]
+[f ]
+"87
+[; ;dateandtime.c: 87:     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
+[v _solarnoon_hour `c ~T0 @X0 1 a ]
+[e = _solarnoon_hour -> / + -> . _current 7 `i -> . _current 4 `i -> 2 `i `c ]
+"88
+[; ;dateandtime.c: 88:     signed char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
+[v _solarnoon_minute `c ~T0 @X0 1 a ]
+[e = _solarnoon_minute -> / + -> . _current 8 `i -> . _current 5 `i -> 2 `i `c ]
+"89
+[; ;dateandtime.c: 89:     signed char solarnoon_second = (current.sunrise_second + current.second)/2;
+[v _solarnoon_second `c ~T0 @X0 1 a ]
+[e = _solarnoon_second -> / + -> . _current 9 `i -> . _current 6 `i -> 2 `i `c ]
+"91
+[; ;dateandtime.c: 91:     current.second = current.second - (solarnoon_second-0);
+[e = . _current 6 -> - -> . _current 6 `i - -> _solarnoon_second `i -> 0 `i `c ]
+"92
+[; ;dateandtime.c: 92:     if (current.second<0) {
+[e $ ! < -> . _current 6 `i -> 0 `i 2034  ]
+{
+"93
+[; ;dateandtime.c: 93:         current.second = current.second+60;
+[e = . _current 6 -> + -> . _current 6 `i -> 60 `i `c ]
+"94
+[; ;dateandtime.c: 94:         current.minute = current.minute-1;
+[e = . _current 5 -> - -> . _current 5 `i -> 1 `i `c ]
+"95
+[; ;dateandtime.c: 95:     }
+}
+[e :U 2034 ]
+"96
+[; ;dateandtime.c: 96:     current.minute = current.minute - (solarnoon_minute-0);
+[e = . _current 5 -> - -> . _current 5 `i - -> _solarnoon_minute `i -> 0 `i `c ]
+"97
+[; ;dateandtime.c: 97:     if (current.minute<0) {
+[e $ ! < -> . _current 5 `i -> 0 `i 2035  ]
+{
+"98
+[; ;dateandtime.c: 98:         current.minute = current.minute+60;
+[e = . _current 5 -> + -> . _current 5 `i -> 60 `i `c ]
+"99
+[; ;dateandtime.c: 99:         current.hour = current.hour-1;
+[e = . _current 4 -> - -> . _current 4 `i -> 1 `i `c ]
+"100
+[; ;dateandtime.c: 100:     }
+}
+[e :U 2035 ]
+"101
+[; ;dateandtime.c: 101:     current.hour = current.hour - (solarnoon_hour-12);
+[e = . _current 4 -> - -> . _current 4 `i - -> _solarnoon_hour `i -> 12 `i `c ]
+"103
+[; ;dateandtime.c: 103:     return current;
+[e ) _current ]
+[e $UE 2033  ]
+"104
+[; ;dateandtime.c: 104: }
+[e :UE 2033 ]
 }

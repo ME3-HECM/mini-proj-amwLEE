@@ -40,7 +40,7 @@
  ***************/
 void main(void) {
     // Initialise today's date and time
-    struct dateandtime init;
+    dateandtime init;
     init.year = 2021;
     init.month = 11;
     init.date = 7;
@@ -61,8 +61,9 @@ void main(void) {
     LEDarray_init();    // Function to initialise pins to drive the LED array
     Timer0_init();      // Function to set up timer 0
     
-    struct dateandtime current;
+    volatile dateandtime current;
     current = init;
+    
     while (1) {
         LEDarray_disp_bin(current.hour);
         LED_toggle(current);

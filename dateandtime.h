@@ -6,17 +6,15 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 // Initialise what day it is when device is first switched on (using manual input)
-struct dateandtime;
-struct dateandtime {
-    unsigned int year;
-    unsigned char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
-};
-extern struct dateandtime current;
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
 
-struct dateandtime time_incre(struct dateandtime current);
-struct dateandtime daylightsavingstime_toggle(struct dateandtime current);
-struct dateandtime date_check(struct dateandtime current);
-struct dateandtime sunrise(struct dateandtime current);
-struct dateandtime sun_sync(struct dateandtime current);
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
 
 #endif	/* _dateandtime_H */

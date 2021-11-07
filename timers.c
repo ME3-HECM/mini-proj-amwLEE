@@ -24,21 +24,3 @@ void Timer0_init(void) {
     TMR0L=0b11011011;           // 16-bit Timer 0 least significant byte
     T0CON0bits.T0EN=1;          // Start the timer
 }
-
-/******************************************************************************************************
- * Function to return the full 16 bit timer value
- * Note TMR0L and TMR0H must be read in the correct order, or TMR0H will not contain the correct value
-******************************************************************************************************/
-unsigned int get16bitTMR0val(void) {
-    // Add your code to get the full 16 bit timer value here
-    unsigned int tmpval; // Variable to store full 16 bit timer value
-    
-    // Note it is unreliable to add both TMR0L and TMR0H in a single line of code,
-    // as the compiler is free to rearrange operations between sequence points.
-    // To guarantee a correct read, TMR0L must be read first on its own line,
-    // before reading/adding TMR0H.
-    tmpval = TMR0L;                             // Read TMR0L
-    tmpval = tmpval | (unsigned int)(TMR0H<<8); // Read TMR0H and use inclusive OR to combine TMR0L and TMR0H to give full 16 bit timer value
-    
-    return tmpval; // Return the full 16 bit timer value
-}

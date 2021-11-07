@@ -1,9 +1,10 @@
 #include <xc.h>
+#include "dateandtime.h"
 
 /********************
  * Check for daylight savings time
  ******************/
-struct dateandtime daylightsavingstime_toggle(struct dateandtime current) {
+dateandtime daylightsavingstime_toggle(dateandtime current) {
     
     if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1) {
         current.hour = current.hour+1;
@@ -18,7 +19,7 @@ struct dateandtime daylightsavingstime_toggle(struct dateandtime current) {
 /******************************
  * Check for date
  *******************************/
-struct dateandtime date_check(struct dateandtime current) {
+dateandtime date_check(dateandtime current) {
     
     if ((current.year%4==0 && current.month==2 && current.date>29)\
             || (current.year%4!=0 && current.month==2 && current.date>28)\
@@ -40,7 +41,7 @@ struct dateandtime date_check(struct dateandtime current) {
 /******************************
  * Check for time
  *******************************/
-struct dateandtime time_incre(struct dateandtime current){
+dateandtime time_incre(dateandtime current){
     
     current.second = current.second+1;
     if (current.second>59) {
@@ -69,7 +70,7 @@ struct dateandtime time_incre(struct dateandtime current){
 /***********************
  * Check sunrise time
  ************************/
-struct dateandtime sunrise(struct dateandtime current) {
+dateandtime sunrise(dateandtime current) {
     current.sunrise_hour = current.hour;
     current.sunrise_minute = current.minute;
     current.sunrise_second = current.second;
@@ -81,11 +82,11 @@ struct dateandtime sunrise(struct dateandtime current) {
 /**********************
  * Check synchronicity with sun
  *********************/
-struct dateandtime sun_sync(struct dateandtime current) {
+dateandtime sun_sync(dateandtime current) {
     
-    unsigned char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
-    unsigned char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
-    unsigned char solarnoon_second = (current.sunrise_second + current.second)/2;
+    signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
+    signed char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
+    signed char solarnoon_second = (current.sunrise_second + current.second)/2;
     
     current.second = current.second - (solarnoon_second-0);
     if (current.second<0) {
