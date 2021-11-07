@@ -2061,7 +2061,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timers.c: 40:     tmpval = TMR0L;
 [e = _tmpval -> _TMR0L `ui ]
 "41
-[; ;timers.c: 41:     tmpval = tmpval | (TMR0H<<8);
+[; ;timers.c: 41:     tmpval = tmpval | (unsigned int)(TMR0H<<8);
 [e = _tmpval | _tmpval -> << -> _TMR0H `i -> 8 `i `ui ]
 "43
 [; ;timers.c: 43:     return tmpval;

@@ -24197,52 +24197,97 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
 # 20 "main.c" 2
 
+# 1 "./dateandtime.h" 1
+
+
+
+
+
+
+
+
+struct dateandtime;
+struct dateandtime {
+    unsigned int year;
+    unsigned char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+};
+extern struct dateandtime current;
+
+struct dateandtime time_incre(struct dateandtime current);
+struct dateandtime daylightsavingstime_toggle(struct dateandtime current);
+struct dateandtime date_check(struct dateandtime current);
+struct dateandtime sunrise(struct dateandtime current);
+struct dateandtime sun_sync(struct dateandtime current);
+# 21 "main.c" 2
+
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
 unsigned int ADC_getval(void);
-# 21 "main.c" 2
+# 22 "main.c" 2
 
 # 1 "./comparator.h" 1
 # 10 "./comparator.h"
 void DAC_init(void);
 void Comp1_init(void);
-# 22 "main.c" 2
-
-# 1 "./interrupts.h" 1
-# 10 "./interrupts.h"
-void Interrupts_init(void);
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
 # 23 "main.c" 2
 
-# 1 "./LCD.h" 1
+# 1 "./interrupts.h" 1
+# 11 "./interrupts.h"
+void Interrupts_init(void);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+void __attribute__((picinterrupt(("low_priority")))) LowISR();
 # 24 "main.c" 2
+
+# 1 "./LCD.h" 1
+# 25 "main.c" 2
+
+# 1 "./LED.h" 1
+# 12 "./LED.h"
+void LED1_init(void);
+void LED2_init(void);
+void LED_toggle (struct dateandtime current);
+# 26 "main.c" 2
 
 # 1 "./LEDarray.h" 1
 # 11 "./LEDarray.h"
 void LEDarray_init(void);
 void LEDarray_disp_bin(unsigned int number);
-# 25 "main.c" 2
+# 27 "main.c" 2
 
 # 1 "./timers.h" 1
 # 11 "./timers.h"
-void LEDarray_init(void);
-void LEDarray_disp_bin(unsigned int number);
-# 26 "main.c" 2
-# 39 "main.c"
+void Timer0_init(void);
+unsigned int get16bitTMR0val(void);
+# 28 "main.c" 2
+# 41 "main.c"
 void main(void) {
 
-    LATHbits.LATH3 = 0;
-    TRISHbits.TRISH3 = 0;
+    struct dateandtime init;
+    init.year = 2021;
+    init.month = 11;
+    init.date = 7;
+    init.day = 7;
+    init.hour = 17;
+    init.minute = 0;
+    init.second = 0;
+    init.sunrise_hour = 7;
+    init.sunrise_minute = 0;
+    init.sunrise_second = 0;
 
 
     ADC_init();
-    Comp1_init();
     Interrupts_init();
+    Comp1_init();
+    LED1_init();
+    LED2_init();
     LEDarray_init();
     Timer0_init();
 
+    struct dateandtime current;
+    current = init;
     while (1) {
-
+        LEDarray_disp_bin(current.hour);
+        LED_toggle(current);
     }
 }

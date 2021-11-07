@@ -6,8 +6,8 @@
 **********************************************************/
 void DAC_init(void)
 {
-    DAC1CON0bits.PSS=0b00;  // 3.3V for positive source (Vdd)
-    DAC1CON0bits.NSS=0b0;   // 0V for negative source (Vss)
+    DAC1CON0bits.PSS=0b00;      // 3.3V for positive source (Vdd)
+    DAC1CON0bits.NSS=0b0;       // 0V for negative source (Vss)
     
 	// 5-bit DAC value to set output voltage
     // Min is 0 = 0V

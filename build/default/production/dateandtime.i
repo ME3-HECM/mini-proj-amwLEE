@@ -1,4 +1,4 @@
-# 1 "LCD.c"
+# 1 "dateandtime.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD.c" 2
+# 1 "dateandtime.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24175,12 +24175,107 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
-# 1 "LCD.c" 2
-
-# 1 "./LCD.h" 1
-# 2 "LCD.c" 2
+# 1 "dateandtime.c" 2
 
 
-void LCD(void) {
-    return;
+
+
+
+struct dateandtime daylightsavingstime_toggle(struct dateandtime *current) {
+
+    if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1) {
+        current.hour = current.hour+1;
+    } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2) {
+        current.hour = current.hour-1;
+    }
+
+    return current;
+}
+
+
+
+
+
+struct dateandtime date_check(struct dateandtime *current) {
+
+    if ((current.year%4==0 && current.month==2 && current.date>29) || (current.year%4!=0 && current.month==2 && current.date>28) || ((current.month==1 || current.month==3 || current.month==5 || current.month==7 || current.month==8 || current.month==10 || current.month==12) && current.date>31) || ((current.month==4 || current.month==6 || current.month==9 || current.month==11) && current.date>30)) {
+
+
+
+        current.month = current.month+1;
+        current.date = 1;
+
+        if (current.month>12) {
+            current.year = current.year+1;
+            current.month = 1;
+        }
+    }
+
+    return current;
+}
+
+
+
+
+
+struct dateandtime time_incre(struct dateandtime *current){
+
+    current.second = current.second+1;
+    if (current.second>59) {
+        current.second = 0;
+        current.minute = current.minute+1;
+        if (current.minute>59) {
+            current.minute = 0;
+            current.hour = current.hour+1;
+            current = daylightsavingstime_toggle(current);
+            if (current.hour>23) {
+                current.hour = 0;
+                current.date = current.date+1;
+                current = date_check(current);
+                current.day = current.day+1;
+                if (current.day>7) {
+                    current.day = 1;
+                }
+            }
+        }
+    }
+
+    return current;
+}
+
+
+
+
+
+struct dateandtime sunrise(struct dateandtime *current) {
+    current.sunrise_hour = current.hour;
+    current.sunrise_minute = current.minute;
+    current.sunrise_second = current.second;
+
+    return current;
+}
+
+
+
+
+
+struct dateandtime sun_sync(struct dateandtime *current) {
+
+    unsigned char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
+    unsigned char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
+    unsigned char solarnoon_second = (current.sunrise_second + current.second)/2;
+
+    current.second = current.second - (solarnoon_second-0);
+    if (current.second<0) {
+        current.second = current.second+60;
+        current.minute = current.minute-1;
+    }
+    current.minute = current.minute - (solarnoon_minute-0);
+    if (current.minute<0) {
+        current.minute = current.minute+60;
+        current.hour = current.hour-1;
+    }
+    current.hour = current.hour - (solarnoon_hour-12);
+
+    return current;
 }

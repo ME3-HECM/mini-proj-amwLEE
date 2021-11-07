@@ -37,8 +37,8 @@ unsigned int get16bitTMR0val(void) {
     // as the compiler is free to rearrange operations between sequence points.
     // To guarantee a correct read, TMR0L must be read first on its own line,
     // before reading/adding TMR0H.
-    tmpval = TMR0L;                 // Read TMR0L
-    tmpval = tmpval | (TMR0H<<8);   // Read TMR0H and use inclusive OR to combine TMR0L and TMR0H to give full 16 bit timer value
+    tmpval = TMR0L;                             // Read TMR0L
+    tmpval = tmpval | (unsigned int)(TMR0H<<8); // Read TMR0H and use inclusive OR to combine TMR0L and TMR0H to give full 16 bit timer value
     
     return tmpval; // Return the full 16 bit timer value
 }

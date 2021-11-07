@@ -1,6 +1,6 @@
 #include <xc.h>
 #include "LCD.h"
 
-void main(void) {
+void LCD(void) {
     return;
 }

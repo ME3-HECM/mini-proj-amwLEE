@@ -8,7 +8,7 @@
 #define _XTAL_FREQ 64000000
 
 //function prototypes
-void LEDarray_init(void);
-void LEDarray_disp_bin(unsigned int number);
+void Timer0_init(void);
+unsigned int get16bitTMR0val(void);
 
 #endif	/* _timers_H */

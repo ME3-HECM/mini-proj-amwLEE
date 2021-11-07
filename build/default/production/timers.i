@@ -24179,8 +24179,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 # 1 "./timers.h" 1
 # 11 "./timers.h"
-void LEDarray_init(void);
-void LEDarray_disp_bin(unsigned int number);
+void Timer0_init(void);
+unsigned int get16bitTMR0val(void);
 # 2 "timers.c" 2
 
 
@@ -24211,7 +24211,7 @@ unsigned int get16bitTMR0val(void) {
 
 
     tmpval = TMR0L;
-    tmpval = tmpval | (TMR0H<<8);
+    tmpval = tmpval | (unsigned int)(TMR0H<<8);
 
     return tmpval;
 }
