@@ -25,12 +25,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./timers.h
 [; ;./timers.h: 11: void Timer0_init(void);
 [v _Timer0_init `(v ~T0 @X0 0 ef ]
-"12 ./LEDarray.h
-[; ;./LEDarray.h: 12: void LEDarray_disp_bin(signed char number);
-[v _LEDarray_disp_bin `(v ~T0 @X0 0 ef1`c ]
 "14 ./LED.h
 [; ;./LED.h: 14: void LED_toggle (dateandtime current);
 [v _LED_toggle `(v ~T0 @X0 0 ef1`S2019 ]
+"67 main.c
+[; ;main.c: 67:     extern volatile unsigned char sunrise_flag;
+[v _sunrise_flag `Vuc ~T0 @X0 0 e ]
+"17 ./dateandtime.h
+[; ;./dateandtime.h: 17: dateandtime sunrise(dateandtime current);
+[v _sunrise `(S2019 ~T0 @X0 0 ef1`S2019 ]
+"18
+[; ;./dateandtime.h: 18: dateandtime sun_sync(dateandtime current);
+[v _sun_sync `(S2019 ~T0 @X0 0 ef1`S2019 ]
+"68 main.c
+[; ;main.c: 68:     extern volatile unsigned char time_flag;
+[v _time_flag `Vuc ~T0 @X0 0 e ]
+"14 ./dateandtime.h
+[; ;./dateandtime.h: 14: dateandtime time_incre(dateandtime current);
+[v _time_incre `(S2019 ~T0 @X0 0 ef1`S2019 ]
+"12 ./LEDarray.h
+[; ;./LEDarray.h: 12: void LEDarray_disp_bin(signed char number);
+[v _LEDarray_disp_bin `(v ~T0 @X0 0 ef1`c ]
 "5 main.c
 [; ;main.c: 5: 
 [p x FEXTOSC  =  HS          ]
@@ -2035,14 +2050,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 47:     init.day = 7;
 [e = . _init 3 -> -> 7 `i `c ]
 "48
-[; ;main.c: 48:     init.hour = 17;
-[e = . _init 4 -> -> 17 `i `c ]
+[; ;main.c: 48:     init.hour = 4;
+[e = . _init 4 -> -> 4 `i `c ]
 "49
-[; ;main.c: 49:     init.minute = 0;
-[e = . _init 5 -> -> 0 `i `c ]
+[; ;main.c: 49:     init.minute = 59;
+[e = . _init 5 -> -> 59 `i `c ]
 "50
-[; ;main.c: 50:     init.second = 0;
-[e = . _init 6 -> -> 0 `i `c ]
+[; ;main.c: 50:     init.second = 59;
+[e = . _init 6 -> -> 59 `i `c ]
 "51
 [; ;main.c: 51:     init.sunrise_hour = 7;
 [e = . _init 7 -> -> 7 `i `c ]
@@ -2074,28 +2089,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 62:     Timer0_init();
 [e ( _Timer0_init ..  ]
 "64
-[; ;main.c: 64:     volatile dateandtime current;
-[v _current `VS2019 ~T0 @X0 1 a ]
+[; ;main.c: 64:     dateandtime current;
+[v _current `S2019 ~T0 @X0 1 a ]
 "65
 [; ;main.c: 65:     current = init;
 [e = _current _init ]
-"67
-[; ;main.c: 67:     while (1) {
+"70
+[; ;main.c: 70:     while (1) {
 [e :U 2022 ]
 {
-"68
-[; ;main.c: 68:         LEDarray_disp_bin(current.hour);
-[e ( _LEDarray_disp_bin (1 . _current 4 ]
-"69
-[; ;main.c: 69:         LED_toggle(current);
+"71
+[; ;main.c: 71:         LED_toggle(current);
 [e ( _LED_toggle (1 _current ]
-"70
-[; ;main.c: 70:     }
+"73
+[; ;main.c: 73:         if (sunrise_flag==1) {
+[e $ ! == -> _sunrise_flag `i -> 1 `i 2024  ]
+{
+"74
+[; ;main.c: 74:             current=sunrise(current);
+[e = _current ( _sunrise (1 _current ]
+"75
+[; ;main.c: 75:             sunrise_flag=0;
+[e = _sunrise_flag -> -> 0 `i `uc ]
+"76
+[; ;main.c: 76:         } else {sun_sync(current);}
+}
+[e $U 2025  ]
+[e :U 2024 ]
+{
+[e ( _sun_sync (1 _current ]
+}
+[e :U 2025 ]
+"78
+[; ;main.c: 78:         if (time_flag==1) {
+[e $ ! == -> _time_flag `i -> 1 `i 2026  ]
+{
+"79
+[; ;main.c: 79:             current=time_incre(current);
+[e = _current ( _time_incre (1 _current ]
+"80
+[; ;main.c: 80:             time_flag=0;
+[e = _time_flag -> -> 0 `i `uc ]
+"81
+[; ;main.c: 81:         }
+}
+[e :U 2026 ]
+"83
+[; ;main.c: 83:         LEDarray_disp_bin(current.hour);
+[e ( _LEDarray_disp_bin (1 . _current 4 ]
+"84
+[; ;main.c: 84:     }
 }
 [e :U 2021 ]
 [e $U 2022  ]
 [e :U 2023 ]
-"71
-[; ;main.c: 71: }
+"85
+[; ;main.c: 85: }
 [e :UE 2020 ]
 }

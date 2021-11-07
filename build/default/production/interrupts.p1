@@ -2156,6 +2156,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 19: }
 [e :UE 2020 ]
 }
+"26
+[; ;interrupts.c: 26: volatile unsigned char sunrise_flag;
+[v _sunrise_flag `Vuc ~T0 @X0 1 e ]
 [v $root$_HighISR `(v ~T0 @X0 0 e ]
 "28
 [; ;interrupts.c: 28: void __attribute__((picinterrupt(("high_priority")))) HighISR() {
@@ -2167,20 +2170,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 30:     if (PIR2bits.C1IF) {
 [e $ ! != -> . . _PIR2bits 0 0 `i -> 0 `i 2022  ]
 {
-"34
-[; ;interrupts.c: 34:         LATDbits.LATD7 = !LATDbits.LATD7;
+"31
+[; ;interrupts.c: 31:         LATDbits.LATD7 = !LATDbits.LATD7;
 [e = . . _LATDbits 0 7 -> -> ! != -> . . _LATDbits 0 7 `i -> 0 `i `i `uc ]
-"35
-[; ;interrupts.c: 35:         PIR2bits.C1IF = 0;
+"32
+[; ;interrupts.c: 32:         if (LATDbits.LATD7==0) {sunrise_flag=1;}
+[e $ ! == -> . . _LATDbits 0 7 `i -> 0 `i 2023  ]
+{
+[e = _sunrise_flag -> -> 1 `i `uc ]
+}
+[e :U 2023 ]
+"33
+[; ;interrupts.c: 33:         PIR2bits.C1IF = 0;
 [e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"36
-[; ;interrupts.c: 36:     }
+"34
+[; ;interrupts.c: 34:     }
 }
 [e :U 2022 ]
-"37
-[; ;interrupts.c: 37: }
+"35
+[; ;interrupts.c: 35: }
 [e :UE 2021 ]
 }
+"42
+[; ;interrupts.c: 42: volatile unsigned char time_flag;
+[v _time_flag `Vuc ~T0 @X0 1 e ]
 [v $root$_LowISR `(v ~T0 @X0 0 e ]
 "44
 [; ;interrupts.c: 44: void __attribute__((picinterrupt(("low_priority")))) LowISR() {
@@ -2190,7 +2203,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "46
 [; ;interrupts.c: 46:     if (PIR0bits.TMR0IF) {
-[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2024  ]
+[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2025  ]
 {
 "47
 [; ;interrupts.c: 47:         TMR0H = 0b1011;
@@ -2198,6 +2211,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48
 [; ;interrupts.c: 48:         TMR0L = 0b11011011;
 [e = _TMR0L -> -> 219 `i `uc ]
+"50
+[; ;interrupts.c: 50:         time_flag = 1;
+[e = _time_flag -> -> 1 `i `uc ]
 "51
 [; ;interrupts.c: 51:         LATHbits.LATH3 = !LATHbits.LATH3;
 [e = . . _LATHbits 0 3 -> -> ! != -> . . _LATHbits 0 3 `i -> 0 `i `i `uc ]
@@ -2207,8 +2223,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;interrupts.c: 53:     }
 }
-[e :U 2024 ]
+[e :U 2025 ]
 "54
 [; ;interrupts.c: 54: }
-[e :UE 2023 ]
+[e :UE 2024 ]
 }

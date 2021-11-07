@@ -24236,15 +24236,13 @@ void Interrupts_init(void) {
 
 
 
-extern volatile dateandtime current;
+volatile unsigned char sunrise_flag;
 
 void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 
     if (PIR2bits.C1IF) {
-
-
-
         LATDbits.LATD7 = !LATDbits.LATD7;
+        if (LATDbits.LATD7==0) {sunrise_flag=1;}
         PIR2bits.C1IF = 0;
     }
 }
@@ -24254,13 +24252,15 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 
 
 
+volatile unsigned char time_flag;
+
 void __attribute__((picinterrupt(("low_priority")))) LowISR() {
 
     if (PIR0bits.TMR0IF) {
         TMR0H = 0b1011;
         TMR0L = 0b11011011;
 
-
+        time_flag = 1;
         LATHbits.LATH3 = !LATHbits.LATH3;
         PIR0bits.TMR0IF = 0;
     }

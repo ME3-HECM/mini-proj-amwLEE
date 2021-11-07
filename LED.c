@@ -15,11 +15,10 @@ void LED2_init(void) {
 }
 
 void LED_toggle (dateandtime current) {
-    if (current.hour==1) {
+    if (current.hour>=1 && current.hour<5) {
         PIE2bits.C1IE = 0;
         LATDbits.LATD7 = 0;
-    } else if (current.hour==5) {
+    } else {
         PIE2bits.C1IE = 1;
     }
-    
 }

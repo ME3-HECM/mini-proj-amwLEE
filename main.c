@@ -45,9 +45,9 @@ void main(void) {
     init.month = 11;
     init.date = 7;
     init.day = 7;
-    init.hour = 17;
-    init.minute = 0;
-    init.second = 0;
+    init.hour = 4;
+    init.minute = 59;
+    init.second = 59;
     init.sunrise_hour = 7;
     init.sunrise_minute = 0;
     init.sunrise_second = 0;
@@ -61,11 +61,25 @@ void main(void) {
     LEDarray_init();    // Function to initialise pins to drive the LED array
     Timer0_init();      // Function to set up timer 0
     
-    volatile dateandtime current;
+    dateandtime current;
     current = init;
     
+    extern volatile unsigned char sunrise_flag;
+    extern volatile unsigned char time_flag;
+    
     while (1) {
-        LEDarray_disp_bin(current.hour);
         LED_toggle(current);
+        
+        if (sunrise_flag==1) {
+            current=sunrise(current);
+            sunrise_flag=0;
+        } else {sun_sync(current);}
+        
+        if (time_flag==1) {
+            current=time_incre(current);
+            time_flag=0;
+        }
+        
+        LEDarray_disp_bin(current.hour);
     }
 }

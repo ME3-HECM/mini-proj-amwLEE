@@ -2100,8 +2100,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
 "18
-[; ;LED.c: 18:     if (current.hour==1) {
-[e $ ! == -> . _current 4 `i -> 1 `i 2023  ]
+[; ;LED.c: 18:     if (current.hour>=1 && current.hour<5) {
+[e $ ! && >= -> . _current 4 `i -> 1 `i < -> . _current 4 `i -> 5 `i 2023  ]
 {
 "19
 [; ;LED.c: 19:         PIE2bits.C1IE = 0;
@@ -2110,11 +2110,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LED.c: 20:         LATDbits.LATD7 = 0;
 [e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
 "21
-[; ;LED.c: 21:     } else if (current.hour==5) {
+[; ;LED.c: 21:     } else {
 }
 [e $U 2024  ]
 [e :U 2023 ]
-[e $ ! == -> . _current 4 `i -> 5 `i 2025  ]
 {
 "22
 [; ;LED.c: 22:         PIE2bits.C1IE = 1;
@@ -2122,9 +2121,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;LED.c: 23:     }
 }
-[e :U 2025 ]
 [e :U 2024 ]
-"25
-[; ;LED.c: 25: }
+"24
+[; ;LED.c: 24: }
 [e :UE 2022 ]
 }
