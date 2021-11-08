@@ -24181,18 +24181,14 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 11 "./timers.h"
 void Timer0_init(void);
 # 2 "timers.c" 2
-
-
-
-
-
-void Timer0_init(void) {
+# 30 "timers.c"
+ void Timer0_init(void) {
     T0CON1bits.T0CS=0b010;
     T0CON1bits.T0ASYNC=1;
-    T0CON1bits.T0CKPS=0b1000;
+    T0CON1bits.T0CKPS=0b0000;
     T0CON0bits.T016BIT=1;
-# 23 "timers.c"
-    TMR0H=0b1011;
-    TMR0L=0b11011011;
+# 46 "timers.c"
+    TMR0H=0b11101110;
+    TMR0L=0b10100011;
     T0CON0bits.T0EN=1;
 }

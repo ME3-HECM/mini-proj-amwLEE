@@ -2137,12 +2137,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comparator.c: 30:     CM1CON1bits.INTP=1;
 [e = . . _CM1CON1bits 0 1 -> -> 1 `i `uc ]
 "31
-[; ;comparator.c: 31:     DAC_init();
-[e ( _DAC_init ..  ]
+[; ;comparator.c: 31:     CM1CON1bits.INTN=1;
+[e = . . _CM1CON1bits 0 0 -> -> 1 `i `uc ]
 "32
-[; ;comparator.c: 32:     CM1CON0bits.EN=1;
-[e = . . _CM1CON0bits 0 6 -> -> 1 `i `uc ]
+[; ;comparator.c: 32:     DAC_init();
+[e ( _DAC_init ..  ]
 "33
-[; ;comparator.c: 33: }
+[; ;comparator.c: 33:     CM1CON0bits.EN=1;
+[e = . . _CM1CON0bits 0 6 -> -> 1 `i `uc ]
+"34
+[; ;comparator.c: 34: }
 [e :UE 2020 ]
 }

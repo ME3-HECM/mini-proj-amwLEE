@@ -3,8 +3,8 @@ main.c  \
 dateandtime.h  \
 ADC.h  \
 comparator.h  \
+timers.h  \
 interrupts.h  \
-LCD.h  \
 LED.h  \
 LEDarray.h  \
-timers.h 
+LCD.h 

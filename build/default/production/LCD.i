@@ -24178,5 +24178,123 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "LCD.c" 2
 
 # 1 "./LCD.h" 1
+# 19 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
 # 2 "LCD.c" 2
 
+
+
+
+
+
+void LCD_E_TOG(void)
+{
+ LATCbits.LATC2 = 1;
+ _delay((unsigned long)((2)*(64000000/4000000.0)));
+ LATCbits.LATC2 = 0;
+}
+
+
+
+
+void LCD_sendnibble(unsigned char number)
+{
+
+    if (number & 0b0001) {LATBbits.LATB3 = 1;} else {LATBbits.LATB3 = 0;}
+    if (number & 0b0010) {LATBbits.LATB2 = 1;} else {LATBbits.LATB2 = 0;}
+    if (number & 0b0100) {LATEbits.LATE3 = 1;} else {LATEbits.LATE3 = 0;}
+    if (number & 0b1000) {LATEbits.LATE1 = 1;} else {LATEbits.LATE1 = 0;}
+
+    LCD_E_TOG();
+    _delay((unsigned long)((5)*(64000000/4000000.0)));
+}
+
+
+
+
+
+void LCD_sendbyte(unsigned char Byte, char type)
+{
+
+    if (type) {LATCbits.LATC6 = 1;} else {LATCbits.LATC6 = 0;}
+
+
+    LCD_sendnibble(Byte>>4);
+
+
+    LCD_sendnibble(Byte&0b00001111);
+
+
+    _delay((unsigned long)((50)*(64000000/4000000.0)));
+}
+
+
+
+
+void LCD_init(void)
+{
+
+    TRISCbits.TRISC6 =0;
+    TRISCbits.TRISC2=0;
+    TRISBbits.TRISB3=0;
+    TRISBbits.TRISB2=0;
+    TRISEbits.TRISE3=0;
+    TRISEbits.TRISE1=0;
+
+
+    LATCbits.LATC6 = 0;
+    LATCbits.LATC2 = 0;
+    LATBbits.LATB3 = 0;
+    LATBbits.LATB2 = 0;
+    LATEbits.LATE3 = 0;
+    LATEbits.LATE1 = 0;
+
+
+
+
+
+    _delay((unsigned long)((45)*(64000000/4000.0)));
+    LCD_sendnibble(0b0010);
+    _delay((unsigned long)((45)*(64000000/4000000.0)));
+    LCD_sendbyte(0b00101000,0);
+    _delay((unsigned long)((45)*(64000000/4000000.0)));
+    LCD_sendbyte(0b00101000,0);
+    _delay((unsigned long)((45)*(64000000/4000000.0)));
+
+
+    LCD_sendbyte(0b00001000,0);
+    _delay((unsigned long)((45)*(64000000/4000000.0)));
+    LCD_sendbyte(0b00000001,0);
+    _delay((unsigned long)((2)*(64000000/4000.0)));
+    LCD_sendbyte(0b00000110,0);
+    _delay((unsigned long)((50)*(64000000/4000000.0)));
+
+
+    LCD_sendbyte(0b00001100,0);
+    _delay((unsigned long)((50)*(64000000/4000000.0)));
+}
+
+
+
+
+
+
+
+void LCD_setline (char line)
+{
+
+    if (line==1) {LCD_sendbyte(0x80,0);}
+    _delay((unsigned long)((50)*(64000000/4000000.0)));
+
+
+    if (line==2) {LCD_sendbyte(0xC0,0);}
+    _delay((unsigned long)((50)*(64000000/4000000.0)));
+}

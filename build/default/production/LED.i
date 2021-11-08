@@ -24209,16 +24209,32 @@ dateandtime sun_sync(dateandtime current);
 
 
 
-void LED1_init(void);
+void LED1_init(dateandtime current);
 void LED2_init(void);
-void LED_toggle (dateandtime current);
+dateandtime LED_toggle (dateandtime current);
 # 2 "LED.c" 2
 
+# 1 "./ADC.h" 1
+# 10 "./ADC.h"
+void ADC_init(void);
+unsigned char ADC_getval(void);
+# 3 "LED.c" 2
 
 
-void LED1_init(void) {
 
-    LATDbits.LATD7 = 0;
+
+
+
+
+
+void LED1_init(dateandtime current) {
+
+    if ((ADC_getval()>222) && (current.hour<1||current.hour>=5)) {
+        LATDbits.LATD7 = 1;
+    } else {
+        LATDbits.LATD7 = 0;
+    }
+
     TRISDbits.TRISD7 = 0;
 }
 
@@ -24228,11 +24244,15 @@ void LED2_init(void) {
     TRISHbits.TRISH3 = 0;
 }
 
-void LED_toggle (dateandtime current) {
-    if (current.hour>=1 && current.hour<5) {
+dateandtime LED_toggle (dateandtime current) {
+    if (current.hour==1 && current.minute==0 && current.second==0) {
         PIE2bits.C1IE = 0;
         LATDbits.LATD7 = 0;
-    } else {
+    } else if (current.hour==5 && current.minute==0 && current.second==0) {
         PIE2bits.C1IE = 1;
+        if (ADC_getval()>222) {LATDbits.LATD7 = 1;}
+        else {current=sunrise(current);}
     }
+
+    return current;
 }

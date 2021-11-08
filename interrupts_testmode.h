@@ -1,16 +1,15 @@
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef _LED_H
-#define	_LED_H
+#ifndef _interrupts_testmode_H
+#define	_interrupts_testmode_H
 
 #include <xc.h> // include processor files - each processor file is guarded.
 #include "dateandtime.h"
 
 #define _XTAL_FREQ 64000000
 
-//function prototypes
-void LED1_init(dateandtime current);
-void LED2_init(void);
-dateandtime LED_toggle (dateandtime current);
+void Interrupts_init(void);
+void __interrupt(high_priority) HighISR();
+void __interrupt(low_priority) LowISR();
 
-#endif	/* _LED_H */
+#endif	/* _interrupts_H */

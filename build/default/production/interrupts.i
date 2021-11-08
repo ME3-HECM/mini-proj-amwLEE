@@ -24208,7 +24208,7 @@ dateandtime sun_sync(dateandtime current);
 
 
 
-void Interrupts_init(void);
+void Interrupts_init(dateandtime current);
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 void __attribute__((picinterrupt(("low_priority")))) LowISR();
 # 2 "interrupts.c" 2
@@ -24219,13 +24219,14 @@ void __attribute__((picinterrupt(("low_priority")))) LowISR();
 
 
 
-void Interrupts_init(void) {
+void Interrupts_init(dateandtime current) {
 
 
+    if (current.hour<1 || current.hour>=5) {PIE2bits.C1IE = 1;}
+    else {PIE2bits.C1IE = 0;}
     PIE0bits.TMR0IE = 1;
-    PIE2bits.C1IE = 1;
-    IPR0bits.TMR0IP = 0;
     IPR2bits.C1IP = 1;
+    IPR0bits.TMR0IP = 0;
     INTCONbits.IPEN = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
@@ -24237,31 +24238,27 @@ void Interrupts_init(void) {
 
 
 volatile unsigned char sunrise_flag;
+volatile unsigned char sunset_flag;
 
 void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 
     if (PIR2bits.C1IF) {
         LATDbits.LATD7 = !LATDbits.LATD7;
         if (LATDbits.LATD7==0) {sunrise_flag=1;}
+        else {sunset_flag=1;}
         PIR2bits.C1IF = 0;
     }
 }
-
-
-
-
-
-
+# 65 "interrupts.c"
 volatile unsigned char time_flag;
 
 void __attribute__((picinterrupt(("low_priority")))) LowISR() {
 
     if (PIR0bits.TMR0IF) {
-        TMR0H = 0b1011;
-        TMR0L = 0b11011011;
+        TMR0H = 0b11101110;
+        TMR0L = 0b10100011;
 
         time_flag = 1;
-        LATHbits.LATH3 = !LATHbits.LATH3;
         PIR0bits.TMR0IF = 0;
     }
 }

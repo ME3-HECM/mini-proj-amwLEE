@@ -27,7 +27,8 @@ void Comp1_init(void)
     CM1PCHbits.PCH=0b101;   // Use DAC output for positive input
     CM1CON0bits.HYS=1;      // A little bit of hysteresis to stop multiple triggers
     CM1CON0bits.POL=1;      // Needed for interrupt to work
-    CM1CON1bits.INTP=1; 	// Set interrupt flag on positive going edge
+    CM1CON1bits.INTP=1; 	// Set interrupt flag on positive going edge / light to dark (switch on street light at sunset)
+    CM1CON1bits.INTN=1; 	// Set interrupt flag on negative going edge / dark to light (switch off street light at sunrise)
     DAC_init();				// Initialise the DAC
     CM1CON0bits.EN=1;   	// Enable comparator 1
 }

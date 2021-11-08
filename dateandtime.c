@@ -45,6 +45,7 @@ dateandtime time_incre(dateandtime current){
     
     current.second = current.second+1;
     if (current.second>59) {
+        LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
         current.second = 0;
         current.minute = current.minute+1;
         if (current.minute>59) {

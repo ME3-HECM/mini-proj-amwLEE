@@ -70,6 +70,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26733
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 26733: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xF60)));
 [v _ADCON0bits `VS1261 ~T0 @X0 0 e@3936 ]
+"27017
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 27017: extern volatile unsigned char ADRESH __attribute__((address(0xF64)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@3940 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2044,39 +2047,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 ADC.c
-[; ;ADC.c: 9: void ADC_init(void)
+"8 ADC.c
+[; ;ADC.c: 8: void ADC_init(void) {
 [v _ADC_init `(v ~T0 @X0 1 ef ]
-"10
-[; ;ADC.c: 10: {
 {
 [e :U _ADC_init ]
 [f ]
-"11
-[; ;ADC.c: 11:     TRISFbits.TRISF7=1;
+"10
+[; ;ADC.c: 10:     TRISFbits.TRISF7=1;
 [e = . . _TRISFbits 0 7 -> -> 1 `i `uc ]
-"12
-[; ;ADC.c: 12:     ANSELFbits.ANSELF7=1;
+"11
+[; ;ADC.c: 11:     ANSELFbits.ANSELF7=1;
 [e = . . _ANSELFbits 0 7 -> -> 1 `i `uc ]
-"15
-[; ;ADC.c: 15:     ADREFbits.ADNREF = 0;
+"14
+[; ;ADC.c: 14:     ADREFbits.ADNREF = 0;
 [e = . . _ADREFbits 0 2 -> -> 0 `i `uc ]
-"16
-[; ;ADC.c: 16:     ADREFbits.ADPREF = 0b00;
+"15
+[; ;ADC.c: 15:     ADREFbits.ADPREF = 0b00;
 [e = . . _ADREFbits 0 0 -> -> 0 `i `uc ]
-"17
-[; ;ADC.c: 17:     ADPCH=0b101111;
+"16
+[; ;ADC.c: 16:     ADPCH=0b101111;
 [e = _ADPCH -> -> 47 `i `uc ]
-"18
-[; ;ADC.c: 18:     ADCON0bits.ADFM = 0;
+"17
+[; ;ADC.c: 17:     ADCON0bits.ADFM = 0;
 [e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"19
-[; ;ADC.c: 19:     ADCON0bits.ADCS = 1;
+"18
+[; ;ADC.c: 18:     ADCON0bits.ADCS = 1;
 [e = . . _ADCON0bits 0 4 -> -> 1 `i `uc ]
-"20
-[; ;ADC.c: 20:     ADCON0bits.ADON = 1;
+"19
+[; ;ADC.c: 19:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 7 -> -> 1 `i `uc ]
-"21
-[; ;ADC.c: 21: }
+"20
+[; ;ADC.c: 20: }
 [e :UE 2019 ]
+}
+"26
+[; ;ADC.c: 26: unsigned char ADC_getval(void) {
+[v _ADC_getval `(uc ~T0 @X0 1 ef ]
+{
+[e :U _ADC_getval ]
+[f ]
+"27
+[; ;ADC.c: 27:     unsigned char tmpval;
+[v _tmpval `uc ~T0 @X0 1 a ]
+"29
+[; ;ADC.c: 29:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"30
+[; ;ADC.c: 30:     while (ADCON0bits.GO);
+[e $U 2021  ]
+[e :U 2022 ]
+[e :U 2021 ]
+[e $ != -> . . _ADCON0bits 1 0 `i -> 0 `i 2022  ]
+[e :U 2023 ]
+"31
+[; ;ADC.c: 31:     tmpval = ADRESH;
+[e = _tmpval _ADRESH ]
+"34
+[; ;ADC.c: 34:     return tmpval;
+[e ) _tmpval ]
+[e $UE 2020  ]
+"35
+[; ;ADC.c: 35: }
+[e :UE 2020 ]
 }

@@ -24211,6 +24211,7 @@ void Comp1_init(void)
     CM1CON0bits.HYS=1;
     CM1CON0bits.POL=1;
     CM1CON1bits.INTP=1;
+    CM1CON1bits.INTN=1;
     DAC_init();
     CM1CON0bits.EN=1;
 }

@@ -20,13 +20,7 @@
 
 
 #pragma config WDTE = OFF
-
-
-
-
-
-
-
+# 28 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24195,7 +24189,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
-# 20 "main.c" 2
+# 28 "main.c" 2
 
 # 1 "./dateandtime.h" 1
 
@@ -24216,88 +24210,114 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
-# 21 "main.c" 2
+# 29 "main.c" 2
 
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
-# 22 "main.c" 2
+unsigned char ADC_getval(void);
+# 30 "main.c" 2
 
 # 1 "./comparator.h" 1
 # 10 "./comparator.h"
 void DAC_init(void);
 void Comp1_init(void);
-# 23 "main.c" 2
+# 31 "main.c" 2
+
+# 1 "./timers.h" 1
+# 11 "./timers.h"
+void Timer0_init(void);
+# 32 "main.c" 2
 
 # 1 "./interrupts.h" 1
 # 11 "./interrupts.h"
-void Interrupts_init(void);
+void Interrupts_init(dateandtime current);
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 void __attribute__((picinterrupt(("low_priority")))) LowISR();
-# 24 "main.c" 2
-
-# 1 "./LCD.h" 1
-# 25 "main.c" 2
+# 33 "main.c" 2
 
 # 1 "./LED.h" 1
 # 12 "./LED.h"
-void LED1_init(void);
+void LED1_init(dateandtime current);
 void LED2_init(void);
-void LED_toggle (dateandtime current);
-# 26 "main.c" 2
+dateandtime LED_toggle (dateandtime current);
+# 34 "main.c" 2
 
 # 1 "./LEDarray.h" 1
 # 11 "./LEDarray.h"
 void LEDarray_init(void);
 void LEDarray_disp_bin(signed char number);
-# 27 "main.c" 2
+# 35 "main.c" 2
 
-# 1 "./timers.h" 1
-# 11 "./timers.h"
-void Timer0_init(void);
-# 28 "main.c" 2
-# 41 "main.c"
+# 1 "./LCD.h" 1
+# 19 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 36 "main.c" 2
+
+
+
+
+
+
 void main(void) {
 
-    dateandtime init;
-    init.year = 2021;
-    init.month = 11;
-    init.date = 7;
-    init.day = 7;
-    init.hour = 4;
-    init.minute = 59;
-    init.second = 59;
-    init.sunrise_hour = 7;
-    init.sunrise_minute = 0;
-    init.sunrise_second = 0;
+
+
+
+    dateandtime current;
+    current.year = 2021;
+    current.month = 11;
+    current.date = 9;
+    current.day = 2;
+    current.hour = 7;
+    current.minute = 30;
+    current.second = 0;
+    current.sunrise_hour = 7;
+    current.sunrise_minute = 0;
+    current.sunrise_second = 0;
 
 
     ADC_init();
-    Interrupts_init();
     Comp1_init();
-    LED1_init();
+    Timer0_init();
+    Interrupts_init(current);
+    LED1_init(current);
     LED2_init();
     LEDarray_init();
-    Timer0_init();
+    LCD_init();
 
-    dateandtime current;
-    current = init;
 
     extern volatile unsigned char sunrise_flag;
+    extern volatile unsigned char sunset_flag;
     extern volatile unsigned char time_flag;
 
-    while (1) {
-        LED_toggle(current);
 
+    while (1) {
         if (sunrise_flag==1) {
             current=sunrise(current);
             sunrise_flag=0;
-        } else {sun_sync(current);}
+        } else if (sunset_flag==1) {
+            current=sun_sync(current);
+            sunset_flag=0;
+        }
 
         if (time_flag==1) {
             current=time_incre(current);
             time_flag=0;
         }
+
+        current = LED_toggle(current);
+
+
+
 
         LEDarray_disp_bin(current.hour);
     }

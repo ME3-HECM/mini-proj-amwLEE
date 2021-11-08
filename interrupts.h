@@ -8,7 +8,7 @@
 
 #define _XTAL_FREQ 64000000
 
-void Interrupts_init(void);
+void Interrupts_init(dateandtime current);
 void __interrupt(high_priority) HighISR();
 void __interrupt(low_priority) LowISR();
 

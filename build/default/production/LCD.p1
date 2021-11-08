@@ -1,4 +1,86 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"28743 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28743:     struct {
+[s S1349 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1349 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"28753
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28753:     struct {
+[s S1350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1350 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"28742
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28742: typedef union {
+[u S1348 `S1349 1 `S1350 1 ]
+[n S1348 . . . ]
+"28764
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28764: extern volatile LATCbits_t LATCbits __attribute__((address(0xF7B)));
+[v _LATCbits `VS1348 ~T0 @X0 0 e@3963 ]
+[v F14184 `(v ~T0 @X0 1 tf1`ul ]
+"203 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\pic18.h
+[v __delay `JF14184 ~T0 @X0 0 e ]
+[p i __delay ]
+"28631 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28631:     struct {
+[s S1346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1346 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"28641
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28641:     struct {
+[s S1347 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1347 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"28630
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28630: typedef union {
+[u S1345 `S1346 1 `S1347 1 ]
+[n S1345 . . . ]
+"28652
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28652: extern volatile LATBbits_t LATBbits __attribute__((address(0xF7A)));
+[v _LATBbits `VS1345 ~T0 @X0 0 e@3962 ]
+"28967
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28967:     struct {
+[s S1355 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1355 . LATE0 LATE1 LATE2 LATE3 LATE4 LATE5 LATE6 LATE7 ]
+"28977
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28977:     struct {
+[s S1356 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1356 . LE0 LE1 LE2 LE3 LE4 LE5 LE6 LE7 ]
+"28966
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28966: typedef union {
+[u S1354 `S1355 1 `S1356 1 ]
+[n S1354 . . . ]
+"28988
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 28988: extern volatile LATEbits_t LATEbits __attribute__((address(0xF7D)));
+[v _LATEbits `VS1354 ~T0 @X0 0 e@3965 ]
+"29629
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29629:     struct {
+[s S1379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1379 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"29628
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29628: typedef union {
+[u S1378 `S1379 1 ]
+[n S1378 . . ]
+"29640
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29640: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF83)));
+[v _TRISCbits `VS1378 ~T0 @X0 0 e@3971 ]
+"29507
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29507:     struct {
+[s S1375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1375 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"29506
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29506: typedef union {
+[u S1374 `S1375 1 ]
+[n S1374 . . ]
+"29518
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29518: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF82)));
+[v _TRISBbits `VS1374 ~T0 @X0 0 e@3970 ]
+"29873
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29873:     struct {
+[s S1387 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1387 . TRISE0 TRISE1 TRISE2 TRISE3 TRISE4 TRISE5 TRISE6 TRISE7 ]
+"29872
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29872: typedef union {
+[u S1386 `S1387 1 ]
+[n S1386 . . ]
+"29884
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29884: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF85)));
+[v _TRISEbits `VS1386 ~T0 @X0 0 e@3973 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -1973,3 +2055,264 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"8 LCD.c
+[; ;LCD.c: 8: void LCD_E_TOG(void)
+[v _LCD_E_TOG `(v ~T0 @X0 1 ef ]
+"9
+[; ;LCD.c: 9: {
+{
+[e :U _LCD_E_TOG ]
+[f ]
+"10
+[; ;LCD.c: 10:  LATCbits.LATC2 = 1;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+"11
+[; ;LCD.c: 11:  _delay((unsigned long)((2)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"12
+[; ;LCD.c: 12:  LATCbits.LATC2 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"13
+[; ;LCD.c: 13: }
+[e :UE 2019 ]
+}
+"18
+[; ;LCD.c: 18: void LCD_sendnibble(unsigned char number)
+[v _LCD_sendnibble `(v ~T0 @X0 1 ef1`uc ]
+"19
+[; ;LCD.c: 19: {
+{
+[e :U _LCD_sendnibble ]
+"18
+[; ;LCD.c: 18: void LCD_sendnibble(unsigned char number)
+[v _number `uc ~T0 @X0 1 r1 ]
+"19
+[; ;LCD.c: 19: {
+[f ]
+"21
+[; ;LCD.c: 21:     if (number & 0b0001) {LATBbits.LATB3 = 1;} else {LATBbits.LATB3 = 0;}
+[e $ ! != & -> _number `i -> 1 `i -> 0 `i 2021  ]
+{
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+}
+[e $U 2022  ]
+[e :U 2021 ]
+{
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 2022 ]
+"22
+[; ;LCD.c: 22:     if (number & 0b0010) {LATBbits.LATB2 = 1;} else {LATBbits.LATB2 = 0;}
+[e $ ! != & -> _number `i -> 2 `i -> 0 `i 2023  ]
+{
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+}
+[e $U 2024  ]
+[e :U 2023 ]
+{
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 2024 ]
+"23
+[; ;LCD.c: 23:     if (number & 0b0100) {LATEbits.LATE3 = 1;} else {LATEbits.LATE3 = 0;}
+[e $ ! != & -> _number `i -> 4 `i -> 0 `i 2025  ]
+{
+[e = . . _LATEbits 0 3 -> -> 1 `i `uc ]
+}
+[e $U 2026  ]
+[e :U 2025 ]
+{
+[e = . . _LATEbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 2026 ]
+"24
+[; ;LCD.c: 24:     if (number & 0b1000) {LATEbits.LATE1 = 1;} else {LATEbits.LATE1 = 0;}
+[e $ ! != & -> _number `i -> 8 `i -> 0 `i 2027  ]
+{
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+}
+[e $U 2028  ]
+[e :U 2027 ]
+{
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 2028 ]
+"26
+[; ;LCD.c: 26:     LCD_E_TOG();
+[e ( _LCD_E_TOG ..  ]
+"27
+[; ;LCD.c: 27:     _delay((unsigned long)((5)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"28
+[; ;LCD.c: 28: }
+[e :UE 2020 ]
+}
+"34
+[; ;LCD.c: 34: void LCD_sendbyte(unsigned char Byte, char type)
+[v _LCD_sendbyte `(v ~T0 @X0 1 ef2`uc`uc ]
+"35
+[; ;LCD.c: 35: {
+{
+[e :U _LCD_sendbyte ]
+"34
+[; ;LCD.c: 34: void LCD_sendbyte(unsigned char Byte, char type)
+[v _Byte `uc ~T0 @X0 1 r1 ]
+[v _type `uc ~T0 @X0 1 r2 ]
+"35
+[; ;LCD.c: 35: {
+[f ]
+"37
+[; ;LCD.c: 37:     if (type) {LATCbits.LATC6 = 1;} else {LATCbits.LATC6 = 0;}
+[e $ ! != -> _type `i -> 0 `i 2030  ]
+{
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+}
+[e $U 2031  ]
+[e :U 2030 ]
+{
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+}
+[e :U 2031 ]
+"40
+[; ;LCD.c: 40:     LCD_sendnibble(Byte>>4);
+[e ( _LCD_sendnibble (1 -> >> -> _Byte `i -> 4 `i `uc ]
+"43
+[; ;LCD.c: 43:     LCD_sendnibble(Byte&0b00001111);
+[e ( _LCD_sendnibble (1 -> & -> _Byte `i -> 15 `i `uc ]
+"46
+[; ;LCD.c: 46:     _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"47
+[; ;LCD.c: 47: }
+[e :UE 2029 ]
+}
+"52
+[; ;LCD.c: 52: void LCD_init(void)
+[v _LCD_init `(v ~T0 @X0 1 ef ]
+"53
+[; ;LCD.c: 53: {
+{
+[e :U _LCD_init ]
+[f ]
+"55
+[; ;LCD.c: 55:     TRISCbits.TRISC6 =0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"56
+[; ;LCD.c: 56:     TRISCbits.TRISC2=0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"57
+[; ;LCD.c: 57:     TRISBbits.TRISB3=0;
+[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+"58
+[; ;LCD.c: 58:     TRISBbits.TRISB2=0;
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
+"59
+[; ;LCD.c: 59:     TRISEbits.TRISE3=0;
+[e = . . _TRISEbits 0 3 -> -> 0 `i `uc ]
+"60
+[; ;LCD.c: 60:     TRISEbits.TRISE1=0;
+[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
+"63
+[; ;LCD.c: 63:     LATCbits.LATC6 = 0;
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+"64
+[; ;LCD.c: 64:     LATCbits.LATC2 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"65
+[; ;LCD.c: 65:     LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"66
+[; ;LCD.c: 66:     LATBbits.LATB2 = 0;
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+"67
+[; ;LCD.c: 67:     LATEbits.LATE3 = 0;
+[e = . . _LATEbits 0 3 -> -> 0 `i `uc ]
+"68
+[; ;LCD.c: 68:     LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+"74
+[; ;LCD.c: 74:     _delay((unsigned long)((45)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"75
+[; ;LCD.c: 75:     LCD_sendnibble(0b0010);
+[e ( _LCD_sendnibble (1 -> -> 2 `i `uc ]
+"76
+[; ;LCD.c: 76:     _delay((unsigned long)((45)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"77
+[; ;LCD.c: 77:     LCD_sendbyte(0b00101000,0);
+[e ( _LCD_sendbyte (2 , -> -> 40 `i `uc -> -> 0 `i `uc ]
+"78
+[; ;LCD.c: 78:     _delay((unsigned long)((45)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"79
+[; ;LCD.c: 79:     LCD_sendbyte(0b00101000,0);
+[e ( _LCD_sendbyte (2 , -> -> 40 `i `uc -> -> 0 `i `uc ]
+"80
+[; ;LCD.c: 80:     _delay((unsigned long)((45)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"83
+[; ;LCD.c: 83:     LCD_sendbyte(0b00001000,0);
+[e ( _LCD_sendbyte (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
+"84
+[; ;LCD.c: 84:     _delay((unsigned long)((45)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"85
+[; ;LCD.c: 85:     LCD_sendbyte(0b00000001,0);
+[e ( _LCD_sendbyte (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"86
+[; ;LCD.c: 86:     _delay((unsigned long)((2)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"87
+[; ;LCD.c: 87:     LCD_sendbyte(0b00000110,0);
+[e ( _LCD_sendbyte (2 , -> -> 6 `i `uc -> -> 0 `i `uc ]
+"88
+[; ;LCD.c: 88:     _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"91
+[; ;LCD.c: 91:     LCD_sendbyte(0b00001100,0);
+[e ( _LCD_sendbyte (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"92
+[; ;LCD.c: 92:     _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"93
+[; ;LCD.c: 93: }
+[e :UE 2032 ]
+}
+"101
+[; ;LCD.c: 101: void LCD_setline (char line)
+[v _LCD_setline `(v ~T0 @X0 1 ef1`uc ]
+"102
+[; ;LCD.c: 102: {
+{
+[e :U _LCD_setline ]
+"101
+[; ;LCD.c: 101: void LCD_setline (char line)
+[v _line `uc ~T0 @X0 1 r1 ]
+"102
+[; ;LCD.c: 102: {
+[f ]
+"104
+[; ;LCD.c: 104:     if (line==1) {LCD_sendbyte(0x80,0);}
+[e $ ! == -> _line `i -> 1 `i 2034  ]
+{
+[e ( _LCD_sendbyte (2 , -> -> 128 `i `uc -> -> 0 `i `uc ]
+}
+[e :U 2034 ]
+"105
+[; ;LCD.c: 105:     _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"108
+[; ;LCD.c: 108:     if (line==2) {LCD_sendbyte(0xC0,0);}
+[e $ ! == -> _line `i -> 2 `i 2035  ]
+{
+[e ( _LCD_sendbyte (2 , -> -> 192 `i `uc -> -> 0 `i `uc ]
+}
+[e :U 2035 ]
+"109
+[; ;LCD.c: 109:     _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"110
+[; ;LCD.c: 110: }
+[e :UE 2033 ]
+}

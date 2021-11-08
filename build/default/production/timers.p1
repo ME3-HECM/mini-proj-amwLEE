@@ -2017,34 +2017,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 timers.c
-[; ;timers.c: 7: void Timer0_init(void) {
+"30 timers.c
+[; ;timers.c: 30:  void Timer0_init(void) {
 [v _Timer0_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Timer0_init ]
 [f ]
-"8
-[; ;timers.c: 8:     T0CON1bits.T0CS=0b010;
+"31
+[; ;timers.c: 31:     T0CON1bits.T0CS=0b010;
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-"9
-[; ;timers.c: 9:     T0CON1bits.T0ASYNC=1;
+"32
+[; ;timers.c: 32:     T0CON1bits.T0ASYNC=1;
 [e = . . _T0CON1bits 0 1 -> -> 1 `i `uc ]
-"10
-[; ;timers.c: 10:     T0CON1bits.T0CKPS=0b1000;
-[e = . . _T0CON1bits 0 0 -> -> 8 `i `uc ]
-"11
-[; ;timers.c: 11:     T0CON0bits.T016BIT=1;
+"33
+[; ;timers.c: 33:     T0CON1bits.T0CKPS=0b0000;
+[e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
+"34
+[; ;timers.c: 34:     T0CON0bits.T016BIT=1;
 [e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
-"23
-[; ;timers.c: 23:     TMR0H=0b1011;
-[e = _TMR0H -> -> 11 `i `uc ]
-"24
-[; ;timers.c: 24:     TMR0L=0b11011011;
-[e = _TMR0L -> -> 219 `i `uc ]
-"25
-[; ;timers.c: 25:     T0CON0bits.T0EN=1;
+"46
+[; ;timers.c: 46:     TMR0H=0b11101110;
+[e = _TMR0H -> -> 238 `i `uc ]
+"47
+[; ;timers.c: 47:     TMR0L=0b10100011;
+[e = _TMR0L -> -> 163 `i `uc ]
+"48
+[; ;timers.c: 48:     T0CON0bits.T0EN=1;
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
-"26
-[; ;timers.c: 26: }
+"49
+[; ;timers.c: 49: }
 [e :UE 2019 ]
 }
