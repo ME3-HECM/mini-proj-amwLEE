@@ -12,10 +12,12 @@
  ************************************************************************************/
 dateandtime daylightsavingstime_toggle(dateandtime current) { // Take current date and time as input
     
-    if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1) {         // If it is March, we're in the last week, it's a Sunday, and it's 1am
-        current.hour = current.hour+1;                                                          // Move the clock forward by 1 hour
-    } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2) { // If it is October, we're in the last week, it's a Sunday, and it's 2am
-        current.hour = current.hour-1;                                                          // Move the clock backwards by 1 hour
+    if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1 && current.dst==0) {         // If it is March, we're in the last week, it's a Sunday, and it's 1am
+        current.hour = current.hour+1;  // Move the clock forward by 1 hour
+        current.dst = 1;
+    } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2 && current.dst==1) { // If it is October, we're in the last week, it's a Sunday, and it's 2am
+        current.hour = current.hour-1;  // Move the clock backwards by 1 hour
+        current.dst = 0;
     }
     
     return current; // Update the new time

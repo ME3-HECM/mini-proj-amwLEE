@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
-[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
+[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
+[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
 "11 ./ADC.h
 [; ;./ADC.h: 11: unsigned char ADC_getval(void);
 [v _ADC_getval `(uc ~T0 @X0 0 ef ]

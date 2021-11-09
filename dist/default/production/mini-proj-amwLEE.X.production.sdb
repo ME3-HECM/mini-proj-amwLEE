@@ -70,55 +70,55 @@
 "24
 [v _Comp1_init Comp1_init `(v  1 e 1 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
 "13 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 11 0 ]
+[v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"30 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _date_check date_check `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"32 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _date_check date_check `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"57 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _time_incre time_incre `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"59 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _time_incre time_incre `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"102 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sunrise sunrise `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"104 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sunrise sunrise `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"118 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sun_sync sun_sync `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"120 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sun_sync sun_sync `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"147 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sunrise_sunset sunrise_sunset `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"149 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sunrise_sunset sunrise_sunset `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
 "34
 [v _HighISR HighISR `IIH(v  1 e 1 0 ]
 "50
 [v _LowISR LowISR `IIL(v  1 e 1 0 ]
-"10 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
+"11 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
 [v _LCD_E_TOG LCD_E_TOG `(v  1 e 1 0 ]
-"20
+"21
 [v _LCD_sendnibble LCD_sendnibble `(v  1 e 1 0 ]
-"36
+"37
 [v _LCD_sendbyte LCD_sendbyte `(v  1 e 1 0 ]
-"54
+"56
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
-"109
+"111
 [v _LCD_setline LCD_setline `(v  1 e 1 0 ]
-"123
+"125
 [v _LCD_sendstring LCD_sendstring `(v  1 e 1 0 ]
 "10 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 [v _LED1_init LED1_init `(v  1 e 1 0 ]
 "29
 [v _LED2_init LED2_init `(v  1 e 1 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
 "40 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-[v _LED_toggle LED_toggle `(S24  1 e 11 0 ]
+[v _LED_toggle LED_toggle `(S24  1 e 12 0 ]
 "9 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LEDarray.c
 [v _LEDarray_init LEDarray_init `(v  1 e 1 0 ]
 "37
@@ -127,7 +127,7 @@
 [v _main main `(v  1 e 1 0 ]
 "9 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\timers.c
 [v _Timer0_init Timer0_init `(v  1 e 1 0 ]
-[s S828 . 1 `uc 1 INT0IP 1 0 :1:0 
+[s S831 . 1 `uc 1 INT0IP 1 0 :1:0 
 `uc 1 INT1IP 1 0 :1:1 
 `uc 1 INT2IP 1 0 :1:2 
 `uc 1 INT3IP 1 0 :1:3 
@@ -135,9 +135,9 @@
 `uc 1 TMR0IP 1 0 :1:5 
 ]
 "4009 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
-[u S835 . 1 `S828 1 . 1 0 ]
-[v _IPR0bits IPR0bits `VES835  1 e 1 @3615 ]
-[s S804 . 1 `uc 1 C1IP 1 0 :1:0 
+[u S838 . 1 `S831 1 . 1 0 ]
+[v _IPR0bits IPR0bits `VES838  1 e 1 @3615 ]
+[s S807 . 1 `uc 1 C1IP 1 0 :1:0 
 `uc 1 C2IP 1 0 :1:1 
 `uc 1 C3IP 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -145,12 +145,12 @@
 `uc 1 HLVDIP 1 0 :1:7 
 ]
 "4111
-[s S811 . 1 `uc 1 . 1 0 :6:0 
+[s S814 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIP 1 0 :1:6 
 ]
-[u S814 . 1 `S804 1 . 1 0 `S811 1 . 1 0 ]
-[v _IPR2bits IPR2bits `VES814  1 e 1 @3617 ]
-[s S787 . 1 `uc 1 INT0IE 1 0 :1:0 
+[u S817 . 1 `S807 1 . 1 0 `S814 1 . 1 0 ]
+[v _IPR2bits IPR2bits `VES817  1 e 1 @3617 ]
+[s S790 . 1 `uc 1 INT0IE 1 0 :1:0 
 `uc 1 INT1IE 1 0 :1:1 
 `uc 1 INT2IE 1 0 :1:2 
 `uc 1 INT3IE 1 0 :1:3 
@@ -158,9 +158,9 @@
 `uc 1 TMR0IE 1 0 :1:5 
 ]
 "4557
-[u S794 . 1 `S787 1 . 1 0 ]
-[v _PIE0bits PIE0bits `VES794  1 e 1 @3625 ]
-[s S763 . 1 `uc 1 C1IE 1 0 :1:0 
+[u S797 . 1 `S790 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES797  1 e 1 @3625 ]
+[s S766 . 1 `uc 1 C1IE 1 0 :1:0 
 `uc 1 C2IE 1 0 :1:1 
 `uc 1 C3IE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -168,12 +168,12 @@
 `uc 1 HLVDIE 1 0 :1:7 
 ]
 "4659
-[s S770 . 1 `uc 1 . 1 0 :6:0 
+[s S773 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIE 1 0 :1:6 
 ]
-[u S773 . 1 `S763 1 . 1 0 `S770 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES773  1 e 1 @3627 ]
-[s S948 . 1 `uc 1 INT0IF 1 0 :1:0 
+[u S776 . 1 `S766 1 . 1 0 `S773 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES776  1 e 1 @3627 ]
+[s S951 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 INT1IF 1 0 :1:1 
 `uc 1 INT2IF 1 0 :1:2 
 `uc 1 INT3IF 1 0 :1:3 
@@ -181,9 +181,9 @@
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "5102
-[u S955 . 1 `S948 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES955  1 e 1 @3635 ]
-[s S884 . 1 `uc 1 C1IF 1 0 :1:0 
+[u S958 . 1 `S951 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES958  1 e 1 @3635 ]
+[s S887 . 1 `uc 1 C1IF 1 0 :1:0 
 `uc 1 C2IF 1 0 :1:1 
 `uc 1 C3IF 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -191,12 +191,12 @@
 `uc 1 HLVDIF 1 0 :1:7 
 ]
 "5204
-[s S891 . 1 `uc 1 . 1 0 :6:0 
+[s S894 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIF 1 0 :1:6 
 ]
-[u S894 . 1 `S884 1 . 1 0 `S891 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES894  1 e 1 @3637 ]
-[s S127 . 1 `uc 1 ANSELF0 1 0 :1:0 
+[u S897 . 1 `S887 1 . 1 0 `S894 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES897  1 e 1 @3637 ]
+[s S129 . 1 `uc 1 ANSELF0 1 0 :1:0 
 `uc 1 ANSELF1 1 0 :1:1 
 `uc 1 ANSELF2 1 0 :1:2 
 `uc 1 ANSELF3 1 0 :1:3 
@@ -206,9 +206,9 @@
 `uc 1 ANSELF7 1 0 :1:7 
 ]
 "12319
-[u S136 . 1 `S127 1 . 1 0 ]
-[v _ANSELFbits ANSELFbits `VES136  1 e 1 @3764 ]
-[s S541 . 1 `uc 1 NSS 1 0 :1:0 
+[u S138 . 1 `S129 1 . 1 0 ]
+[v _ANSELFbits ANSELFbits `VES138  1 e 1 @3764 ]
+[s S543 . 1 `uc 1 NSS 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 PSS 1 0 :2:2 
 `uc 1 OE2 1 0 :1:4 
@@ -217,7 +217,7 @@
 `uc 1 EN 1 0 :1:7 
 ]
 "13322
-[s S549 . 1 `uc 1 DAC1NSS 1 0 :1:0 
+[s S551 . 1 `uc 1 DAC1NSS 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 DAC1PSS0 1 0 :1:2 
 `uc 1 DAC1PSS1 1 0 :1:3 
@@ -226,24 +226,24 @@
 `uc 1 . 1 0 :1:6 
 `uc 1 DAC1EN 1 0 :1:7 
 ]
-[s S558 . 1 `uc 1 . 1 0 :2:0 
+[s S560 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PSS0 1 0 :1:2 
 `uc 1 PSS1 1 0 :1:3 
 ]
-[u S562 . 1 `S541 1 . 1 0 `S549 1 . 1 0 `S558 1 . 1 0 ]
-[v _DAC1CON0bits DAC1CON0bits `VES562  1 e 1 @3782 ]
-[s S588 . 1 `uc 1 DAC1R 1 0 :5:0 
+[u S564 . 1 `S543 1 . 1 0 `S551 1 . 1 0 `S560 1 . 1 0 ]
+[v _DAC1CON0bits DAC1CON0bits `VES564  1 e 1 @3782 ]
+[s S590 . 1 `uc 1 DAC1R 1 0 :5:0 
 ]
 "13409
-[s S590 . 1 `uc 1 DAC1R0 1 0 :1:0 
+[s S592 . 1 `uc 1 DAC1R0 1 0 :1:0 
 `uc 1 DAC1R1 1 0 :1:1 
 `uc 1 DAC1R2 1 0 :1:2 
 `uc 1 DAC1R3 1 0 :1:3 
 `uc 1 DAC1R4 1 0 :1:4 
 ]
-[u S596 . 1 `S588 1 . 1 0 `S590 1 . 1 0 ]
-[v _DAC1CON1bits DAC1CON1bits `VES596  1 e 1 @3783 ]
-[s S670 . 1 `uc 1 SYNC 1 0 :1:0 
+[u S598 . 1 `S590 1 . 1 0 `S592 1 . 1 0 ]
+[v _DAC1CON1bits DAC1CON1bits `VES598  1 e 1 @3783 ]
+[s S672 . 1 `uc 1 SYNC 1 0 :1:0 
 `uc 1 HYS 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 POL 1 0 :1:4 
@@ -252,7 +252,7 @@
 `uc 1 EN 1 0 :1:7 
 ]
 "13949
-[s S678 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S680 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 C1POL 1 0 :1:4 
@@ -260,56 +260,56 @@
 `uc 1 C1OUT 1 0 :1:6 
 `uc 1 C1EN 1 0 :1:7 
 ]
-[u S686 . 1 `S670 1 . 1 0 `S678 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES686  1 e 1 @3792 ]
-[s S706 . 1 `uc 1 INTN 1 0 :1:0 
+[u S688 . 1 `S672 1 . 1 0 `S680 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES688  1 e 1 @3792 ]
+[s S708 . 1 `uc 1 INTN 1 0 :1:0 
 `uc 1 INTP 1 0 :1:1 
 ]
 "14019
-[s S709 . 1 `uc 1 C1INTN 1 0 :1:0 
+[s S711 . 1 `uc 1 C1INTN 1 0 :1:0 
 `uc 1 C1INTP 1 0 :1:1 
 ]
-[u S712 . 1 `S706 1 . 1 0 `S709 1 . 1 0 ]
-[v _CM1CON1bits CM1CON1bits `VES712  1 e 1 @3793 ]
-[s S620 . 1 `uc 1 NCH 1 0 :3:0 
+[u S714 . 1 `S708 1 . 1 0 `S711 1 . 1 0 ]
+[v _CM1CON1bits CM1CON1bits `VES714  1 e 1 @3793 ]
+[s S622 . 1 `uc 1 NCH 1 0 :3:0 
 ]
 "14064
-[s S622 . 1 `uc 1 NCH0 1 0 :1:0 
+[s S624 . 1 `uc 1 NCH0 1 0 :1:0 
 `uc 1 NCH1 1 0 :1:1 
 `uc 1 NCH2 1 0 :1:2 
 ]
-[s S626 . 1 `uc 1 C1NCH0 1 0 :1:0 
+[s S628 . 1 `uc 1 C1NCH0 1 0 :1:0 
 `uc 1 C1NCH1 1 0 :1:1 
 `uc 1 C1NCH2 1 0 :1:2 
 ]
-[u S630 . 1 `S620 1 . 1 0 `S622 1 . 1 0 `S626 1 . 1 0 ]
-[v _CM1NCHbits CM1NCHbits `VES630  1 e 1 @3794 ]
-[s S645 . 1 `uc 1 PCH 1 0 :3:0 
+[u S632 . 1 `S622 1 . 1 0 `S624 1 . 1 0 `S628 1 . 1 0 ]
+[v _CM1NCHbits CM1NCHbits `VES632  1 e 1 @3794 ]
+[s S647 . 1 `uc 1 PCH 1 0 :3:0 
 ]
 "14124
-[s S647 . 1 `uc 1 PCH0 1 0 :1:0 
+[s S649 . 1 `uc 1 PCH0 1 0 :1:0 
 `uc 1 PCH1 1 0 :1:1 
 `uc 1 PCH2 1 0 :1:2 
 ]
-[s S651 . 1 `uc 1 C1PCH0 1 0 :1:0 
+[s S653 . 1 `uc 1 C1PCH0 1 0 :1:0 
 `uc 1 C1PCH1 1 0 :1:1 
 `uc 1 C1PCH2 1 0 :1:2 
 ]
-[u S655 . 1 `S645 1 . 1 0 `S647 1 . 1 0 `S651 1 . 1 0 ]
-[v _CM1PCHbits CM1PCHbits `VES655  1 e 1 @3795 ]
-[s S148 . 1 `uc 1 ADPREF 1 0 :2:0 
+[u S657 . 1 `S647 1 . 1 0 `S649 1 . 1 0 `S653 1 . 1 0 ]
+[v _CM1PCHbits CM1PCHbits `VES657  1 e 1 @3795 ]
+[s S150 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADNREF 1 0 :1:4 
 ]
 "26236
-[s S152 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S154 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 ]
-[u S155 . 1 `S148 1 . 1 0 `S152 1 . 1 0 ]
-[v _ADREFbits ADREFbits `VES155  1 e 1 @3928 ]
+[u S157 . 1 `S150 1 . 1 0 `S154 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES157  1 e 1 @3928 ]
 "26640
 [v _ADPCH ADPCH `VEuc  1 e 1 @3935 ]
-[s S167 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S169 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -319,24 +319,24 @@
 `uc 1 ADON 1 0 :1:7 
 ]
 "26733
-[s S176 . 1 `uc 1 GO 1 0 :1:0 
+[s S178 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
-[s S180 . 1 `uc 1 DONE 1 0 :1:0 
+[s S182 . 1 `uc 1 DONE 1 0 :1:0 
 ]
-[s S182 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S184 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
-[s S184 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S186 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 ]
-[s S186 . 1 `uc 1 . 1 0 :7:0 
+[s S188 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[u S189 . 1 `S167 1 . 1 0 `S176 1 . 1 0 `S180 1 . 1 0 `S182 1 . 1 0 `S184 1 . 1 0 `S186 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES189  1 e 1 @3936 ]
+[u S191 . 1 `S169 1 . 1 0 `S178 1 . 1 0 `S182 1 . 1 0 `S184 1 . 1 0 `S186 1 . 1 0 `S188 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES191  1 e 1 @3936 ]
 "27017
 [v _ADRESH ADRESH `VEuc  1 e 1 @3940 ]
-[s S287 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S289 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -346,7 +346,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "28540
-[s S296 . 1 `uc 1 LA0 1 0 :1:0 
+[s S298 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -355,9 +355,9 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S305 . 1 `S287 1 . 1 0 `S296 1 . 1 0 ]
-[v _LATAbits LATAbits `VES305  1 e 1 @3961 ]
-[s S367 . 1 `uc 1 LATB0 1 0 :1:0 
+[u S307 . 1 `S289 1 . 1 0 `S298 1 . 1 0 ]
+[v _LATAbits LATAbits `VES307  1 e 1 @3961 ]
+[s S369 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -367,7 +367,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "28652
-[s S376 . 1 `uc 1 LB0 1 0 :1:0 
+[s S378 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -376,9 +376,9 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S385 . 1 `S367 1 . 1 0 `S376 1 . 1 0 ]
-[v _LATBbits LATBbits `VES385  1 e 1 @3962 ]
-[s S1130 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S387 . 1 `S369 1 . 1 0 `S378 1 . 1 0 ]
+[v _LATBbits LATBbits `VES387  1 e 1 @3962 ]
+[s S1134 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -388,7 +388,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "28764
-[s S1139 . 1 `uc 1 LC0 1 0 :1:0 
+[s S1143 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -397,9 +397,9 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S1148 . 1 `S1130 1 . 1 0 `S1139 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1148  1 e 1 @3963 ]
-[s S908 . 1 `uc 1 LATD0 1 0 :1:0 
+[u S1152 . 1 `S1134 1 . 1 0 `S1143 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1152  1 e 1 @3963 ]
+[s S911 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -409,7 +409,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "28876
-[s S917 . 1 `uc 1 LD0 1 0 :1:0 
+[s S920 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -418,9 +418,9 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S926 . 1 `S908 1 . 1 0 `S917 1 . 1 0 ]
-[v _LATDbits LATDbits `VES926  1 e 1 @3964 ]
-[s S1198 . 1 `uc 1 LATE0 1 0 :1:0 
+[u S929 . 1 `S911 1 . 1 0 `S920 1 . 1 0 ]
+[v _LATDbits LATDbits `VES929  1 e 1 @3964 ]
+[s S1202 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
@@ -430,7 +430,7 @@
 `uc 1 LATE7 1 0 :1:7 
 ]
 "28988
-[s S1207 . 1 `uc 1 LE0 1 0 :1:0 
+[s S1211 . 1 `uc 1 LE0 1 0 :1:0 
 `uc 1 LE1 1 0 :1:1 
 `uc 1 LE2 1 0 :1:2 
 `uc 1 LE3 1 0 :1:3 
@@ -439,9 +439,9 @@
 `uc 1 LE6 1 0 :1:6 
 `uc 1 LE7 1 0 :1:7 
 ]
-[u S1216 . 1 `S1198 1 . 1 0 `S1207 1 . 1 0 ]
-[v _LATEbits LATEbits `VES1216  1 e 1 @3965 ]
-[s S327 . 1 `uc 1 LATF0 1 0 :1:0 
+[u S1220 . 1 `S1202 1 . 1 0 `S1211 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1220  1 e 1 @3965 ]
+[s S329 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -451,7 +451,7 @@
 `uc 1 LATF7 1 0 :1:7 
 ]
 "29100
-[s S336 . 1 `uc 1 LF0 1 0 :1:0 
+[s S338 . 1 `uc 1 LF0 1 0 :1:0 
 `uc 1 LF1 1 0 :1:1 
 `uc 1 LF2 1 0 :1:2 
 `uc 1 LF3 1 0 :1:3 
@@ -460,9 +460,9 @@
 `uc 1 LF6 1 0 :1:6 
 `uc 1 LF7 1 0 :1:7 
 ]
-[u S345 . 1 `S327 1 . 1 0 `S336 1 . 1 0 ]
-[v _LATFbits LATFbits `VES345  1 e 1 @3966 ]
-[s S253 . 1 `uc 1 LATG0 1 0 :1:0 
+[u S347 . 1 `S329 1 . 1 0 `S338 1 . 1 0 ]
+[v _LATFbits LATFbits `VES347  1 e 1 @3966 ]
+[s S255 . 1 `uc 1 LATG0 1 0 :1:0 
 `uc 1 LATG1 1 0 :1:1 
 `uc 1 LATG2 1 0 :1:2 
 `uc 1 LATG3 1 0 :1:3 
@@ -472,40 +472,40 @@
 `uc 1 LATG7 1 0 :1:7 
 ]
 "29209
-[s S262 . 1 `uc 1 LG0 1 0 :1:0 
+[s S264 . 1 `uc 1 LG0 1 0 :1:0 
 `uc 1 LG1 1 0 :1:1 
 `uc 1 LG2 1 0 :1:2 
 `uc 1 LG3 1 0 :1:3 
 `uc 1 LG4 1 0 :1:4 
 ]
-[u S268 . 1 `S253 1 . 1 0 `S262 1 . 1 0 ]
-[v _LATGbits LATGbits `VES268  1 e 1 @3967 ]
-[s S1433 . 1 `uc 1 LATH0 1 0 :1:0 
+[u S270 . 1 `S255 1 . 1 0 `S264 1 . 1 0 ]
+[v _LATGbits LATGbits `VES270  1 e 1 @3967 ]
+[s S1440 . 1 `uc 1 LATH0 1 0 :1:0 
 `uc 1 LATH1 1 0 :1:1 
 `uc 1 LATH2 1 0 :1:2 
 `uc 1 LATH3 1 0 :1:3 
 ]
 "29309
-[s S1438 . 1 `uc 1 LH0 1 0 :1:0 
+[s S1445 . 1 `uc 1 LH0 1 0 :1:0 
 `uc 1 LH1 1 0 :1:1 
 `uc 1 LH2 1 0 :1:2 
 `uc 1 LH3 1 0 :1:3 
 ]
-[s S1443 . 1 `uc 1 . 1 0 :4:0 
+[s S1450 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LH4 1 0 :1:4 
 ]
-[s S1446 . 1 `uc 1 . 1 0 :5:0 
+[s S1453 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LH5 1 0 :1:5 
 ]
-[s S1449 . 1 `uc 1 . 1 0 :6:0 
+[s S1456 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LH6 1 0 :1:6 
 ]
-[s S1452 . 1 `uc 1 . 1 0 :7:0 
+[s S1459 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LH7 1 0 :1:7 
 ]
-[u S1455 . 1 `S1433 1 . 1 0 `S1438 1 . 1 0 `S1443 1 . 1 0 `S1446 1 . 1 0 `S1449 1 . 1 0 `S1452 1 . 1 0 ]
-[v _LATHbits LATHbits `VES1455  1 e 1 @3968 ]
-[s S428 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S1462 . 1 `S1440 1 . 1 0 `S1445 1 . 1 0 `S1450 1 . 1 0 `S1453 1 . 1 0 `S1456 1 . 1 0 `S1459 1 . 1 0 ]
+[v _LATHbits LATHbits `VES1462  1 e 1 @3968 ]
+[s S430 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -515,9 +515,9 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "29396
-[u S437 . 1 `S428 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES437  1 e 1 @3969 ]
-[s S461 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S439 . 1 `S430 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES439  1 e 1 @3969 ]
+[s S463 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -527,9 +527,9 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "29518
-[u S470 . 1 `S461 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES470  1 e 1 @3970 ]
-[s S1249 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S472 . 1 `S463 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES472  1 e 1 @3970 ]
+[s S1254 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -539,9 +539,9 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "29640
-[u S1258 . 1 `S1249 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1258  1 e 1 @3971 ]
-[s S1412 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S1263 . 1 `S1254 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1263  1 e 1 @3971 ]
+[s S1419 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -551,9 +551,9 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "29762
-[u S1421 . 1 `S1412 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES1421  1 e 1 @3972 ]
-[s S1282 . 1 `uc 1 TRISE0 1 0 :1:0 
+[u S1428 . 1 `S1419 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES1428  1 e 1 @3972 ]
+[s S1287 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
@@ -563,9 +563,9 @@
 `uc 1 TRISE7 1 0 :1:7 
 ]
 "29884
-[u S1291 . 1 `S1282 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES1291  1 e 1 @3973 ]
-[s S106 . 1 `uc 1 TRISF0 1 0 :1:0 
+[u S1296 . 1 `S1287 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES1296  1 e 1 @3973 ]
+[s S108 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -575,9 +575,9 @@
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "30001
-[u S115 . 1 `S106 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES115  1 e 1 @3974 ]
-[s S407 . 1 `uc 1 TRISG0 1 0 :1:0 
+[u S117 . 1 `S108 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES117  1 e 1 @3974 ]
+[s S409 . 1 `uc 1 TRISG0 1 0 :1:0 
 `uc 1 TRISG1 1 0 :1:1 
 `uc 1 TRISG2 1 0 :1:2 
 `uc 1 TRISG3 1 0 :1:3 
@@ -587,43 +587,43 @@
 `uc 1 TRISG7 1 0 :1:7 
 ]
 "30063
-[u S416 . 1 `S407 1 . 1 0 ]
-[v _TRISGbits TRISGbits `VES416  1 e 1 @3975 ]
-[s S1485 . 1 `uc 1 TRISH0 1 0 :1:0 
+[u S418 . 1 `S409 1 . 1 0 ]
+[v _TRISGbits TRISGbits `VES418  1 e 1 @3975 ]
+[s S1492 . 1 `uc 1 TRISH0 1 0 :1:0 
 `uc 1 TRISH1 1 0 :1:1 
 `uc 1 TRISH2 1 0 :1:2 
 `uc 1 TRISH3 1 0 :1:3 
 ]
 "30116
-[u S1490 . 1 `S1485 1 . 1 0 ]
-[v _TRISHbits TRISHbits `VES1490  1 e 1 @3976 ]
+[u S1497 . 1 `S1492 1 . 1 0 ]
+[v _TRISHbits TRISHbits `VES1497  1 e 1 @3976 ]
 "39242
 [v _TMR0L TMR0L `VEuc  1 e 1 @4051 ]
 "39380
 [v _TMR0H TMR0H `VEuc  1 e 1 @4052 ]
-[s S1093 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S1097 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "39654
-[s S1099 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S1103 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
 "39654
-[u S1104 . 1 `S1093 1 . 1 0 `S1099 1 . 1 0 ]
+[u S1108 . 1 `S1097 1 . 1 0 `S1103 1 . 1 0 ]
 "39654
 "39654
-[v _T0CON0bits T0CON0bits `VES1104  1 e 1 @4053 ]
-[s S1047 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[v _T0CON0bits T0CON0bits `VES1108  1 e 1 @4053 ]
+[s S1051 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 T0ASYNC 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "39730
-[s S1051 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S1055 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -633,20 +633,20 @@
 `uc 1 T0CS2 1 0 :1:7 
 ]
 "39730
-[s S1060 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S1064 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
 "39730
-[s S1065 . 1 `uc 1 T0PS 1 0 :4:0 
+[s S1069 . 1 `uc 1 T0PS 1 0 :4:0 
 ]
 "39730
-[u S1067 . 1 `S1047 1 . 1 0 `S1051 1 . 1 0 `S1060 1 . 1 0 `S1065 1 . 1 0 ]
+[u S1071 . 1 `S1051 1 . 1 0 `S1055 1 . 1 0 `S1064 1 . 1 0 `S1069 1 . 1 0 ]
 "39730
 "39730
-[v _T0CON1bits T0CON1bits `VES1067  1 e 1 @4054 ]
-[s S845 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[v _T0CON1bits T0CON1bits `VES1071  1 e 1 @4054 ]
+[s S848 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 INT3EDG 1 0 :1:3 
@@ -656,20 +656,20 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "40553
-[s S854 . 1 `uc 1 . 1 0 :6:0 
+[s S857 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "40553
-[s S858 . 1 `uc 1 . 1 0 :6:0 
+[s S861 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "40553
-[u S862 . 1 `S845 1 . 1 0 `S854 1 . 1 0 `S858 1 . 1 0 ]
+[u S865 . 1 `S848 1 . 1 0 `S857 1 . 1 0 `S861 1 . 1 0 ]
 "40553
 "40553
-[v _INTCONbits INTCONbits `VES862  1 e 1 @4082 ]
+[v _INTCONbits INTCONbits `VES865  1 e 1 @4082 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
@@ -687,62 +687,62 @@
 "7 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
 "12
-[v main@current current `S24  1 a 11 127 ]
-"51
+[v main@current current `S24  1 a 12 128 ]
+"52
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"57 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _time_incre time_incre `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"59 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _time_incre time_incre `(S24  1 e 12 0 ]
 {
-"80
-[v time_incre@buf2 buf2 `[40]uc  1 a 40 87 ]
-"62
-[v time_incre@buf1 buf1 `[40]uc  1 a 40 47 ]
-"57
-[v time_incre@current current `S24  1 p 11 36 ]
-"96
+"82
+[v time_incre@buf2 buf2 `[40]uc  1 a 40 88 ]
+"64
+[v time_incre@buf1 buf1 `[40]uc  1 a 40 48 ]
+"59
+[v time_incre@current current `S24  1 p 12 36 ]
+"98
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
 "13 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 11 0 ]
+[v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 12 0 ]
 {
-[v daylightsavingstime_toggle@current current `S24  1 p 11 4 ]
-"22
+[v daylightsavingstime_toggle@current current `S24  1 p 12 4 ]
+"24
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"30 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _date_check date_check `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"32 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _date_check date_check `(S24  1 e 12 0 ]
 {
-[v date_check@current current `S24  1 p 11 4 ]
-"50
+[v date_check@current current `S24  1 p 12 4 ]
+"52
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"147 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sunrise_sunset sunrise_sunset `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"149 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sunrise_sunset sunrise_sunset `(S24  1 e 12 0 ]
 {
-[v sunrise_sunset@current current `S24  1 p 11 26 ]
-"158
+[v sunrise_sunset@current current `S24  1 p 12 27 ]
+"160
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"118 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sun_sync sun_sync `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"120 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sun_sync sun_sync `(S24  1 e 12 0 ]
 {
+"124
+[v sun_sync@solarnoon_second solarnoon_second `c  1 a 1 26 ]
+"123
+[v sun_sync@solarnoon_minute solarnoon_minute `c  1 a 1 25 ]
 "122
-[v sun_sync@solarnoon_second solarnoon_second `c  1 a 1 25 ]
-"121
-[v sun_sync@solarnoon_minute solarnoon_minute `c  1 a 1 24 ]
+[v sun_sync@solarnoon_hour solarnoon_hour `c  1 a 1 24 ]
 "120
-[v sun_sync@solarnoon_hour solarnoon_hour `c  1 a 1 23 ]
-"118
-[v sun_sync@current current `S24  1 p 11 12 ]
-"141
+[v sun_sync@current current `S24  1 p 12 12 ]
+"143
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -777,20 +777,20 @@
 "49
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
 "40 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-[v _LED_toggle LED_toggle `(S24  1 e 11 0 ]
+[v _LED_toggle LED_toggle `(S24  1 e 12 0 ]
 {
-[v LED_toggle@current current `S24  1 p 11 15 ]
+[v LED_toggle@current current `S24  1 p 12 16 ]
 "51
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"102 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-[v _sunrise sunrise `(S24  1 e 11 0 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"104 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[v _sunrise sunrise `(S24  1 e 12 0 ]
 {
-[v sunrise@current current `S24  1 p 11 4 ]
-"109
+[v sunrise@current current `S24  1 p 12 4 ]
+"111
 } 0
 "29 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 [v _LED2_init LED2_init `(v  1 e 1 0 ]
@@ -800,8 +800,8 @@
 "10
 [v _LED1_init LED1_init `(v  1 e 1 0 ]
 {
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-[v LED1_init@current current `S24  1 p 11 5 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[v LED1_init@current current `S24  1 p 12 5 ]
 "23
 } 0
 "26 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\ADC.c
@@ -811,22 +811,22 @@
 [v ADC_getval@tmpval tmpval `uc  1 a 1 4 ]
 "35
 } 0
-"54 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
+"56 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 {
-"97
-[v LCD_init@buf buf `[40]uc  1 a 40 47 ]
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-"54
-[v LCD_init@current current `S24  1 p 11 36 ]
-"101
+"98
+[v LCD_init@buf buf `[40]uc  1 a 40 48 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+"56
+[v LCD_init@current current `S24  1 p 12 36 ]
+"102
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S2125 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S2141 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S2125  1 a 6 30 ]
+[v sprintf@f f `S2141  1 a 6 30 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 28 ]
 "9
@@ -839,9 +839,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 77 ]
-[s S2151 _IO_FILE 0 ]
+[s S2167 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S2151  1 p 2 12 ]
+[v vfprintf@fp fp `*.39S2167  1 p 2 12 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 14 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 16 ]
 "1404
@@ -853,9 +853,9 @@
 [v vfpfcnvrt@ll ll `o  1 a 8 0 ]
 "695
 [v vfpfcnvrt@done done `i  1 a 2 8 ]
-[s S2151 _IO_FILE 0 ]
+[s S2167 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S2151  1 p 2 67 ]
+[v vfpfcnvrt@fp fp `*.39S2167  1 p 2 67 ]
 [v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 69 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 71 ]
 "1387
@@ -870,9 +870,9 @@
 [v dtoa@s s `i  1 a 2 55 ]
 [v dtoa@w w `i  1 a 2 53 ]
 [v dtoa@p p `i  1 a 2 51 ]
-[s S2151 _IO_FILE 0 ]
+[s S2167 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S2151  1 p 2 31 ]
+[v dtoa@fp fp `*.39S2167  1 p 2 31 ]
 [v dtoa@d d `o  1 p 8 33 ]
 "328
 } 0
@@ -882,9 +882,9 @@
 "74
 [v pad@w w `i  1 a 2 29 ]
 [v pad@i i `i  1 a 2 27 ]
-[s S2151 _IO_FILE 0 ]
+[s S2167 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S2151  1 p 2 20 ]
+[v pad@fp fp `*.39S2167  1 p 2 20 ]
 [v pad@buf buf `*.39uc  1 p 2 22 ]
 [v pad@p p `i  1 p 2 24 ]
 "95
@@ -907,16 +907,16 @@
 [v fputs@c c `uc  1 a 1 17 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 13 ]
-[s S2125 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S2125  1 p 2 15 ]
+[s S2141 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S2141  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S2125 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S2125  1 p 2 6 ]
+[s S2141 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S2141  1 p 2 6 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -986,22 +986,22 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
 "53
 } 0
-"109 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
+"111 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LCD.c
 [v _LCD_setline LCD_setline `(v  1 e 1 0 ]
 {
 [v LCD_setline@line line `uc  1 a 1 wreg ]
 [v LCD_setline@line line `uc  1 a 1 wreg ]
-"112
+"113
 [v LCD_setline@line line `uc  1 a 1 7 ]
-"118
+"119
 } 0
-"123
+"125
 [v _LCD_sendstring LCD_sendstring `(v  1 e 1 0 ]
 {
 [v LCD_sendstring@string string `*.39uc  1 p 2 7 ]
-"129
+"130
 } 0
-"36
+"37
 [v _LCD_sendbyte LCD_sendbyte `(v  1 e 1 0 ]
 {
 [v LCD_sendbyte@Byte Byte `uc  1 a 1 wreg ]
@@ -1011,7 +1011,7 @@
 [v LCD_sendbyte@Byte Byte `uc  1 a 1 6 ]
 "49
 } 0
-"20
+"21
 [v _LCD_sendnibble LCD_sendnibble `(v  1 e 1 0 ]
 {
 [v LCD_sendnibble@number number `uc  1 a 1 wreg ]
@@ -1020,7 +1020,7 @@
 [v LCD_sendnibble@number number `uc  1 a 1 4 ]
 "30
 } 0
-"10
+"11
 [v _LCD_E_TOG LCD_E_TOG `(v  1 e 1 0 ]
 {
 "15
@@ -1028,8 +1028,8 @@
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
 {
-[s S24 . 11 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 ]
-[v Interrupts_init@current current `S24  1 p 11 4 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[v Interrupts_init@current current `S24  1 p 12 4 ]
 "24
 } 0
 "24 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\comparator.c

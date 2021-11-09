@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
-[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
+[s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
+[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
 "10 ./ADC.h
 [; ;./ADC.h: 10: void ADC_init(void);
 [v _ADC_init `(v ~T0 @X0 0 ef ]
@@ -2034,20 +2034,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 13:     current.year = 2021;
 [e = . _current 0 -> 2021 `i ]
 "14
-[; ;main.c: 14:     current.month = 11;
-[e = . _current 1 -> -> 11 `i `c ]
+[; ;main.c: 14:     current.month = 10;
+[e = . _current 1 -> -> 10 `i `c ]
 "15
-[; ;main.c: 15:     current.date = 9;
-[e = . _current 2 -> -> 9 `i `c ]
+[; ;main.c: 15:     current.date = 30;
+[e = . _current 2 -> -> 30 `i `c ]
 "16
-[; ;main.c: 16:     current.day = 2;
-[e = . _current 3 -> -> 2 `i `c ]
+[; ;main.c: 16:     current.day = 6;
+[e = . _current 3 -> -> 6 `i `c ]
 "17
-[; ;main.c: 17:     current.hour = 7;
-[e = . _current 4 -> -> 7 `i `c ]
+[; ;main.c: 17:     current.hour = 20;
+[e = . _current 4 -> -> 20 `i `c ]
 "18
-[; ;main.c: 18:     current.minute = 30;
-[e = . _current 5 -> -> 30 `i `c ]
+[; ;main.c: 18:     current.minute = 0;
+[e = . _current 5 -> -> 0 `i `c ]
 "19
 [; ;main.c: 19:     current.second = 0;
 [e = . _current 6 -> -> 0 `i `c ]
@@ -2060,53 +2060,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;main.c: 22:     current.sunrise_second = 0;
 [e = . _current 9 -> -> 0 `i `c ]
-"25
-[; ;main.c: 25:     ADC_init();
-[e ( _ADC_init ..  ]
+"23
+[; ;main.c: 23:     current.dst = 1;
+[e = . _current 10 -> -> 1 `i `c ]
 "26
-[; ;main.c: 26:     Comp1_init();
-[e ( _Comp1_init ..  ]
+[; ;main.c: 26:     ADC_init();
+[e ( _ADC_init ..  ]
 "27
-[; ;main.c: 27:     Timer0_init();
-[e ( _Timer0_init ..  ]
+[; ;main.c: 27:     Comp1_init();
+[e ( _Comp1_init ..  ]
 "28
-[; ;main.c: 28:     Interrupts_init(current);
-[e ( _Interrupts_init (1 _current ]
+[; ;main.c: 28:     Timer0_init();
+[e ( _Timer0_init ..  ]
 "29
-[; ;main.c: 29:     LED1_init(current);
-[e ( _LED1_init (1 _current ]
+[; ;main.c: 29:     Interrupts_init(current);
+[e ( _Interrupts_init (1 _current ]
 "30
-[; ;main.c: 30:     LED2_init();
-[e ( _LED2_init ..  ]
+[; ;main.c: 30:     LED1_init(current);
+[e ( _LED1_init (1 _current ]
 "31
-[; ;main.c: 31:     LEDarray_init();
-[e ( _LEDarray_init ..  ]
+[; ;main.c: 31:     LED2_init();
+[e ( _LED2_init ..  ]
 "32
-[; ;main.c: 32:     LCD_init(current);
+[; ;main.c: 32:     LEDarray_init();
+[e ( _LEDarray_init ..  ]
+"33
+[; ;main.c: 33:     LCD_init(current);
 [e ( _LCD_init (1 _current ]
-"35
-[; ;main.c: 35:     while (1) {
+"36
+[; ;main.c: 36:     while (1) {
 [e :U 2022 ]
 {
-"36
-[; ;main.c: 36:         current = sunrise_sunset(current);
+"37
+[; ;main.c: 37:         current = sunrise_sunset(current);
 [e = _current ( _sunrise_sunset (1 _current ]
-"40
-[; ;main.c: 40:         current = time_incre(current);
+"41
+[; ;main.c: 41:         current = time_incre(current);
 [e = _current ( _time_incre (1 _current ]
-"44
-[; ;main.c: 44:         current = LED_toggle(current);
+"45
+[; ;main.c: 45:         current = LED_toggle(current);
 [e = _current ( _LED_toggle (1 _current ]
-"49
-[; ;main.c: 49:         LEDarray_disp_bin(current.hour);
-[e ( _LEDarray_disp_bin (1 . _current 4 ]
 "50
-[; ;main.c: 50:     }
+[; ;main.c: 50:         LEDarray_disp_bin(current.hour);
+[e ( _LEDarray_disp_bin (1 . _current 4 ]
+"51
+[; ;main.c: 51:     }
 }
 [e :U 2021 ]
 [e $U 2022  ]
 [e :U 2023 ]
-"51
-[; ;main.c: 51: }
+"52
+[; ;main.c: 52: }
 [e :UE 2020 ]
 }

@@ -24321,7 +24321,7 @@ char *tempnam(const char *, const char *);
 # 12 "./dateandtime.h"
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second,dst;
 } dateandtime;
 
 
@@ -24364,10 +24364,12 @@ void LCD_sendstring(char *string);
 
 dateandtime daylightsavingstime_toggle(dateandtime current) {
 
-    if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1) {
+    if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1 && current.dst==0) {
         current.hour = current.hour+1;
-    } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2) {
+        current.dst = 1;
+    } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2 && current.dst==1) {
         current.hour = current.hour-1;
+        current.dst = 0;
     }
 
     return current;
@@ -24459,7 +24461,7 @@ dateandtime sunrise(dateandtime current) {
 
     return current;
 }
-# 118 "dateandtime.c"
+# 120 "dateandtime.c"
 dateandtime sun_sync(dateandtime current) {
 
     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;

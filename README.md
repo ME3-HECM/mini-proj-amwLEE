@@ -42,16 +42,20 @@ My program has been structured as follows:
     ```
     
     The source file contains 2 key functions:
-    - ```time_incre``` which updates our current time every second, functions to check for clock changes due to daylight savings and changes to the date, month and year are also called here;
-    - ```sunrise_sunset``` which synchronises our time with the sun indefinitely.
+    - ```dateandtime time_incre(dateandtime current)``` which updates our current time every second, functions to check for clock changes due to daylight savings and changes to the date, month and year are also called here;
+    - ```dateandtime sunrise_sunset(dateandtime current)``` which synchronises our time with the sun indefinitely.
 
 1. ```"ADC.c/h"```
 
-    xx
+    The header file simply contains the function prototypes from the corresponding source file.
+    
+    The source file contains functions to initialise our ADC module, and obtain the current ADC readings for the LDR voltage.
 
 1. ```"comparator.c/h"```
 
-    xx
+    The header file simply contains the function prototypes from the corresponding source file.
+    
+    The source file contains functions initialise the comparator module to use in our interrupts.
 
 1. ```"timers.c/h"```
 

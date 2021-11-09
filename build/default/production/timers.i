@@ -24204,7 +24204,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 12 "./dateandtime.h"
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second,dst;
 } dateandtime;
 
 

@@ -24327,7 +24327,7 @@ char *tempnam(const char *, const char *);
 # 12 "./dateandtime.h"
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second,dst;
 } dateandtime;
 
 
@@ -24353,8 +24353,8 @@ void LCD_sendstring(char *string);
 
 
 
-void LCD_E_TOG(void)
-{
+
+void LCD_E_TOG(void) {
  LATCbits.LATC2 = 1;
  _delay((unsigned long)((2)*(64000000/4000000.0)));
  LATCbits.LATC2 = 0;
@@ -24363,8 +24363,8 @@ void LCD_E_TOG(void)
 
 
 
-void LCD_sendnibble(unsigned char number)
-{
+
+void LCD_sendnibble(unsigned char number) {
 
     if (number & 0b0001) {LATBbits.LATB3 = 1;} else {LATBbits.LATB3 = 0;}
     if (number & 0b0010) {LATBbits.LATB2 = 1;} else {LATBbits.LATB2 = 0;}
@@ -24379,8 +24379,8 @@ void LCD_sendnibble(unsigned char number)
 
 
 
-void LCD_sendbyte(unsigned char Byte, char type)
-{
+
+void LCD_sendbyte(unsigned char Byte, char type) {
 
     if (type) {LATCbits.LATC6 = 1;} else {LATCbits.LATC6 = 0;}
 
@@ -24397,8 +24397,9 @@ void LCD_sendbyte(unsigned char Byte, char type)
 
 
 
-void LCD_init(dateandtime current)
-{
+
+
+void LCD_init(dateandtime current) {
 
     TRISCbits.TRISC6 =0;
     TRISCbits.TRISC2=0;
@@ -24445,15 +24446,8 @@ void LCD_init(dateandtime current)
     sprintf(buf,"%04d-%02d-%02d",current.year,current.month,current.date);
     LCD_sendstring(buf);
 }
-
-
-
-
-
-
-
-void LCD_setline (char line)
-{
+# 111 "LCD.c"
+void LCD_setline (char line) {
 
     if (line==1) {LCD_sendbyte(0x80,0);}
     _delay((unsigned long)((50)*(64000000/4000000.0)));
@@ -24466,8 +24460,8 @@ void LCD_setline (char line)
 
 
 
-void LCD_sendstring(char *string)
-{
+
+void LCD_sendstring(char *string) {
 
     while (*string != 0) {
         LCD_sendbyte(*string++,1);

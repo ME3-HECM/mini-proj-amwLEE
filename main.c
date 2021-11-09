@@ -11,11 +11,12 @@ void main(void) {
     // the code will be able to auto adjust back the timing after 2 days
     dateandtime current;
     current.year = 2021;            // Year (2021, 2022, ...)
-    current.month = 11;             // Month (January==1, ..., December==12)
-    current.date = 9;               // Date (1, ..., 31)
-    current.day = 2;                // Day of the week (Monday==1, ..., Sunday==7)
-    current.hour = 9;               // Hour using 24-hour clock system (12am==0, ..., 9am==9, ..., 12pm==12, ..., 5pm==17, ...)
-    current.minute = 0;            // Minute (0, ..., 59)
+    current.month = 10;             // Month (January==1, ..., December==12)
+    current.date = 30;              // Date (1, ..., 31)
+    current.day = 6;                // Day of the week (Monday==1, ..., Sunday==7)
+    current.dst = 1;                // Are we currently in daylight savings time? (BST=1, GMT=0)
+    current.hour = 18;              // Hour using 24-hour clock system (12am==0, ..., 9am==9, ..., 12pm==12, ..., 5pm==17, ...)
+    current.minute = 0;             // Minute (0, ..., 59)
     current.second = 0;             // Second (0, ..., 59)
     current.sunrise_hour = 7;       // The hour that sunrise occurred today (4am==4, ..., 8am==8)
     current.sunrise_minute = 0;     // The minute that sunrise occurred today (0, ..., 59)

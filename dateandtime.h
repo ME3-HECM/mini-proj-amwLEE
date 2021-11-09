@@ -11,7 +11,7 @@
 // thus char (which stores up to 8-bit) is used to make the code as memory-space-efficient as possible
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+    signed char month,date,day,dst,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
 
 // Function prototypes
