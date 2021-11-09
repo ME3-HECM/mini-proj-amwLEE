@@ -24184,18 +24184,12 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 # 1 "./dateandtime.h" 1
-
-
-
-
-
-
-
-
+# 12 "./dateandtime.h"
 typedef struct {
     signed int year;
     signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
+
 
 dateandtime time_incre(dateandtime current);
 dateandtime daylightsavingstime_toggle(dateandtime current);

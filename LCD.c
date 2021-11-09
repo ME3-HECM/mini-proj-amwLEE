@@ -1,22 +1,24 @@
-#include <xc.h>     // XC8 Compiler standard library
-#include "LCD.h"    // Our LCD header file in the current directory
+#include <xc.h>
+#include <stdio.h>
+#include "LCD.h"
+#include "dateandtime.h"
 
-/******************************************************************
+/*******************************************************************
+ * LCD_E_TOG
  * Function to toggle LCD enable bit on then off
- * When this function is called the LCD screen reads the data lines
-*******************************************************************/
-void LCD_E_TOG(void)
-{
+ * When this function is called, the LCD screen reads the data lines
+ *******************************************************************/
+void LCD_E_TOG(void) {
 	LCD_E = 1;      // Turn the LCD enable bit on
 	__delay_us(2);  // Wait a short delay
 	LCD_E = 0;      // Turn the LCD enable bit off again
 }
 
 /********************************************************
+ * LCD_sendnibble
  * Function to set the 4-bit data line levels for the LCD
-*********************************************************/
-void LCD_sendnibble(unsigned char number)
-{
+ ********************************************************/
+void LCD_sendnibble(unsigned char number) {
 	// Set the data lines here (think back to LED array output)
     if (number & 0b0001) {LCD_DB4 = 1;} else {LCD_DB4 = 0;} // Configure 1st data bus line
     if (number & 0b0010) {LCD_DB5 = 1;} else {LCD_DB5 = 0;} // Configure 2nd data bus line
@@ -28,11 +30,11 @@ void LCD_sendnibble(unsigned char number)
 }
 
 /****************************************************************************
+ * LCD_sendbyte
  * Function to send full 8-bit commands/data over the 4-bit interface
  * High nibble (4 most significant bits) are sent first, then low nibble sent
-*****************************************************************************/
-void LCD_sendbyte(unsigned char Byte, char type)
-{
+ ****************************************************************************/
+void LCD_sendbyte(unsigned char Byte, char type) {
     // Set RS pin whether it is a Data/Char (1) or Command (0) using type argument
     if (type) {LCD_RS = 1;} else {LCD_RS = 0;}
     
@@ -46,11 +48,12 @@ void LCD_sendbyte(unsigned char Byte, char type)
     __delay_us(50);
 }
 
-/***********************************************
+/*************************************************************************
+ * LCD_init
  * Function to initialise the LCD after power on
-************************************************/
-void LCD_init(void)
-{
+ * This function also displays the initial inputted date on the LCD screen
+ *************************************************************************/
+void LCD_init(dateandtime current) {
     // Define LCD Pins as Outputs
     TRISCbits.TRISC6 =0;
     TRISCbits.TRISC2=0;
@@ -68,7 +71,7 @@ void LCD_init(void)
     LCD_DB7 = 0;
     
     // Initialisation sequence code
-	// Follow the sequence in the GitHub Readme picture for 4-bit interface
+	// Follow the sequence in the LCD datasheet for 4-bit interface
 	// First function set should be sent with LCD_sendnibble (the LCD is in 8-bit mode at start up)
     // After this use LCD_sendbyte to operate in 4-bit mode
     __delay_ms(45);             // Wait for more than 40ms after V_DD rises to 4.5V
@@ -90,16 +93,22 @@ void LCD_init(void)
 	// Remember to turn the LCD display back on at the end of the initialisation (not in the data sheet)
     LCD_sendbyte(0b00001100,0); // Display ON/OFF control (0, 0, 0, 0, 1, D:display-on/display-off, C:cursor-on/cursor-off, B:blinking-of-cursor-on/blinking-of-cursor-off)
     __delay_us(50);             // Delay 50us (minimum for command to execute)
+    
+    // Display the initial inputed date on the LCD screen
+    char buf[40];                                                           // Define a buffer variable
+    LCD_setline(1);                                                         // Set to the first line of the LCD
+    sprintf(buf,"%04d-%02d-%02d",current.year,current.month,current.date);  // Format the initial date as a string
+    LCD_sendstring(buf);                                                    // Send the string to the LCD screen
 }
 
 /*****************************************************************************************************
+ * LCD_setline
  * Function to set the cursor to beginning of line 1 or 2
  * The Display Data RAM (DDRAM) is used to store the display data represented in 8-bit character codes
  * The Character Generator RAM (CGRAM) allows the user to rewrite character by program
  * The Address Counter (AC) assigns addresses to both DDRAM and CGRAM
-******************************************************************************************************/
-void LCD_setline (char line)
-{
+ *****************************************************************************************************/
+void LCD_setline (char line) {
     // Send 0x80 to set line to 1 (0x00 DDRAM address)
     if (line==1) {LCD_sendbyte(0x80,0);}    // Set DDRAM address (1, AC6, AC5, AC4, AC3, AC2, AC1, AC0)
     __delay_us(50);                         // Delay 50us (minimum for command to execute)
@@ -110,29 +119,12 @@ void LCD_setline (char line)
 }
 
 /***************************************
+ * LCD_sendstring
  * Function to send string to LCD screen
-****************************************/
-void LCD_sendstring(char *string)
-{
+ ***************************************/
+void LCD_sendstring(char *string) {
 	// Code here to send a string to LCD using pointers and LCD_sendbyte function
-    char counter1=0, counter2;              // Initialise counter variables
-    while (*string != 0) {                  // While the data pointed to isn't a 0x00 do below (strings in C must end with a NULL byte)
-        LCD_sendbyte(*string++,1);          // Send out the current byte pointed to and increment the pointer
-        counter1++;                         // Count the number of characters in the string
+    while (*string != 0) {          // While the data pointed to isn't a 0x00 do below (strings in C must end with a NULL byte)
+        LCD_sendbyte(*string++,1);  // Send out the current byte pointed to and increment the pointer
     }
-    
-    for (counter2=0; counter2<(counter1-16); counter2++) {
-        __delay_ms(500);                    // Delay so eyes can see change
-        LCD_scroll();                       // Scroll text on LCD screen
-    }
-}
-
-/***************************************
- * Function to scroll text on LCD screen
-****************************************/
-void LCD_scroll(void)
-{
-	// Code here to scroll the text on the LCD screen
-    LCD_sendbyte(0b00011000,0); // Set cursor moving and display shift control bit, and the direction, without changing of DDRAM data (0, 0, 0, 1, S/C:scroll-on/scroll-off, R/L:scroll-right/scroll-left, -, -)
-    __delay_us(45);             // Delay by more than 39us
 }

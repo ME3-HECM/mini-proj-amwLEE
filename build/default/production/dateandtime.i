@@ -24318,18 +24318,12 @@ char *tempnam(const char *, const char *);
 # 2 "dateandtime.c" 2
 
 # 1 "./dateandtime.h" 1
-
-
-
-
-
-
-
-
+# 12 "./dateandtime.h"
 typedef struct {
     signed int year;
     signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
+
 
 dateandtime time_incre(dateandtime current);
 dateandtime daylightsavingstime_toggle(dateandtime current);
@@ -24352,17 +24346,17 @@ void __attribute__((picinterrupt(("low_priority")))) LowISR();
 # 4 "dateandtime.c" 2
 
 # 1 "./LCD.h" 1
-# 20 "./LCD.h"
+# 19 "./LCD.h"
 void LCD_E_TOG(void);
 void LCD_sendnibble(unsigned char number);
 void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
+void LCD_init(dateandtime current);
 void LCD_setline (char line);
 void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
 # 5 "dateandtime.c" 2
+
+
+
 
 
 
@@ -24383,7 +24377,13 @@ dateandtime daylightsavingstime_toggle(dateandtime current) {
 
 
 
+
+
 dateandtime date_check(dateandtime current) {
+
+
+
+
 
     if ((current.year%4==0 && current.month==2 && current.date>29) || (current.year%4!=0 && current.month==2 && current.date>28) || ((current.month==1 || current.month==3 || current.month==5 || current.month==7 || current.month==8 || current.month==10 || current.month==12) && current.date>31) || ((current.month==4 || current.month==6 || current.month==9 || current.month==11) && current.date>30)) {
 
@@ -24405,7 +24405,9 @@ dateandtime date_check(dateandtime current) {
 
 
 
+
 dateandtime time_incre(dateandtime current){
+
     if (time_flag==1) {
         current.second = current.second+1;
 
@@ -24441,6 +24443,7 @@ dateandtime time_incre(dateandtime current){
         }
         time_flag=0;
     }
+
     return current;
 }
 
@@ -24449,17 +24452,14 @@ dateandtime time_incre(dateandtime current){
 
 
 dateandtime sunrise(dateandtime current) {
+
     current.sunrise_hour = current.hour;
     current.sunrise_minute = current.minute;
     current.sunrise_second = current.second;
 
     return current;
 }
-
-
-
-
-
+# 118 "dateandtime.c"
 dateandtime sun_sync(dateandtime current) {
 
     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
@@ -24478,13 +24478,19 @@ dateandtime sun_sync(dateandtime current) {
     }
     current.hour = current.hour - (solarnoon_hour-12);
 
+
+
+
+
     return current;
 }
 
 
 
 
+
 dateandtime sunrise_sunset(dateandtime current) {
+
     if (sunrise_flag==1) {
     current=sunrise(current);
     sunrise_flag=0;
@@ -24492,5 +24498,6 @@ dateandtime sunrise_sunset(dateandtime current) {
         current=sun_sync(current);
         sunset_flag=0;
     }
+
     return current;
 }

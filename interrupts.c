@@ -23,7 +23,6 @@ void Interrupts_init(dateandtime current) {
     INTCONbits.GIE = 1;                         // Enable global interrupts (when this is off, all interrupts are deactivated)
 }
 
-
 /****************************************************************
  * High ISR
  * Special function for high priority interrupt service routine
@@ -40,7 +39,6 @@ void __interrupt(high_priority) HighISR() {
         PIR2bits.C1IF = 0;                      // Clear the interrupt flag
     }
 }
-
 
 /****************************************************************
  * Low ISR

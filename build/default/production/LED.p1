@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 ./dateandtime.h
-[; ;./dateandtime.h: 9: typedef struct {
+"12 ./dateandtime.h
+[; ;./dateandtime.h: 12: typedef struct {
 [s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
 [n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "11 ./ADC.h
@@ -89,8 +89,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4659
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 4659: extern volatile PIE2bits_t PIE2bits __attribute__((address(0xE2B)));
 [v _PIE2bits `VS266 ~T0 @X0 0 e@3627 ]
-"17 ./dateandtime.h
-[; ;./dateandtime.h: 17: dateandtime sunrise(dateandtime current);
+"21 ./dateandtime.h
+[; ;./dateandtime.h: 21: dateandtime sunrise(dateandtime current);
 [v _sunrise `(S2019 ~T0 @X0 0 ef1`S2019 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");

@@ -24201,18 +24201,12 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 # 1 "./dateandtime.h" 1
-
-
-
-
-
-
-
-
+# 12 "./dateandtime.h"
 typedef struct {
     signed int year;
     signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
+
 
 dateandtime time_incre(dateandtime current);
 dateandtime daylightsavingstime_toggle(dateandtime current);
@@ -24263,16 +24257,13 @@ void LEDarray_disp_bin(signed char number);
 # 36 "./main.h" 2
 
 # 1 "./LCD.h" 1
-# 20 "./LCD.h"
+# 19 "./LCD.h"
 void LCD_E_TOG(void);
 void LCD_sendnibble(unsigned char number);
 void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
+void LCD_init(dateandtime current);
 void LCD_setline (char line);
 void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
 # 37 "./main.h" 2
 # 6 "./timers.h" 2
 # 23 "./timers.h"

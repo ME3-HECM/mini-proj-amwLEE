@@ -29,13 +29,7 @@ void main(void) {
     LED1_init(current);             // Function to initialise pins to drive LED1 (the street light)
     LED2_init();                    // Function to initialise pins to drive LED2 (the minute indicator - flashes every minute)
     LEDarray_init();                // Function to initialise pins to drive the LED array (the hour indicator - displays the hour in binary)
-    LCD_init();                     // Function to initialise the LCD after power on (the date and time indicator - displays the date and time digitally on the screen)
-    
-    // Display today's date on
-    char buf2[40];
-    LCD_setline(1);
-    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
-    LCD_sendstring(buf2);
+    LCD_init(current);              // Function to initialise the LCD after power on (the date and time indicator - displays the date and time digitally on the screen)
     
     // Infinite while loop (program runs indefinitely - or more realistically, until the hardware fails)
     while (1) {
