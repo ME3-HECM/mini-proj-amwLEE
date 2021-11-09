@@ -1,4 +1,4 @@
-# Amanda's individual project - Energy saving automatic outside light
+# Amanda's individual project (Energy saving automatic outside light)
 
 
 ## Table of contents
@@ -16,24 +16,57 @@
 My program has been structured as follows:
 1. ```"main.c/h"```
 
-    This file contains the main function.
+    ```#define _TESTING_MODE``` in the header file allows us to enter a "testing mode", which pretends that a day lasts 24 seconds.
 
-1. "dateandtime.c/h"
-1. "ADC.c/h"
-1. "comparator.c/h"
-1. "timers.c/h"
-1. "interrupts.c/h"
-1. "LED.c/h"
-1. "LEDarray.c/h"
-1. "LCD.c/h"
+    The source file contains our main function.
+
+1. ```"dateandtime.c/h"```
+
+    xx
+
+1. ```"ADC.c/h"```
+
+    xx
+
+1. ```"comparator.c/h"```
+
+    xx
+
+1. ```"timers.c/h"```
+
+    xx
+
+1. ```"interrupts.c/h"```
+
+    xx
+
+1. ```"LED.c/h"```
+
+    xx
+
+1. ```"LEDarray.c/h"```
+
+    xx
+
+1. ```"LCD.c/h"```
+
+    xx
 
 My program uses the following standard libraries:
-1. <xc.h>
-1. <stdio.h>
+1. ```<xc.h>```
+
+    The XC8 Compiler processor file.
+
+1. ```<stdio.h>```
+
+    The standard input and output library.
+
+
+
 
 
 ## Hardware setup
-
+My hardware has been set up as in Lab 4.
 
 
 ## Demonstration video
@@ -42,6 +75,10 @@ xx
 
 ## Related documentation
 xx
+
+
+
+
 
 
 ## Learning outcomes
