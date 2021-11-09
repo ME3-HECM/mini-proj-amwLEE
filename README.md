@@ -85,7 +85,7 @@ My hardware has been set up as in Lab 4:
 - The **LED array** is used as the hour indicator (it displays the hour in binary);
 - The **LCD screen** is used as the date and time indicator during "testing mode" (it displays the date and time in decimal).
 
-![Amanda ECM kit](jpgs/amanda-ecm-kit.jpg)
+![Amanda ECM kit](gifs/amanda-ecm-kit.jpg)
 
 
 ## Demonstration video
