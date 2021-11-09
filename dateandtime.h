@@ -3,7 +3,7 @@
 #ifndef _dateandtime_H
 #define	_dateandtime_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> // include processor files - each processor file is guarded.
 
 // Initialise what day it is when device is first switched on (using manual input)
 typedef struct {
@@ -16,5 +16,6 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
+dateandtime sunrise_sunset(dateandtime current);
 
 #endif	/* _dateandtime_H */

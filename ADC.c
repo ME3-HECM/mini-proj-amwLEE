@@ -10,7 +10,7 @@ void ADC_init(void) {
     TRISFbits.TRISF7=1;         // Select pin RF7 as input
     ANSELFbits.ANSELF7=1;       // Ensure analogue circuitry is active (it is by default)
 
-    // Set up the ADC module (check section 32 of the datasheet for more details)
+    // Initialise the ADC module (check section 32 of the datasheet for more details)
     ADREFbits.ADNREF = 0;       // Use Vss (0V) as negative reference
     ADREFbits.ADPREF = 0b00;    // Use Vdd (3.3V) as positive reference
     ADPCH=0b101111;             // Select channel RF7/ANF7 for ADC (refer pg 631 of datasheet)

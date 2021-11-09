@@ -24183,13 +24183,33 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-
 # 1 "./dateandtime.h" 1
 
 
 
 
 
+
+# 1 "./LCD.h" 1
+
+
+
+
+
+
+# 1 "./dateandtime.h" 1
+# 7 "./LCD.h" 2
+# 20 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 7 "./dateandtime.h" 2
 
 
 
@@ -24203,31 +24223,22 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
-# 7 "./interrupts.h" 2
-
-# 1 "./main.h" 1
-# 10 "./main.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = EXTOSC_4PLL
+dateandtime sunrise_sunset(dateandtime current);
+# 6 "./interrupts.h" 2
 
 
 
 
 
+extern volatile unsigned char sunrise_flag;
+extern volatile unsigned char sunset_flag;
+extern volatile unsigned char time_flag;
 
-#pragma config WDTE = OFF
-# 35 "./main.h"
-# 1 "./ADC.h" 1
-# 10 "./ADC.h"
-void ADC_init(void);
-unsigned char ADC_getval(void);
-# 35 "./main.h" 2
 
-# 1 "./comparator.h" 1
-# 10 "./comparator.h"
-void DAC_init(void);
-void Comp1_init(void);
-# 36 "./main.h" 2
+void Interrupts_init(dateandtime current);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+void __attribute__((picinterrupt(("low_priority")))) LowISR();
+# 2 "interrupts.c" 2
 
 # 1 "./timers.h" 1
 
@@ -24235,62 +24246,66 @@ void Comp1_init(void);
 
 
 
-
 # 1 "./main.h" 1
-# 7 "./timers.h" 2
-# 22 "./timers.h"
-void Timer0_init(void);
-# 37 "./main.h" 2
+# 16 "./main.h"
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = EXTOSC_4PLL
 
-# 1 "./interrupts.h" 1
-# 38 "./main.h" 2
+
+
+
+
+#pragma config WDTE = OFF
+
+
+
+
+
+
+
+
+# 1 "./ADC.h" 1
+# 10 "./ADC.h"
+void ADC_init(void);
+unsigned char ADC_getval(void);
+# 31 "./main.h" 2
+
+# 1 "./comparator.h" 1
+# 10 "./comparator.h"
+void DAC_init(void);
+void Comp1_init(void);
+# 32 "./main.h" 2
+
+# 1 "./timers.h" 1
+# 33 "./main.h" 2
+
 
 # 1 "./LED.h" 1
-# 12 "./LED.h"
+# 11 "./LED.h"
 void LED1_init(dateandtime current);
 void LED2_init(void);
 dateandtime LED_toggle (dateandtime current);
-# 39 "./main.h" 2
+# 35 "./main.h" 2
 
 # 1 "./LEDarray.h" 1
-# 11 "./LEDarray.h"
+# 10 "./LEDarray.h"
 void LEDarray_init(void);
-void LEDarray_disp_bin(signed char number);
-# 40 "./main.h" 2
-
-# 1 "./LCD.h" 1
-# 19 "./LCD.h"
-void LCD_E_TOG(void);
-void LCD_sendnibble(unsigned char number);
-void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
-void LCD_setline (char line);
-void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
-# 41 "./main.h" 2
-# 8 "./interrupts.h" 2
-# 20 "./interrupts.h"
-void Interrupts_init(dateandtime current);
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
-void __attribute__((picinterrupt(("low_priority")))) LowISR();
-# 2 "interrupts.c" 2
-
-
-
-
-
-
-
+void LEDarray_disp_bin(char number);
+# 36 "./main.h" 2
+# 6 "./timers.h" 2
+# 23 "./timers.h"
+void Timer0_init(void);
+# 3 "interrupts.c" 2
+# 12 "interrupts.c"
 void Interrupts_init(dateandtime current) {
-
-
-    if (current.hour<1 || current.hour>=5) {PIE2bits.C1IE = 1;}
-    else {PIE2bits.C1IE = 0;}
+    if (current.hour<1 || current.hour>=5) {
+        PIE2bits.C1IE = 1;
+    } else {PIE2bits.C1IE = 0;}
     PIE0bits.TMR0IE = 1;
+
     IPR2bits.C1IP = 1;
     IPR0bits.TMR0IP = 0;
+
     INTCONbits.IPEN = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
@@ -24301,11 +24316,11 @@ void Interrupts_init(dateandtime current) {
 
 
 
-volatile unsigned char sunrise_flag;
-volatile unsigned char sunset_flag;
+
+volatile unsigned char sunrise_flag=0;
+volatile unsigned char sunset_flag=0;
 
 void __attribute__((picinterrupt(("high_priority")))) HighISR() {
-
     if (PIR2bits.C1IF) {
         LATDbits.LATD7 = !LATDbits.LATD7;
         if (LATDbits.LATD7==0) {sunrise_flag=1;}
@@ -24319,14 +24334,13 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 
 
 
-volatile unsigned char time_flag;
+
+volatile unsigned char time_flag=0;
 
 void __attribute__((picinterrupt(("low_priority")))) LowISR() {
-
     if (PIR0bits.TMR0IF) {
         TMR0H = 0b11101110;
         TMR0L = 0b10100011;
-
         time_flag = 1;
         PIR0bits.TMR0IF = 0;
     }

@@ -108,3 +108,31 @@ void LCD_setline (char line)
     if (line==2) {LCD_sendbyte(0xC0,0);}    // Set DDRAM address (1, AC6, AC5, AC4, AC3, AC2, AC1, AC0)
     __delay_us(50);                         // Delay 50us (minimum for command to execute)
 }
+
+/***************************************
+ * Function to send string to LCD screen
+****************************************/
+void LCD_sendstring(char *string)
+{
+	// Code here to send a string to LCD using pointers and LCD_sendbyte function
+    //char counter1=0, counter2;              // Initialise counter variables
+    while (*string != 0) {                  // While the data pointed to isn't a 0x00 do below (strings in C must end with a NULL byte)
+        LCD_sendbyte(*string++,1);          // Send out the current byte pointed to and increment the pointer
+        //counter1++;                         // Count the number of characters in the string
+    }
+    
+    //for (counter2=0; counter2<(counter1-16); counter2++) {
+    //    __delay_ms(500);                    // Delay so eyes can see change
+    //    LCD_scroll();                       // Scroll text on LCD screen
+    //}
+}
+
+/***************************************
+ * Function to scroll text on LCD screen
+****************************************/
+void LCD_scroll(void)
+{
+	// Code here to scroll the text on the LCD screen
+    LCD_sendbyte(0b00011000,0); // Set cursor moving and display shift control bit, and the direction, without changing of DDRAM data (0, 0, 0, 1, S/C:scroll-on/scroll-off, R/L:scroll-right/scroll-left, -, -)
+    __delay_us(45);             // Delay by more than 39us
+}

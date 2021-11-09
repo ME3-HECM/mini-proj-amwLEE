@@ -24178,7 +24178,37 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "LCD.c" 2
 
 # 1 "./LCD.h" 1
-# 19 "./LCD.h"
+
+
+
+
+
+
+# 1 "./dateandtime.h" 1
+
+
+
+
+
+
+# 1 "./LCD.h" 1
+# 7 "./dateandtime.h" 2
+
+
+
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
+
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
+dateandtime sunrise_sunset(dateandtime current);
+# 7 "./LCD.h" 2
+# 20 "./LCD.h"
 void LCD_E_TOG(void);
 void LCD_sendnibble(unsigned char number);
 void LCD_sendbyte(unsigned char Byte, char type);
@@ -24297,4 +24327,32 @@ void LCD_setline (char line)
 
     if (line==2) {LCD_sendbyte(0xC0,0);}
     _delay((unsigned long)((50)*(64000000/4000000.0)));
+}
+
+
+
+
+void LCD_sendstring(char *string)
+{
+
+
+    while (*string != 0) {
+        LCD_sendbyte(*string++,1);
+
+    }
+
+
+
+
+
+}
+
+
+
+
+void LCD_scroll(void)
+{
+
+    LCD_sendbyte(0b00011000,0);
+    _delay((unsigned long)((45)*(64000000/4000000.0)));
 }

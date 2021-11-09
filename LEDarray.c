@@ -1,12 +1,12 @@
 #include <xc.h>
 #include "LEDarray.h"
 
-/*********************************************************
-/ LEDarray_init
-/ Function used to initialise pins to drive the LED array
-*********************************************************/
-void LEDarray_init(void)
-{
+/*******************************************************************************************************
+ * LEDarray_init
+ * Function used to initialise pins to drive the LED array
+ * Note that the 10th LED is not configured (since the bussed resistor is not long enough to protect it)
+ *******************************************************************************************************/
+void LEDarray_init(void) {
     // Set initial output LAT values as low "0" (they may have random values when powered on)
     LATGbits.LATG0 = 0;
     LATGbits.LATG1 = 0;
@@ -28,18 +28,15 @@ void LEDarray_init(void)
     TRISFbits.TRISF0 = 0;
     TRISBbits.TRISB0 = 0;
     TRISBbits.TRISB1 = 0;
-    // Ommit the 10th LED, since we do not have a resistor protecting it (the bussed resistor is not long enough)
 }
 
 /**************************************************************
-/ LEDarray_disp_bin
-/ Function used to display a number on the LED array in binary
-**************************************************************/
-void LEDarray_disp_bin(signed char number)
-{
+ * LEDarray_disp_bin
+ * Function used to display a number on the LED array in binary
+ **************************************************************/
+void LEDarray_disp_bin(char number) {
 	// Some code to turn on/off the pins connected to the LED array
 	// If statements and bit masks can be used to determine if a particular pin should be on/off
-	// See Readme.md for examples
     if (number & 0b000000001) {LATGbits.LATG0 = 1;} else {LATGbits.LATG0 = 0;}
     if (number & 0b000000010) {LATGbits.LATG1 = 1;} else {LATGbits.LATG1 = 0;}
     if (number & 0b000000100) {LATAbits.LATA2 = 1;} else {LATAbits.LATA2 = 0;}

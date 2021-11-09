@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"9 ./dateandtime.h
-[; ;./dateandtime.h: 9: typedef struct {
+"10 ./dateandtime.h
+[; ;./dateandtime.h: 10: typedef struct {
 [s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
 [n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "4646 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
@@ -2098,131 +2098,142 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 ./main.h
+"16 ./main.h
 [p x FEXTOSC  =  HS          ]
-"11
+"17
 [p x RSTOSC  =  EXTOSC_4PLL  ]
-"18
+"23
 [p x WDTE  =  OFF            ]
-"9 interrupts.c
-[; ;interrupts.c: 9: void Interrupts_init(dateandtime current) {
+"12 interrupts.c
+[; ;interrupts.c: 12: void Interrupts_init(dateandtime current) {
 [v _Interrupts_init `(v ~T0 @X0 1 ef1`S2019 ]
 {
 [e :U _Interrupts_init ]
 [v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
-"12
-[; ;interrupts.c: 12:     if (current.hour<1 || current.hour>=5) {PIE2bits.C1IE = 1;}
+"13
+[; ;interrupts.c: 13:     if (current.hour<1 || current.hour>=5) {
 [e $ ! || < -> . _current 4 `i -> 1 `i >= -> . _current 4 `i -> 5 `i 2021  ]
 {
+"14
+[; ;interrupts.c: 14:         PIE2bits.C1IE = 1;
 [e = . . _PIE2bits 0 0 -> -> 1 `i `uc ]
+"15
+[; ;interrupts.c: 15:     } else {PIE2bits.C1IE = 0;}
 }
 [e $U 2022  ]
-"13
-[; ;interrupts.c: 13:     else {PIE2bits.C1IE = 0;}
 [e :U 2021 ]
 {
 [e = . . _PIE2bits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 2022 ]
-"14
-[; ;interrupts.c: 14:     PIE0bits.TMR0IE = 1;
-[e = . . _PIE0bits 0 5 -> -> 1 `i `uc ]
-"15
-[; ;interrupts.c: 15:     IPR2bits.C1IP = 1;
-[e = . . _IPR2bits 0 0 -> -> 1 `i `uc ]
 "16
-[; ;interrupts.c: 16:     IPR0bits.TMR0IP = 0;
-[e = . . _IPR0bits 0 5 -> -> 0 `i `uc ]
-"17
-[; ;interrupts.c: 17:     INTCONbits.IPEN = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;interrupts.c: 16:     PIE0bits.TMR0IE = 1;
+[e = . . _PIE0bits 0 5 -> -> 1 `i `uc ]
 "18
-[; ;interrupts.c: 18:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
+[; ;interrupts.c: 18:     IPR2bits.C1IP = 1;
+[e = . . _IPR2bits 0 0 -> -> 1 `i `uc ]
 "19
-[; ;interrupts.c: 19:     INTCONbits.GIE = 1;
+[; ;interrupts.c: 19:     IPR0bits.TMR0IP = 0;
+[e = . . _IPR0bits 0 5 -> -> 0 `i `uc ]
+"21
+[; ;interrupts.c: 21:     INTCONbits.IPEN = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"22
+[; ;interrupts.c: 22:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
+"23
+[; ;interrupts.c: 23:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
-"20
-[; ;interrupts.c: 20: }
+"24
+[; ;interrupts.c: 24: }
 [e :UE 2020 ]
 }
-"27
-[; ;interrupts.c: 27: volatile unsigned char sunrise_flag;
+"32
+[; ;interrupts.c: 32: volatile unsigned char sunrise_flag=0;
 [v _sunrise_flag `Vuc ~T0 @X0 1 e ]
-"28
-[; ;interrupts.c: 28: volatile unsigned char sunset_flag;
+[i _sunrise_flag
+-> -> 0 `i `uc
+]
+"33
+[; ;interrupts.c: 33: volatile unsigned char sunset_flag=0;
 [v _sunset_flag `Vuc ~T0 @X0 1 e ]
+[i _sunset_flag
+-> -> 0 `i `uc
+]
 [v $root$_HighISR `(v ~T0 @X0 0 e ]
-"30
-[; ;interrupts.c: 30: void __attribute__((picinterrupt(("high_priority")))) HighISR() {
+"35
+[; ;interrupts.c: 35: void __attribute__((picinterrupt(("high_priority")))) HighISR() {
 [v _HighISR `(v ~T3 @X0 1 ef ]
 {
 [e :U _HighISR ]
 [f ]
-"32
-[; ;interrupts.c: 32:     if (PIR2bits.C1IF) {
+"36
+[; ;interrupts.c: 36:     if (PIR2bits.C1IF) {
 [e $ ! != -> . . _PIR2bits 0 0 `i -> 0 `i 2024  ]
 {
-"33
-[; ;interrupts.c: 33:         LATDbits.LATD7 = !LATDbits.LATD7;
+"37
+[; ;interrupts.c: 37:         LATDbits.LATD7 = !LATDbits.LATD7;
 [e = . . _LATDbits 0 7 -> -> ! != -> . . _LATDbits 0 7 `i -> 0 `i `i `uc ]
-"34
-[; ;interrupts.c: 34:         if (LATDbits.LATD7==0) {sunrise_flag=1;}
+"38
+[; ;interrupts.c: 38:         if (LATDbits.LATD7==0) {sunrise_flag=1;}
 [e $ ! == -> . . _LATDbits 0 7 `i -> 0 `i 2025  ]
 {
 [e = _sunrise_flag -> -> 1 `i `uc ]
 }
 [e $U 2026  ]
-"35
-[; ;interrupts.c: 35:         else {sunset_flag=1;}
+"39
+[; ;interrupts.c: 39:         else {sunset_flag=1;}
 [e :U 2025 ]
 {
 [e = _sunset_flag -> -> 1 `i `uc ]
 }
 [e :U 2026 ]
-"36
-[; ;interrupts.c: 36:         PIR2bits.C1IF = 0;
+"40
+[; ;interrupts.c: 40:         PIR2bits.C1IF = 0;
 [e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"37
-[; ;interrupts.c: 37:     }
+"41
+[; ;interrupts.c: 41:     }
 }
 [e :U 2024 ]
-"38
-[; ;interrupts.c: 38: }
+"42
+[; ;interrupts.c: 42: }
 [e :UE 2023 ]
 }
-"45
-[; ;interrupts.c: 45: volatile unsigned char time_flag;
+"50
+[; ;interrupts.c: 50: volatile unsigned char time_flag=0;
 [v _time_flag `Vuc ~T0 @X0 1 e ]
+[i _time_flag
+-> -> 0 `i `uc
+]
 [v $root$_LowISR `(v ~T0 @X0 0 e ]
-"47
-[; ;interrupts.c: 47: void __attribute__((picinterrupt(("low_priority")))) LowISR() {
+"52
+[; ;interrupts.c: 52: void __attribute__((picinterrupt(("low_priority")))) LowISR() {
 [v _LowISR `(v ~T4 @X0 1 ef ]
 {
 [e :U _LowISR ]
 [f ]
-"49
-[; ;interrupts.c: 49:     if (PIR0bits.TMR0IF) {
+"53
+[; ;interrupts.c: 53:     if (PIR0bits.TMR0IF) {
 [e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2028  ]
 {
-"50
-[; ;interrupts.c: 50:         TMR0H = 0b11101110;
-[e = _TMR0H -> -> 238 `i `uc ]
-"51
-[; ;interrupts.c: 51:         TMR0L = 0b10100011;
-[e = _TMR0L -> -> 163 `i `uc ]
-"53
-[; ;interrupts.c: 53:         time_flag = 1;
-[e = _time_flag -> -> 1 `i `uc ]
 "54
-[; ;interrupts.c: 54:         PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
+[; ;interrupts.c: 54:         TMR0H = 0b11101110;
+[e = _TMR0H -> -> 238 `i `uc ]
 "55
-[; ;interrupts.c: 55:     }
+[; ;interrupts.c: 55:         TMR0L = 0b10100011;
+[e = _TMR0L -> -> 163 `i `uc ]
+"56
+[; ;interrupts.c: 56:         time_flag = 1;
+[e = _time_flag -> -> 1 `i `uc ]
+"57
+[; ;interrupts.c: 57:         PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
+"58
+[; ;interrupts.c: 58:     }
 }
 [e :U 2028 ]
-"56
-[; ;interrupts.c: 56: }
+"59
+[; ;interrupts.c: 59: }
 [e :UE 2027 ]
 }

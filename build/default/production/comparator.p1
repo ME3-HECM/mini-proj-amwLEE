@@ -2086,11 +2086,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 comparator.c
-[; ;comparator.c: 7: void DAC_init(void)
+"8 comparator.c
+[; ;comparator.c: 8: void DAC_init(void) {
 [v _DAC_init `(v ~T0 @X0 1 ef ]
-"8
-[; ;comparator.c: 8: {
 {
 [e :U _DAC_init ]
 [f ]
@@ -2110,11 +2108,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comparator.c: 17: }
 [e :UE 2019 ]
 }
-"23
-[; ;comparator.c: 23: void Comp1_init(void)
-[v _Comp1_init `(v ~T0 @X0 1 ef ]
 "24
-[; ;comparator.c: 24: {
+[; ;comparator.c: 24: void Comp1_init(void) {
+[v _Comp1_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Comp1_init ]
 [f ]

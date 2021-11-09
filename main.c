@@ -22,39 +22,30 @@ void main(void) {
     current.sunrise_second = 0;     // The second that sunrise occurred today (0, ..., 59)
     
     // Call your initialisation functions to set up the hardware modules
-    ADC_init();                     // Function used to initialise ADC module and set it up to sample on pin RF7
+    ADC_init();                     // Function to initialise ADC module and set it up to sample on pin RF7
     Comp1_init();                   // Function to set up comparator to compare RF7 to the DAC output voltage
-    Timer0_init();                  // Function to set up timer 0
+    Timer0_init();                  // Function to set up Timer 0
     Interrupts_init(current);       // Function to turn on interrupts and set if priority is used
     LED1_init(current);             // Function to initialise pins to drive LED1 (the street light)
     LED2_init();                    // Function to initialise pins to drive LED2 (the minute indicator - flashes every minute)
     LEDarray_init();                // Function to initialise pins to drive the LED array (the hour indicator - displays the hour in binary)
-    LCD_init();                     // Function to initialise the LCD after power on (the date indicator - displays the date digitally on the screen)
-    
-    // Access global variables that are toggled by the interrupts
-    extern volatile unsigned char sunrise_flag; // The high priority interrupt will toggle this variable when sunrise has occurred
-    extern volatile unsigned char sunset_flag;  // The high priority interrupt will toggle this variable when sunset has occurred
-    extern volatile unsigned char time_flag;    // The low priority interrupt will toggle this variable when a second has passed (when the timer has overflowed)
+    LCD_init();                     // Function to initialise the LCD after power on (the date and time indicator - displays the date and time digitally on the screen)
     
     // Infinite while loop (program runs indefinitely - or more realistically, until the hardware fails)
     while (1) {
-        if (sunrise_flag==1) {                  // If sunrise has just occurred,
-            current=sunrise(current);           // update today's sunrise timing in the structure "current"
-            sunrise_flag=0;                     // and reset the sunrise flag
-        } else if (sunset_flag==1) {
-            current=sun_sync(current);          // If sunset has just occurred, check what time solarnoon was recorded today, and sync the clock with the sun
-            sunset_flag=0;                      // and reset the sunset flag
-        }
+        current = sunrise_sunset(current);  // Check if sunrise or sunset has just occurred (toggled by high priority interrupt)
+                                            // If sunrise, record today's sunrise timing
+                                            // If sunset, calculate what time solarnoon was recorded today and adjust clock to sync with sun
         
-        if (time_flag==1) {                     // If the timer has just overflowed,
-            current=time_incre(current);        // increment the current time by 1 second
-            time_flag=0;                        // and reset the time flag
-        }
+        current = time_incre(current);      // Check if the timer has just overflowed (toggled by low priority interrupt)
+                                            // If yes, increase time by 1 second
+                                            // If no, pass
         
-        current = LED_toggle(current);          // Check if the current time is between 1am-5am
-                                                // If yes, turn off the street light and disable interrupts
-                                                // If no, check if it's still dark enough for the street lights to be turned on and enable interrupts
+        current = LED_toggle(current);      // Check if the current time is between 1am-5am
+                                            // If yes, disable comparator interrupt, and turn off the street light
+                                            // If no, enable comparator interrupt, and check if it's still dark enough for the street lights to be turned on
+                                            // or whether it's bright enough to record sunrise
         
-        LEDarray_disp_bin(current.hour);        // Display the current hour on the LEDarray in binary
+        LEDarray_disp_bin(current.hour);    // Display the current hour on the LEDarray in binary
     }
 }

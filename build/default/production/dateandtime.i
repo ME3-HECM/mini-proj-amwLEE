@@ -24184,6 +24184,27 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+# 1 "./LCD.h" 1
+
+
+
+
+
+
+# 1 "./dateandtime.h" 1
+# 7 "./LCD.h" 2
+# 20 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 7 "./dateandtime.h" 2
+
 
 
 typedef struct {
@@ -24196,7 +24217,20 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
+dateandtime sunrise_sunset(dateandtime current);
 # 2 "dateandtime.c" 2
+
+# 1 "./interrupts.h" 1
+# 11 "./interrupts.h"
+extern volatile unsigned char sunrise_flag;
+extern volatile unsigned char sunset_flag;
+extern volatile unsigned char time_flag;
+
+
+void Interrupts_init(dateandtime current);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+void __attribute__((picinterrupt(("low_priority")))) LowISR();
+# 3 "dateandtime.c" 2
 
 
 
@@ -24240,28 +24274,29 @@ dateandtime date_check(dateandtime current) {
 
 
 dateandtime time_incre(dateandtime current){
-
-    current.second = current.second+1;
-    if (current.second>59) {
-        LATHbits.LATH3 = !LATHbits.LATH3;
-        current.second = 0;
-        current.minute = current.minute+1;
-        if (current.minute>59) {
-            current.minute = 0;
-            current.hour = current.hour+1;
-            current = daylightsavingstime_toggle(current);
-            if (current.hour>23) {
-                current.hour = 0;
-                current.date = current.date+1;
-                current = date_check(current);
-                current.day = current.day+1;
-                if (current.day>7) {
-                    current.day = 1;
+    if (time_flag==1) {
+        current.second = current.second+1;
+        if (current.second>59) {
+            LATHbits.LATH3 = !LATHbits.LATH3;
+            current.second = 0;
+            current.minute = current.minute+1;
+            if (current.minute>59) {
+                current.minute = 0;
+                current.hour = current.hour+1;
+                current = daylightsavingstime_toggle(current);
+                if (current.hour>23) {
+                    current.hour = 0;
+                    current.date = current.date+1;
+                    current = date_check(current);
+                    current.day = current.day+1;
+                    if (current.day>7) {
+                        current.day = 1;
+                    }
                 }
             }
         }
+        time_flag=0;
     }
-
     return current;
 }
 
@@ -24299,5 +24334,17 @@ dateandtime sun_sync(dateandtime current) {
     }
     current.hour = current.hour - (solarnoon_hour-12);
 
+    return current;
+}
+
+
+dateandtime sunrise_sunset(dateandtime current) {
+    if (sunrise_flag==1) {
+    current=sunrise(current);
+    sunrise_flag=0;
+    } else if (sunset_flag==1) {
+        current=sun_sync(current);
+        sunset_flag=0;
+    }
     return current;
 }

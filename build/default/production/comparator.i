@@ -24187,8 +24187,8 @@ void Comp1_init(void);
 
 
 
-void DAC_init(void)
-{
+
+void DAC_init(void) {
     DAC1CON0bits.PSS=0b00;
     DAC1CON0bits.NSS=0b0;
 
@@ -24203,8 +24203,8 @@ void DAC_init(void)
 
 
 
-void Comp1_init(void)
-{
+
+void Comp1_init(void) {
     TRISFbits.TRISF7=1;
     CM1NCHbits.NCH=0b011;
     CM1PCHbits.PCH=0b101;

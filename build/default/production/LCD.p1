@@ -2074,7 +2074,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "13
 [; ;LCD.c: 13: }
-[e :UE 2019 ]
+[e :UE 2020 ]
 }
 "18
 [; ;LCD.c: 18: void LCD_sendnibble(unsigned char number)
@@ -2091,52 +2091,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "21
 [; ;LCD.c: 21:     if (number & 0b0001) {LATBbits.LATB3 = 1;} else {LATBbits.LATB3 = 0;}
-[e $ ! != & -> _number `i -> 1 `i -> 0 `i 2021  ]
+[e $ ! != & -> _number `i -> 1 `i -> 0 `i 2022  ]
 {
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 }
-[e $U 2022  ]
-[e :U 2021 ]
+[e $U 2023  ]
+[e :U 2022 ]
 {
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 2022 ]
+[e :U 2023 ]
 "22
 [; ;LCD.c: 22:     if (number & 0b0010) {LATBbits.LATB2 = 1;} else {LATBbits.LATB2 = 0;}
-[e $ ! != & -> _number `i -> 2 `i -> 0 `i 2023  ]
+[e $ ! != & -> _number `i -> 2 `i -> 0 `i 2024  ]
 {
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 }
-[e $U 2024  ]
-[e :U 2023 ]
+[e $U 2025  ]
+[e :U 2024 ]
 {
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 2024 ]
+[e :U 2025 ]
 "23
 [; ;LCD.c: 23:     if (number & 0b0100) {LATEbits.LATE3 = 1;} else {LATEbits.LATE3 = 0;}
-[e $ ! != & -> _number `i -> 4 `i -> 0 `i 2025  ]
+[e $ ! != & -> _number `i -> 4 `i -> 0 `i 2026  ]
 {
 [e = . . _LATEbits 0 3 -> -> 1 `i `uc ]
 }
-[e $U 2026  ]
-[e :U 2025 ]
+[e $U 2027  ]
+[e :U 2026 ]
 {
 [e = . . _LATEbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 2026 ]
+[e :U 2027 ]
 "24
 [; ;LCD.c: 24:     if (number & 0b1000) {LATEbits.LATE1 = 1;} else {LATEbits.LATE1 = 0;}
-[e $ ! != & -> _number `i -> 8 `i -> 0 `i 2027  ]
+[e $ ! != & -> _number `i -> 8 `i -> 0 `i 2028  ]
 {
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
 }
-[e $U 2028  ]
-[e :U 2027 ]
+[e $U 2029  ]
+[e :U 2028 ]
 {
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 2028 ]
+[e :U 2029 ]
 "26
 [; ;LCD.c: 26:     LCD_E_TOG();
 [e ( _LCD_E_TOG ..  ]
@@ -2145,7 +2145,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "28
 [; ;LCD.c: 28: }
-[e :UE 2020 ]
+[e :UE 2021 ]
 }
 "34
 [; ;LCD.c: 34: void LCD_sendbyte(unsigned char Byte, char type)
@@ -2163,16 +2163,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "37
 [; ;LCD.c: 37:     if (type) {LATCbits.LATC6 = 1;} else {LATCbits.LATC6 = 0;}
-[e $ ! != -> _type `i -> 0 `i 2030  ]
+[e $ ! != -> _type `i -> 0 `i 2031  ]
 {
 [e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
 }
-[e $U 2031  ]
-[e :U 2030 ]
+[e $U 2032  ]
+[e :U 2031 ]
 {
 [e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 2031 ]
+[e :U 2032 ]
 "40
 [; ;LCD.c: 40:     LCD_sendnibble(Byte>>4);
 [e ( _LCD_sendnibble (1 -> >> -> _Byte `i -> 4 `i `uc ]
@@ -2184,7 +2184,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "47
 [; ;LCD.c: 47: }
-[e :UE 2029 ]
+[e :UE 2030 ]
 }
 "52
 [; ;LCD.c: 52: void LCD_init(void)
@@ -2277,7 +2277,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "93
 [; ;LCD.c: 93: }
-[e :UE 2032 ]
+[e :UE 2033 ]
 }
 "101
 [; ;LCD.c: 101: void LCD_setline (char line)
@@ -2294,25 +2294,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "104
 [; ;LCD.c: 104:     if (line==1) {LCD_sendbyte(0x80,0);}
-[e $ ! == -> _line `i -> 1 `i 2034  ]
+[e $ ! == -> _line `i -> 1 `i 2035  ]
 {
 [e ( _LCD_sendbyte (2 , -> -> 128 `i `uc -> -> 0 `i `uc ]
 }
-[e :U 2034 ]
+[e :U 2035 ]
 "105
 [; ;LCD.c: 105:     _delay((unsigned long)((50)*(64000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "108
 [; ;LCD.c: 108:     if (line==2) {LCD_sendbyte(0xC0,0);}
-[e $ ! == -> _line `i -> 2 `i 2035  ]
+[e $ ! == -> _line `i -> 2 `i 2036  ]
 {
 [e ( _LCD_sendbyte (2 , -> -> 192 `i `uc -> -> 0 `i `uc ]
 }
-[e :U 2035 ]
+[e :U 2036 ]
 "109
 [; ;LCD.c: 109:     _delay((unsigned long)((50)*(64000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "110
 [; ;LCD.c: 110: }
-[e :UE 2033 ]
+[e :UE 2034 ]
+}
+"115
+[; ;LCD.c: 115: void LCD_sendstring(char *string)
+[v _LCD_sendstring `(v ~T0 @X0 1 ef1`*uc ]
+"116
+[; ;LCD.c: 116: {
+{
+[e :U _LCD_sendstring ]
+"115
+[; ;LCD.c: 115: void LCD_sendstring(char *string)
+[v _string `*uc ~T0 @X0 1 r1 ]
+"116
+[; ;LCD.c: 116: {
+[f ]
+"119
+[; ;LCD.c: 119:     while (*string != 0) {
+[e $U 2038  ]
+[e :U 2039 ]
+{
+"120
+[; ;LCD.c: 120:         LCD_sendbyte(*string++,1);
+[e ( _LCD_sendbyte (2 , -> *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x `uc -> -> 1 `i `uc ]
+"122
+[; ;LCD.c: 122:     }
+}
+[e :U 2038 ]
+"119
+[; ;LCD.c: 119:     while (*string != 0) {
+[e $ != -> *U _string `i -> 0 `i 2039  ]
+[e :U 2040 ]
+"128
+[; ;LCD.c: 128: }
+[e :UE 2037 ]
+}
+"133
+[; ;LCD.c: 133: void LCD_scroll(void)
+[v _LCD_scroll `(v ~T0 @X0 1 ef ]
+"134
+[; ;LCD.c: 134: {
+{
+[e :U _LCD_scroll ]
+[f ]
+"136
+[; ;LCD.c: 136:     LCD_sendbyte(0b00011000,0);
+[e ( _LCD_sendbyte (2 , -> -> 24 `i `uc -> -> 0 `i `uc ]
+"137
+[; ;LCD.c: 137:     _delay((unsigned long)((45)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"138
+[; ;LCD.c: 138: }
+[e :UE 2041 ]
 }

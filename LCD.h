@@ -3,7 +3,8 @@
 #ifndef _LCD_H
 #define	_LCD_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> // include processor files - each processor file is guarded.
+#include "dateandtime.h"
 
 #define _XTAL_FREQ 64000000             // Note intrinsic _delay function is 62.5ns at 64,000,000Hz  
 

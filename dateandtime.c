@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "dateandtime.h"
+#include "interrupts.h"
 
 /********************
  * Check for daylight savings time
@@ -42,28 +43,29 @@ dateandtime date_check(dateandtime current) {
  * Check for time
  *******************************/
 dateandtime time_incre(dateandtime current){
-    
-    current.second = current.second+1;
-    if (current.second>59) {
-        LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
-        current.second = 0;
-        current.minute = current.minute+1;
-        if (current.minute>59) {
-            current.minute = 0;
-            current.hour = current.hour+1;
-            current = daylightsavingstime_toggle(current);
-            if (current.hour>23) {
-                current.hour = 0;
-                current.date = current.date+1;
-                current = date_check(current);
-                current.day = current.day+1;
-                if (current.day>7) {
-                    current.day = 1;
+    if (time_flag==1) { // If the timer has just overflowed
+        current.second = current.second+1;    
+        if (current.second>59) {
+            LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
+            current.second = 0;
+            current.minute = current.minute+1;
+            if (current.minute>59) {
+                current.minute = 0;
+                current.hour = current.hour+1;
+                current = daylightsavingstime_toggle(current);
+                if (current.hour>23) {
+                    current.hour = 0;
+                    current.date = current.date+1;
+                    current = date_check(current);                
+                    current.day = current.day+1;
+                    if (current.day>7) {
+                        current.day = 1;
+                    }
                 }
             }
         }
+        time_flag=0; // Reset the timer flag
     }
-    
     return current;
 }
 
@@ -101,5 +103,17 @@ dateandtime sun_sync(dateandtime current) {
     }
     current.hour = current.hour - (solarnoon_hour-12);
     
+    return current;
+}
+
+
+dateandtime sunrise_sunset(dateandtime current) {
+    if (sunrise_flag==1) {                  // If sunrise has just occurred,
+    current=sunrise(current);           // update today's sunrise timing in the structure "current"
+    sunrise_flag=0;                     // and reset the sunrise flag
+    } else if (sunset_flag==1) {            // If sunset has just occurred,
+        current=sun_sync(current);          // check what time solarnoon was recorded today, and sync the clock with the sun
+        sunset_flag=0;                      // and reset the sunset flag
+    }
     return current;
 }

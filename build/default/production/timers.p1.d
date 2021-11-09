@@ -3,9 +3,9 @@ timers.c  \
 timers.h  \
 main.h  \
 dateandtime.h  \
+LCD.h  \
 ADC.h  \
 comparator.h  \
 interrupts.h  \
 LED.h  \
-LEDarray.h  \
-LCD.h 
+LEDarray.h 

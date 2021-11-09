@@ -24178,7 +24178,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "main.c" 2
 
 # 1 "./main.h" 1
-# 10 "./main.h"
+# 16 "./main.h"
 #pragma config FEXTOSC = HS
 #pragma config RSTOSC = EXTOSC_4PLL
 
@@ -24186,15 +24186,41 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-
 #pragma config WDTE = OFF
-# 34 "./main.h"
+
+
+
+
+
+
+
 # 1 "./dateandtime.h" 1
 
 
 
 
 
+
+# 1 "./LCD.h" 1
+
+
+
+
+
+
+# 1 "./dateandtime.h" 1
+# 7 "./LCD.h" 2
+# 20 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 7 "./dateandtime.h" 2
 
 
 
@@ -24208,19 +24234,20 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
-# 34 "./main.h" 2
+dateandtime sunrise_sunset(dateandtime current);
+# 30 "./main.h" 2
 
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
 unsigned char ADC_getval(void);
-# 35 "./main.h" 2
+# 31 "./main.h" 2
 
 # 1 "./comparator.h" 1
 # 10 "./comparator.h"
 void DAC_init(void);
 void Comp1_init(void);
-# 36 "./main.h" 2
+# 32 "./main.h" 2
 
 # 1 "./timers.h" 1
 
@@ -24228,54 +24255,36 @@ void Comp1_init(void);
 
 
 
-
 # 1 "./main.h" 1
-# 7 "./timers.h" 2
-# 22 "./timers.h"
+# 6 "./timers.h" 2
+# 23 "./timers.h"
 void Timer0_init(void);
-# 37 "./main.h" 2
+# 33 "./main.h" 2
 
 # 1 "./interrupts.h" 1
+# 11 "./interrupts.h"
+extern volatile unsigned char sunrise_flag;
+extern volatile unsigned char sunset_flag;
+extern volatile unsigned char time_flag;
 
 
-
-
-
-
-
-# 1 "./main.h" 1
-# 8 "./interrupts.h" 2
-# 20 "./interrupts.h"
 void Interrupts_init(dateandtime current);
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 void __attribute__((picinterrupt(("low_priority")))) LowISR();
-# 38 "./main.h" 2
+# 34 "./main.h" 2
 
 # 1 "./LED.h" 1
-# 12 "./LED.h"
+# 11 "./LED.h"
 void LED1_init(dateandtime current);
 void LED2_init(void);
 dateandtime LED_toggle (dateandtime current);
-# 39 "./main.h" 2
+# 35 "./main.h" 2
 
 # 1 "./LEDarray.h" 1
-# 11 "./LEDarray.h"
+# 10 "./LEDarray.h"
 void LEDarray_init(void);
-void LEDarray_disp_bin(signed char number);
-# 40 "./main.h" 2
-
-# 1 "./LCD.h" 1
-# 19 "./LCD.h"
-void LCD_E_TOG(void);
-void LCD_sendnibble(unsigned char number);
-void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
-void LCD_setline (char line);
-void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
-# 41 "./main.h" 2
+void LEDarray_disp_bin(char number);
+# 36 "./main.h" 2
 # 2 "main.c" 2
 
 
@@ -24310,26 +24319,17 @@ void main(void) {
     LCD_init();
 
 
-    extern volatile unsigned char sunrise_flag;
-    extern volatile unsigned char sunset_flag;
-    extern volatile unsigned char time_flag;
-
-
     while (1) {
-        if (sunrise_flag==1) {
-            current=sunrise(current);
-            sunrise_flag=0;
-        } else if (sunset_flag==1) {
-            current=sun_sync(current);
-            sunset_flag=0;
-        }
+        current = sunrise_sunset(current);
 
-        if (time_flag==1) {
-            current=time_incre(current);
-            time_flag=0;
-        }
+
+
+        current = time_incre(current);
+
+
 
         current = LED_toggle(current);
+
 
 
 
