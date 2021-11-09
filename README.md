@@ -32,7 +32,6 @@ My hardware has been set up as in Lab 4:
 
 ## Demonstration video
 My video demonstrates operation of the street light during daylight savings change of clock (note that the clocks changed on 31 October 2021 (Sunday) at 2am - it turned back 1 hour to 1am):
-- The video begins 
 
 https://youtu.be/aipM7BNAiSA
 
