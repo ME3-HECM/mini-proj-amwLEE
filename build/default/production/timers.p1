@@ -2017,6 +2017,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"10 ./main.h
+[p x FEXTOSC  =  HS          ]
+"11
+[p x RSTOSC  =  EXTOSC_4PLL  ]
+"18
+[p x WDTE  =  OFF            ]
 "30 timers.c
 [; ;timers.c: 30:  void Timer0_init(void) {
 [v _Timer0_init `(v ~T0 @X0 1 ef ]
@@ -2046,5 +2052,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 "49
 [; ;timers.c: 49: }
-[e :UE 2019 ]
+[e :UE 2020 ]
 }

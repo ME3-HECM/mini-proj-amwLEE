@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Nov 08 17:49:47 2021
+                                                                                               Tue Nov 09 01:37:56 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	18F67K40
@@ -292,7 +292,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    278 ;;
    279 ;; *************** function _main *****************
    280 ;; Defined at:
-   281 ;;		line 42 in file "main.c"
+   281 ;;		line 7 in file "main.c"
    282 ;; Parameters:    Size  Location     Type
    283 ;;		None
    284 ;; Auto vars:     Size  Location     Type
@@ -342,58 +342,58 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    323  00020C                     _main:
    324                           	callstack 25
    325  00020C                     
-   326                           ;main.c: 47:     dateandtime current;;main.c: 48:     current.year = 2021;
+   326                           ;main.c: 12:     dateandtime current;;main.c: 13:     current.year = 2021;
    327  00020C  0E07               	movlw	7
    328  00020E  6E1F               	movwf	(main@current+1)^0,c
    329  000210  0EE5               	movlw	229
    330  000212  6E1E               	movwf	main@current^0,c
    331                           
-   332                           ;main.c: 49:     current.month = 11;
+   332                           ;main.c: 14:     current.month = 11;
    333  000214  0E0B               	movlw	11
    334  000216  6E20               	movwf	(main@current+2)^0,c
    335                           
-   336                           ;main.c: 50:     current.date = 9;
+   336                           ;main.c: 15:     current.date = 9;
    337  000218  0E09               	movlw	9
    338  00021A  6E21               	movwf	(main@current+3)^0,c
    339                           
-   340                           ;main.c: 51:     current.day = 2;
+   340                           ;main.c: 16:     current.day = 2;
    341  00021C  0E02               	movlw	2
    342  00021E  6E22               	movwf	(main@current+4)^0,c
    343                           
-   344                           ;main.c: 52:     current.hour = 7;
+   344                           ;main.c: 17:     current.hour = 7;
    345  000220  0E07               	movlw	7
    346  000222  6E23               	movwf	(main@current+5)^0,c
    347                           
-   348                           ;main.c: 53:     current.minute = 30;
+   348                           ;main.c: 18:     current.minute = 30;
    349  000224  0E1E               	movlw	30
    350  000226  6E24               	movwf	(main@current+6)^0,c
    351                           
-   352                           ;main.c: 54:     current.second = 0;
+   352                           ;main.c: 19:     current.second = 0;
    353  000228  0E00               	movlw	0
    354  00022A  6E25               	movwf	(main@current+7)^0,c
    355                           
-   356                           ;main.c: 55:     current.sunrise_hour = 7;
+   356                           ;main.c: 20:     current.sunrise_hour = 7;
    357  00022C  0E07               	movlw	7
    358  00022E  6E26               	movwf	(main@current+8)^0,c
    359                           
-   360                           ;main.c: 56:     current.sunrise_minute = 0;
+   360                           ;main.c: 21:     current.sunrise_minute = 0;
    361  000230  0E00               	movlw	0
    362  000232  6E27               	movwf	(main@current+9)^0,c
    363                           
-   364                           ;main.c: 57:     current.sunrise_second = 0;
+   364                           ;main.c: 22:     current.sunrise_second = 0;
    365  000234  0E00               	movlw	0
    366  000236  6E28               	movwf	(main@current+10)^0,c
    367  000238                     
-   368                           ;main.c: 60:     ADC_init();
+   368                           ;main.c: 25:     ADC_init();
    369  000238  ECAD  F005         	call	_ADC_init	;wreg free
    370  00023C                     
-   371                           ;main.c: 61:     Comp1_init();
+   371                           ;main.c: 26:     Comp1_init();
    372  00023C  EC7C  F005         	call	_Comp1_init	;wreg free
    373  000240                     
-   374                           ;main.c: 62:     Timer0_init();
+   374                           ;main.c: 27:     Timer0_init();
    375  000240  EC9F  F005         	call	_Timer0_init	;wreg free
    376  000244                     
-   377                           ;main.c: 63:     Interrupts_init(current);
+   377                           ;main.c: 28:     Interrupts_init(current);
    378  000244  EE20  F01E         	lfsr	2,main@current
    379  000248  EE00  F005         	lfsr	0,Interrupts_init@current
    380  00024C  0E0A               	movlw	10
@@ -403,7 +403,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    384  000254  E2FC               	bc	u1831
    385  000256  EC2E  F005         	call	_Interrupts_init	;wreg free
    386  00025A                     
-   387                           ;main.c: 64:     LED1_init(current);
+   387                           ;main.c: 29:     LED1_init(current);
    388  00025A  EE20  F01E         	lfsr	2,main@current
    389  00025E  EE00  F006         	lfsr	0,LED1_init@current
    390  000262  0E0A               	movlw	10
@@ -413,17 +413,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    394  00026A  E2FC               	bc	u1841
    395  00026C  EC09  F005         	call	_LED1_init	;wreg free
    396                           
-   397                           ;main.c: 65:     LED2_init();
+   397                           ;main.c: 30:     LED2_init();
    398  000270  ECDF  F005         	call	_LED2_init	;wreg free
    399                           
-   400                           ;main.c: 66:     LEDarray_init();
+   400                           ;main.c: 31:     LEDarray_init();
    401  000274  EC69  F005         	call	_LEDarray_init	;wreg free
    402  000278                     
-   403                           ;main.c: 67:     LCD_init();
+   403                           ;main.c: 32:     LCD_init();
    404  000278  EC57  F004         	call	_LCD_init	;wreg free
    405  00027C                     l37:
    406                           
-   407                           ;main.c: 76:         if (sunrise_flag==1) {
+   407                           ;main.c: 41:         if (sunrise_flag==1) {
    408  00027C  042B               	decf	_sunrise_flag^0,w,c	;volatile
    409  00027E  A4D8               	btfss	status,2,c
    410  000280  EF44  F001         	goto	u1851
@@ -432,7 +432,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    413  000288  EF5C  F001         	goto	l1776
    414  00028C                     u1850:
    415  00028C                     
-   416                           ;main.c: 77:             current=sunrise(current);
+   416                           ;main.c: 42:             current=sunrise(current);
    417  00028C  EE20  F01E         	lfsr	2,main@current
    418  000290  EE00  F005         	lfsr	0,sunrise@current
    419  000294  0E0A               	movlw	10
@@ -448,11 +448,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    429  0002AC  06E8               	decf	wreg,f,c
    430  0002AE  E2FC               	bc	u1871
    431  0002B0                     
-   432                           ;main.c: 78:             sunrise_flag=0;
+   432                           ;main.c: 43:             sunrise_flag=0;
    433  0002B0  0E00               	movlw	0
    434  0002B2  6E2B               	movwf	_sunrise_flag^0,c	;volatile
    435                           
-   436                           ;main.c: 79:         } else if (sunset_flag==1) {
+   436                           ;main.c: 44:         } else if (sunset_flag==1) {
    437  0002B4  EF78  F001         	goto	l1782
    438  0002B8                     l1776:
    439  0002B8  042A               	decf	_sunset_flag^0,w,c	;volatile
@@ -463,7 +463,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    444  0002C4  EF78  F001         	goto	l1782
    445  0002C8                     u1880:
    446  0002C8                     
-   447                           ;main.c: 80:             current=sun_sync(current);
+   447                           ;main.c: 45:             current=sun_sync(current);
    448  0002C8  EE20  F01E         	lfsr	2,main@current
    449  0002CC  EE00  F00D         	lfsr	0,sun_sync@current
    450  0002D0  0E0A               	movlw	10
@@ -479,12 +479,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    460  0002E8  06E8               	decf	wreg,f,c
    461  0002EA  E2FC               	bc	u1901
    462  0002EC                     
-   463                           ;main.c: 81:             sunset_flag=0;
+   463                           ;main.c: 46:             sunset_flag=0;
    464  0002EC  0E00               	movlw	0
    465  0002EE  6E2A               	movwf	_sunset_flag^0,c	;volatile
    466  0002F0                     l1782:
    467                           
-   468                           ;main.c: 84:         if (time_flag==1) {
+   468                           ;main.c: 49:         if (time_flag==1) {
    469  0002F0  0429               	decf	_time_flag^0,w,c	;volatile
    470  0002F2  A4D8               	btfss	status,2,c
    471  0002F4  EF7E  F001         	goto	u1911
@@ -493,7 +493,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    474  0002FC  EF94  F001         	goto	l1788
    475  000300                     u1910:
    476  000300                     
-   477                           ;main.c: 85:             current=time_incre(current);
+   477                           ;main.c: 50:             current=time_incre(current);
    478  000300  EE20  F01E         	lfsr	2,main@current
    479  000304  EE00  F012         	lfsr	0,time_incre@current
    480  000308  0E0A               	movlw	10
@@ -509,12 +509,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    490  000320  06E8               	decf	wreg,f,c
    491  000322  E2FC               	bc	u1931
    492  000324                     
-   493                           ;main.c: 86:             time_flag=0;
+   493                           ;main.c: 51:             time_flag=0;
    494  000324  0E00               	movlw	0
    495  000326  6E29               	movwf	_time_flag^0,c	;volatile
    496  000328                     l1788:
    497                           
-   498                           ;main.c: 89:         current = LED_toggle(current);
+   498                           ;main.c: 54:         current = LED_toggle(current);
    499  000328  EE20  F01E         	lfsr	2,main@current
    500  00032C  EE00  F010         	lfsr	0,LED_toggle@current
    501  000330  0E0A               	movlw	10
@@ -530,7 +530,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    511  000348  06E8               	decf	wreg,f,c
    512  00034A  E2FC               	bc	u1951
    513  00034C                     
-   514                           ;main.c: 94:         LEDarray_disp_bin(current.hour);
+   514                           ;main.c: 58:         LEDarray_disp_bin(current.hour);
    515  00034C  5023               	movf	(main@current+5)^0,w,c
    516  00034E  ECAD  F001         	call	_LEDarray_disp_bin
    517  000352  EF3E  F001         	goto	l37
@@ -1841,7 +1841,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1764                           
   1765 ;; *************** function _LED_toggle *****************
   1766 ;; Defined at:
-  1767 ;;		line 28 in file "LED.c"
+  1767 ;;		line 29 in file "LED.c"
   1768 ;; Parameters:    Size  Location     Type
   1769 ;;  current        11   15[COMRAM] struct .
   1770 ;; Auto vars:     Size  Location     Type
@@ -1881,7 +1881,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1799  0007EA                     _LED_toggle:
   1800                           	callstack 27
   1801  0007EA                     
-  1802                           ;LED.c: 29:     if (current.hour==1 && current.minute==0 && current.second==0) {
+  1802                           ;LED.c: 30:     if (current.hour==1 && current.minute==0 && current.second==0) {
   1803  0007EA  0415               	decf	(LED_toggle@current+5)^0,w,c
   1804  0007EC  A4D8               	btfss	status,2,c
   1805  0007EE  EFFB  F003         	goto	u1641
@@ -1904,14 +1904,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1822  000816  EF12  F004         	goto	l1704
   1823  00081A                     u1660:
   1824  00081A                     
-  1825                           ;LED.c: 30:         PIE2bits.C1IE = 0;
+  1825                           ;LED.c: 31:         PIE2bits.C1IE = 0;
   1826  00081A  010E               	movlb	14	; () banked
   1827  00081C  912B               	bcf	43,0,b	;volatile
   1828                           
-  1829                           ;LED.c: 31:         LATDbits.LATD7 = 0;
+  1829                           ;LED.c: 32:         LATDbits.LATD7 = 0;
   1830  00081E  9E7C               	bcf	124,7,c	;volatile
   1831                           
-  1832                           ;LED.c: 32:     } else if (current.hour==5 && current.minute==0 && current.second==0) {
+  1832                           ;LED.c: 33:     } else if (current.hour==5 && current.minute==0 && current.second==0) {
   1833  000820  EF4D  F004         	goto	l1718
   1834  000824                     l1704:
   1835  000824  0E05               	movlw	5
@@ -1937,15 +1937,15 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1855  000852  EF4D  F004         	goto	l1718
   1856  000856                     u1690:
   1857  000856                     
-  1858                           ;LED.c: 33:         PIE2bits.C1IE = 1;
+  1858                           ;LED.c: 34:         PIE2bits.C1IE = 1;
   1859  000856  010E               	movlb	14	; () banked
   1860  000858  812B               	bsf	43,0,b	;volatile
   1861  00085A                     
   1862                           ; BSR set to: 14
-  1863                           ;LED.c: 34:         if (ADC_getval()>222) {LATDbits.LATD7 = 1;}
+  1863                           ;LED.c: 35:         if (ADC_getval()>=222) {LATDbits.LATD7 = 1;}
   1864  00085A  ECBA  F005         	call	_ADC_getval	;wreg free
   1865  00085E  6E1B               	movwf	??_LED_toggle^0,c
-  1866  000860  0EDE               	movlw	222
+  1866  000860  0EDD               	movlw	221
   1867  000862  641B               	cpfsgt	??_LED_toggle^0,c
   1868  000864  EF36  F004         	goto	u1701
   1869  000868  EF38  F004         	goto	u1700
@@ -1971,7 +1971,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1889  000898  E2FC               	bc	u1721
   1890  00089A                     l1718:
   1891                           
-  1892                           ;LED.c: 38:     return current;
+  1892                           ;LED.c: 39:     return current;
   1893  00089A  EE20  F010         	lfsr	2,LED_toggle@current
   1894  00089E  EE00  F010         	lfsr	0,?_LED_toggle
   1895  0008A2  0E0A               	movlw	10
@@ -2048,7 +2048,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1961                           
   1962 ;; *************** function _LED2_init *****************
   1963 ;; Defined at:
-  1964 ;;		line 22 in file "LED.c"
+  1964 ;;		line 23 in file "LED.c"
   1965 ;; Parameters:    Size  Location     Type
   1966 ;;		None
   1967 ;; Auto vars:     Size  Location     Type
@@ -2087,10 +2087,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1995  000BBE                     _LED2_init:
   1996                           	callstack 28
   1997  000BBE                     
-  1998                           ;LED.c: 24:     LATHbits.LATH3 = 0;
-  1999  000BBE  9680               	bcf	128,3,c	;volatile
+  1998                           ;LED.c: 25:     LATHbits.LATH3 = 1;
+  1999  000BBE  8680               	bsf	128,3,c	;volatile
   2000                           
-  2001                           ;LED.c: 25:     TRISHbits.TRISH3 = 0;
+  2001                           ;LED.c: 26:     TRISHbits.TRISH3 = 0;
   2002  000BC0  9688               	bcf	136,3,c	;volatile
   2003  000BC2  0012               	return		;funcret
   2004  000BC4                     __end_of_LED2_init:
@@ -2098,7 +2098,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2006                           
   2007 ;; *************** function _LED1_init *****************
   2008 ;; Defined at:
-  2009 ;;		line 11 in file "LED.c"
+  2009 ;;		line 12 in file "LED.c"
   2010 ;; Parameters:    Size  Location     Type
   2011 ;;  current        11    5[COMRAM] struct .
   2012 ;; Auto vars:     Size  Location     Type
@@ -2137,10 +2137,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2040  000A12                     _LED1_init:
   2041                           	callstack 27
   2042  000A12                     
-  2043                           ;LED.c: 13:     if ((ADC_getval()>222) && (current.hour<1||current.hour>=5)) {
+  2043                           ;LED.c: 14:     if ((ADC_getval()>=222) && (current.hour<1||current.hour>=5)) {
   2044  000A12  ECBA  F005         	call	_ADC_getval	;wreg free
   2045  000A16  6E11               	movwf	??_LED1_init^0,c
-  2046  000A18  0EDE               	movlw	222
+  2046  000A18  0EDD               	movlw	221
   2047  000A1A  6411               	cpfsgt	??_LED1_init^0,c
   2048  000A1C  EF12  F005         	goto	u1471
   2049  000A20  EF14  F005         	goto	u1470
@@ -2167,18 +2167,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2070  000A50                     u1490:
   2071  000A50                     l243:
   2072                           
-  2073                           ;LED.c: 14:         LATDbits.LATD7 = 1;
+  2073                           ;LED.c: 15:         LATDbits.LATD7 = 1;
   2074  000A50  8E7C               	bsf	124,7,c	;volatile
   2075                           
-  2076                           ;LED.c: 15:     } else {
+  2076                           ;LED.c: 16:     } else {
   2077  000A52  EF2C  F005         	goto	l244
   2078  000A56                     l241:
   2079                           
-  2080                           ;LED.c: 16:         LATDbits.LATD7 = 0;
+  2080                           ;LED.c: 17:         LATDbits.LATD7 = 0;
   2081  000A56  9E7C               	bcf	124,7,c	;volatile
   2082  000A58                     l244:
   2083                           
-  2084                           ;LED.c: 19:     TRISDbits.TRISD7 = 0;
+  2084                           ;LED.c: 20:     TRISDbits.TRISD7 = 0;
   2085  000A58  9E84               	bcf	132,7,c	;volatile
   2086  000A5A  0012               	return		;funcret
   2087  000A5C                     __end_of_LED1_init:
@@ -3003,7 +3003,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2859                           
   2860 ;; *************** function _LowISR *****************
   2861 ;; Defined at:
-  2862 ;;		line 67 in file "interrupts.c"
+  2862 ;;		line 47 in file "interrupts.c"
   2863 ;; Parameters:    Size  Location     Type
   2864 ;;		None
   2865 ;; Auto vars:     Size  Location     Type
@@ -3049,7 +3049,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2900  00001E  CFE8 F003          	movff	wreg,??_LowISR+1
   2901  000022  CFE0 F004          	movff	bsr,??_LowISR+2
   2902  000026                     
-  2903                           ;interrupts.c: 69:     if (PIR0bits.TMR0IF) {
+  2903                           ;interrupts.c: 49:     if (PIR0bits.TMR0IF) {
   2904  000026  010E               	movlb	14	; () banked
   2905  000028  AB33               	btfss	51,5,b	;volatile
   2906  00002A  EF19  F000         	goto	i1u200_21
@@ -3059,20 +3059,20 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2910  000036                     i1u200_20:
   2911  000036                     
   2912                           ; BSR set to: 14
-  2913                           ;interrupts.c: 70:         TMR0H = 0b11101110;
+  2913                           ;interrupts.c: 50:         TMR0H = 0b11101110;
   2914  000036  0EEE               	movlw	238
   2915  000038  6ED4               	movwf	212,c	;volatile
   2916                           
-  2917                           ;interrupts.c: 71:         TMR0L = 0b10100011;
+  2917                           ;interrupts.c: 51:         TMR0L = 0b10100011;
   2918  00003A  0EA3               	movlw	163
   2919  00003C  6ED3               	movwf	211,c	;volatile
   2920                           
-  2921                           ;interrupts.c: 73:         time_flag = 1;
+  2921                           ;interrupts.c: 53:         time_flag = 1;
   2922  00003E  0E01               	movlw	1
   2923  000040  6E29               	movwf	_time_flag^0,c	;volatile
   2924  000042                     
   2925                           ; BSR set to: 14
-  2926                           ;interrupts.c: 74:         PIR0bits.TMR0IF = 0;
+  2926                           ;interrupts.c: 54:         PIR0bits.TMR0IF = 0;
   2927  000042  9B33               	bcf	51,5,b	;volatile
   2928  000044                     i1l172:
   2929                           
@@ -3832,7 +3832,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Nov 08 17:49:47 2021
+Symbol Table                                                                                   Tue Nov 09 01:37:56 2021
 
                                  l37 027C                                   l62 0B76  
                                  l64 0B84                                   l65 0B8A  

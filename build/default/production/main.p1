@@ -10,11 +10,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./comparator.h
 [; ;./comparator.h: 11: void Comp1_init(void);
 [v _Comp1_init `(v ~T0 @X0 0 ef ]
-"11 ./timers.h
-[; ;./timers.h: 11: void Timer0_init(void);
+"22 ./timers.h
+[; ;./timers.h: 22: void Timer0_init(void);
 [v _Timer0_init `(v ~T0 @X0 0 ef ]
-"11 ./interrupts.h
-[; ;./interrupts.h: 11: void Interrupts_init(dateandtime current);
+"20 ./interrupts.h
+[; ;./interrupts.h: 20: void Interrupts_init(dateandtime current);
 [v _Interrupts_init `(v ~T0 @X0 0 ef1`S2019 ]
 "12 ./LED.h
 [; ;./LED.h: 12: void LED1_init(dateandtime current);
@@ -28,20 +28,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./LCD.h
 [; ;./LCD.h: 22: void LCD_init(void);
 [v _LCD_init `(v ~T0 @X0 0 ef ]
-"70 main.c
-[; ;main.c: 70:     extern volatile unsigned char sunrise_flag;
+"35 main.c
+[; ;main.c: 35:     extern volatile unsigned char sunrise_flag;
 [v _sunrise_flag `Vuc ~T0 @X0 0 e ]
 "17 ./dateandtime.h
 [; ;./dateandtime.h: 17: dateandtime sunrise(dateandtime current);
 [v _sunrise `(S2019 ~T0 @X0 0 ef1`S2019 ]
-"71 main.c
-[; ;main.c: 71:     extern volatile unsigned char sunset_flag;
+"36 main.c
+[; ;main.c: 36:     extern volatile unsigned char sunset_flag;
 [v _sunset_flag `Vuc ~T0 @X0 0 e ]
 "18 ./dateandtime.h
 [; ;./dateandtime.h: 18: dateandtime sun_sync(dateandtime current);
 [v _sun_sync `(S2019 ~T0 @X0 0 ef1`S2019 ]
-"72 main.c
-[; ;main.c: 72:     extern volatile unsigned char time_flag;
+"37 main.c
+[; ;main.c: 37:     extern volatile unsigned char time_flag;
 [v _time_flag `Vuc ~T0 @X0 0 e ]
 "14 ./dateandtime.h
 [; ;./dateandtime.h: 14: dateandtime time_incre(dateandtime current);
@@ -52,12 +52,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 ./LEDarray.h
 [; ;./LEDarray.h: 12: void LEDarray_disp_bin(signed char number);
 [v _LEDarray_disp_bin `(v ~T0 @X0 0 ef1`c ]
-"5 main.c
-[p x FEXTOSC  =  HS          ]
-"6
-[p x RSTOSC  =  EXTOSC_4PLL  ]
-"13
-[p x WDTE  =  OFF            ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2032,129 +2026,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"10 ./main.h
+[p x FEXTOSC  =  HS          ]
+"11
+[p x RSTOSC  =  EXTOSC_4PLL  ]
+"18
+[p x WDTE  =  OFF            ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42 main.c
-[; ;main.c: 42: void main(void) {
+"7 main.c
+[; ;main.c: 7: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"47
-[; ;main.c: 47:     dateandtime current;
+"12
+[; ;main.c: 12:     dateandtime current;
 [v _current `S2019 ~T0 @X0 1 a ]
-"48
-[; ;main.c: 48:     current.year = 2021;
+"13
+[; ;main.c: 13:     current.year = 2021;
 [e = . _current 0 -> 2021 `i ]
-"49
-[; ;main.c: 49:     current.month = 11;
+"14
+[; ;main.c: 14:     current.month = 11;
 [e = . _current 1 -> -> 11 `i `c ]
-"50
-[; ;main.c: 50:     current.date = 9;
+"15
+[; ;main.c: 15:     current.date = 9;
 [e = . _current 2 -> -> 9 `i `c ]
-"51
-[; ;main.c: 51:     current.day = 2;
+"16
+[; ;main.c: 16:     current.day = 2;
 [e = . _current 3 -> -> 2 `i `c ]
-"52
-[; ;main.c: 52:     current.hour = 7;
+"17
+[; ;main.c: 17:     current.hour = 7;
 [e = . _current 4 -> -> 7 `i `c ]
-"53
-[; ;main.c: 53:     current.minute = 30;
+"18
+[; ;main.c: 18:     current.minute = 30;
 [e = . _current 5 -> -> 30 `i `c ]
-"54
-[; ;main.c: 54:     current.second = 0;
+"19
+[; ;main.c: 19:     current.second = 0;
 [e = . _current 6 -> -> 0 `i `c ]
-"55
-[; ;main.c: 55:     current.sunrise_hour = 7;
+"20
+[; ;main.c: 20:     current.sunrise_hour = 7;
 [e = . _current 7 -> -> 7 `i `c ]
-"56
-[; ;main.c: 56:     current.sunrise_minute = 0;
+"21
+[; ;main.c: 21:     current.sunrise_minute = 0;
 [e = . _current 8 -> -> 0 `i `c ]
-"57
-[; ;main.c: 57:     current.sunrise_second = 0;
+"22
+[; ;main.c: 22:     current.sunrise_second = 0;
 [e = . _current 9 -> -> 0 `i `c ]
-"60
-[; ;main.c: 60:     ADC_init();
+"25
+[; ;main.c: 25:     ADC_init();
 [e ( _ADC_init ..  ]
-"61
-[; ;main.c: 61:     Comp1_init();
+"26
+[; ;main.c: 26:     Comp1_init();
 [e ( _Comp1_init ..  ]
-"62
-[; ;main.c: 62:     Timer0_init();
+"27
+[; ;main.c: 27:     Timer0_init();
 [e ( _Timer0_init ..  ]
-"63
-[; ;main.c: 63:     Interrupts_init(current);
+"28
+[; ;main.c: 28:     Interrupts_init(current);
 [e ( _Interrupts_init (1 _current ]
-"64
-[; ;main.c: 64:     LED1_init(current);
+"29
+[; ;main.c: 29:     LED1_init(current);
 [e ( _LED1_init (1 _current ]
-"65
-[; ;main.c: 65:     LED2_init();
+"30
+[; ;main.c: 30:     LED2_init();
 [e ( _LED2_init ..  ]
-"66
-[; ;main.c: 66:     LEDarray_init();
+"31
+[; ;main.c: 31:     LEDarray_init();
 [e ( _LEDarray_init ..  ]
-"67
-[; ;main.c: 67:     LCD_init();
+"32
+[; ;main.c: 32:     LCD_init();
 [e ( _LCD_init ..  ]
-"75
-[; ;main.c: 75:     while (1) {
+"40
+[; ;main.c: 40:     while (1) {
 [e :U 2022 ]
 {
-"76
-[; ;main.c: 76:         if (sunrise_flag==1) {
+"41
+[; ;main.c: 41:         if (sunrise_flag==1) {
 [e $ ! == -> _sunrise_flag `i -> 1 `i 2024  ]
 {
-"77
-[; ;main.c: 77:             current=sunrise(current);
+"42
+[; ;main.c: 42:             current=sunrise(current);
 [e = _current ( _sunrise (1 _current ]
-"78
-[; ;main.c: 78:             sunrise_flag=0;
+"43
+[; ;main.c: 43:             sunrise_flag=0;
 [e = _sunrise_flag -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:         } else if (sunset_flag==1) {
+"44
+[; ;main.c: 44:         } else if (sunset_flag==1) {
 }
 [e $U 2025  ]
 [e :U 2024 ]
 [e $ ! == -> _sunset_flag `i -> 1 `i 2026  ]
 {
-"80
-[; ;main.c: 80:             current=sun_sync(current);
+"45
+[; ;main.c: 45:             current=sun_sync(current);
 [e = _current ( _sun_sync (1 _current ]
-"81
-[; ;main.c: 81:             sunset_flag=0;
+"46
+[; ;main.c: 46:             sunset_flag=0;
 [e = _sunset_flag -> -> 0 `i `uc ]
-"82
-[; ;main.c: 82:         }
+"47
+[; ;main.c: 47:         }
 }
 [e :U 2026 ]
 [e :U 2025 ]
-"84
-[; ;main.c: 84:         if (time_flag==1) {
+"49
+[; ;main.c: 49:         if (time_flag==1) {
 [e $ ! == -> _time_flag `i -> 1 `i 2027  ]
 {
-"85
-[; ;main.c: 85:             current=time_incre(current);
+"50
+[; ;main.c: 50:             current=time_incre(current);
 [e = _current ( _time_incre (1 _current ]
-"86
-[; ;main.c: 86:             time_flag=0;
+"51
+[; ;main.c: 51:             time_flag=0;
 [e = _time_flag -> -> 0 `i `uc ]
-"87
-[; ;main.c: 87:         }
+"52
+[; ;main.c: 52:         }
 }
 [e :U 2027 ]
-"89
-[; ;main.c: 89:         current = LED_toggle(current);
+"54
+[; ;main.c: 54:         current = LED_toggle(current);
 [e = _current ( _LED_toggle (1 _current ]
-"94
-[; ;main.c: 94:         LEDarray_disp_bin(current.hour);
+"58
+[; ;main.c: 58:         LEDarray_disp_bin(current.hour);
 [e ( _LEDarray_disp_bin (1 . _current 4 ]
-"95
-[; ;main.c: 95:     }
+"59
+[; ;main.c: 59:     }
 }
 [e :U 2021 ]
 [e $U 2022  ]
 [e :U 2023 ]
-"96
-[; ;main.c: 96: }
+"60
+[; ;main.c: 60: }
 [e :UE 2020 ]
 }

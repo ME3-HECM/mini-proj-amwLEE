@@ -2066,107 +2066,107 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40981
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 40981: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 LED.c
-[; ;LED.c: 11: void LED1_init(dateandtime current) {
+"12 LED.c
+[; ;LED.c: 12: void LED1_init(dateandtime current) {
 [v _LED1_init `(v ~T0 @X0 1 ef1`S2019 ]
 {
 [e :U _LED1_init ]
 [v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
-"13
-[; ;LED.c: 13:     if ((ADC_getval()>222) && (current.hour<1||current.hour>=5)) {
-[e $ ! && > -> ( _ADC_getval ..  `i -> 222 `i || < -> . _current 4 `i -> 1 `i >= -> . _current 4 `i -> 5 `i 2021  ]
-{
 "14
-[; ;LED.c: 14:         LATDbits.LATD7 = 1;
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+[; ;LED.c: 14:     if ((ADC_getval()>=222) && (current.hour<1||current.hour>=5)) {
+[e $ ! && >= -> ( _ADC_getval ..  `i -> 222 `i || < -> . _current 4 `i -> 1 `i >= -> . _current 4 `i -> 5 `i 2021  ]
+{
 "15
-[; ;LED.c: 15:     } else {
+[; ;LED.c: 15:         LATDbits.LATD7 = 1;
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+"16
+[; ;LED.c: 16:     } else {
 }
 [e $U 2022  ]
 [e :U 2021 ]
 {
-"16
-[; ;LED.c: 16:         LATDbits.LATD7 = 0;
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
 "17
-[; ;LED.c: 17:     }
+[; ;LED.c: 17:         LATDbits.LATD7 = 0;
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"18
+[; ;LED.c: 18:     }
 }
 [e :U 2022 ]
-"19
-[; ;LED.c: 19:     TRISDbits.TRISD7 = 0;
-[e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
 "20
-[; ;LED.c: 20: }
+[; ;LED.c: 20:     TRISDbits.TRISD7 = 0;
+[e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
+"21
+[; ;LED.c: 21: }
 [e :UE 2020 ]
 }
-"22
-[; ;LED.c: 22: void LED2_init(void) {
+"23
+[; ;LED.c: 23: void LED2_init(void) {
 [v _LED2_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _LED2_init ]
 [f ]
-"24
-[; ;LED.c: 24:     LATHbits.LATH3 = 0;
-[e = . . _LATHbits 0 3 -> -> 0 `i `uc ]
 "25
-[; ;LED.c: 25:     TRISHbits.TRISH3 = 0;
-[e = . . _TRISHbits 0 3 -> -> 0 `i `uc ]
+[; ;LED.c: 25:     LATHbits.LATH3 = 1;
+[e = . . _LATHbits 0 3 -> -> 1 `i `uc ]
 "26
-[; ;LED.c: 26: }
+[; ;LED.c: 26:     TRISHbits.TRISH3 = 0;
+[e = . . _TRISHbits 0 3 -> -> 0 `i `uc ]
+"27
+[; ;LED.c: 27: }
 [e :UE 2023 ]
 }
-"28
-[; ;LED.c: 28: dateandtime LED_toggle (dateandtime current) {
+"29
+[; ;LED.c: 29: dateandtime LED_toggle (dateandtime current) {
 [v _LED_toggle `(S2019 ~T0 @X0 1 ef1`S2019 ]
 {
 [e :U _LED_toggle ]
 [v _current `S2019 ~T0 @X0 1 r1 ]
 [f ]
-"29
-[; ;LED.c: 29:     if (current.hour==1 && current.minute==0 && current.second==0) {
+"30
+[; ;LED.c: 30:     if (current.hour==1 && current.minute==0 && current.second==0) {
 [e $ ! && && == -> . _current 4 `i -> 1 `i == -> . _current 5 `i -> 0 `i == -> . _current 6 `i -> 0 `i 2025  ]
 {
-"30
-[; ;LED.c: 30:         PIE2bits.C1IE = 0;
-[e = . . _PIE2bits 0 0 -> -> 0 `i `uc ]
 "31
-[; ;LED.c: 31:         LATDbits.LATD7 = 0;
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+[; ;LED.c: 31:         PIE2bits.C1IE = 0;
+[e = . . _PIE2bits 0 0 -> -> 0 `i `uc ]
 "32
-[; ;LED.c: 32:     } else if (current.hour==5 && current.minute==0 && current.second==0) {
+[; ;LED.c: 32:         LATDbits.LATD7 = 0;
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"33
+[; ;LED.c: 33:     } else if (current.hour==5 && current.minute==0 && current.second==0) {
 }
 [e $U 2026  ]
 [e :U 2025 ]
 [e $ ! && && == -> . _current 4 `i -> 5 `i == -> . _current 5 `i -> 0 `i == -> . _current 6 `i -> 0 `i 2027  ]
 {
-"33
-[; ;LED.c: 33:         PIE2bits.C1IE = 1;
-[e = . . _PIE2bits 0 0 -> -> 1 `i `uc ]
 "34
-[; ;LED.c: 34:         if (ADC_getval()>222) {LATDbits.LATD7 = 1;}
-[e $ ! > -> ( _ADC_getval ..  `i -> 222 `i 2028  ]
+[; ;LED.c: 34:         PIE2bits.C1IE = 1;
+[e = . . _PIE2bits 0 0 -> -> 1 `i `uc ]
+"35
+[; ;LED.c: 35:         if (ADC_getval()>=222) {LATDbits.LATD7 = 1;}
+[e $ ! >= -> ( _ADC_getval ..  `i -> 222 `i 2028  ]
 {
 [e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
 }
 [e $U 2029  ]
-"35
-[; ;LED.c: 35:         else {current=sunrise(current);}
+"36
+[; ;LED.c: 36:         else {current=sunrise(current);}
 [e :U 2028 ]
 {
 [e = _current ( _sunrise (1 _current ]
 }
 [e :U 2029 ]
-"36
-[; ;LED.c: 36:     }
+"37
+[; ;LED.c: 37:     }
 }
 [e :U 2027 ]
 [e :U 2026 ]
-"38
-[; ;LED.c: 38:     return current;
+"39
+[; ;LED.c: 39:     return current;
 [e ) _current ]
 [e $UE 2024  ]
-"39
-[; ;LED.c: 39: }
+"40
+[; ;LED.c: 40: }
 [e :UE 2024 ]
 }

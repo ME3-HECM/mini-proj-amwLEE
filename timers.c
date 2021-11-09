@@ -30,7 +30,7 @@ void Timer0_init(void) {
  void Timer0_init(void) {
     T0CON1bits.T0CS=0b010;      // Fosc/4 (see datasheet pg 354)
     T0CON1bits.T0ASYNC=1;       // Needed to ensure correct operation when Fosc/4 used as clock source (see datasheet errata)
-    T0CON1bits.T0CKPS=0b0000;   // Adjust prescaler to 1:256 (see datasheet pg 369, see below for explanations)
+    T0CON1bits.T0CKPS=prescaler;   // Adjust prescaler to 1:256 (see datasheet pg 369, see below for explanations)
     T0CON0bits.T016BIT=1;       // 16 bit mode (see datasheet pg 358)
 	// Calculate required prescaler using T_int=(1/3600)/65535=4*PS/64000000.
     // Thus, we need a prescaler 1:0.0678178751... to get an overflow exactly every 0.000277777 ... second.
@@ -43,7 +43,7 @@ void Timer0_init(void) {
     // Thus, we start the timer at n=65535-((1/3600)/(4*1/64000000))=61090.55556 ~ 61091.
     // Now my device will be 100% accurate for as long as the device is working.
     // Write High reg first, update happens when low reg is written to
-    TMR0H=0b11101110;           // 16-bit Timer 0 most significant byte
-    TMR0L=0b10100011;           // 16-bit Timer 0 least significant byte
+    TMR0H=TMR0H_bits;           // 16-bit Timer 0 most significant byte
+    TMR0L=TMR0L_bits;           // 16-bit Timer 0 least significant byte
     T0CON0bits.T0EN=1;          // Start the timer
 }

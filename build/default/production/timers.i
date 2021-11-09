@@ -24178,7 +24178,103 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "timers.c" 2
 
 # 1 "./timers.h" 1
-# 11 "./timers.h"
+
+
+
+
+
+
+# 1 "./main.h" 1
+# 10 "./main.h"
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = EXTOSC_4PLL
+
+
+
+
+
+
+#pragma config WDTE = OFF
+# 34 "./main.h"
+# 1 "./dateandtime.h" 1
+
+
+
+
+
+
+
+
+typedef struct {
+    signed int year;
+    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+} dateandtime;
+
+dateandtime time_incre(dateandtime current);
+dateandtime daylightsavingstime_toggle(dateandtime current);
+dateandtime date_check(dateandtime current);
+dateandtime sunrise(dateandtime current);
+dateandtime sun_sync(dateandtime current);
+# 34 "./main.h" 2
+
+# 1 "./ADC.h" 1
+# 10 "./ADC.h"
+void ADC_init(void);
+unsigned char ADC_getval(void);
+# 35 "./main.h" 2
+
+# 1 "./comparator.h" 1
+# 10 "./comparator.h"
+void DAC_init(void);
+void Comp1_init(void);
+# 36 "./main.h" 2
+
+# 1 "./timers.h" 1
+# 37 "./main.h" 2
+
+# 1 "./interrupts.h" 1
+
+
+
+
+
+
+
+# 1 "./main.h" 1
+# 8 "./interrupts.h" 2
+# 20 "./interrupts.h"
+void Interrupts_init(dateandtime current);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+void __attribute__((picinterrupt(("low_priority")))) LowISR();
+# 38 "./main.h" 2
+
+# 1 "./LED.h" 1
+# 12 "./LED.h"
+void LED1_init(dateandtime current);
+void LED2_init(void);
+dateandtime LED_toggle (dateandtime current);
+# 39 "./main.h" 2
+
+# 1 "./LEDarray.h" 1
+# 11 "./LEDarray.h"
+void LEDarray_init(void);
+void LEDarray_disp_bin(signed char number);
+# 40 "./main.h" 2
+
+# 1 "./LCD.h" 1
+# 19 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 41 "./main.h" 2
+# 7 "./timers.h" 2
+# 22 "./timers.h"
 void Timer0_init(void);
 # 2 "timers.c" 2
 # 30 "timers.c"

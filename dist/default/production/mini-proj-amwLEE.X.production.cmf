@@ -43,7 +43,7 @@ temp COMRAM 1 2C 2C 1 1
 intcode CODE 0 8 8 6 1
 bssCOMRAM COMRAM 1 29 29 3 1
 config CONFIG 4 300000 300000 C 1
-$C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+$C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 idloc IDLOC 5 200000 200000 10 1
 init CODE 0 54 54 4 1
 reset_vec CODE 0 0 0 4 1
@@ -97,15 +97,15 @@ MEDIUMCONST 10E00-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\mini-proj-amwLEE.X.production.o
-18 intcodelo CODE >16105:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-18 intcodelo CODE >67:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-26 intcodelo CODE >69:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-36 intcodelo CODE >70:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-3A intcodelo CODE >71:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-3E intcodelo CODE >73:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-42 intcodelo CODE >74:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-44 intcodelo CODE >76:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
-8 intcode CODE >16199:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
+18 intcodelo CODE >16105:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+18 intcodelo CODE >47:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+26 intcodelo CODE >49:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+36 intcodelo CODE >50:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+3A intcodelo CODE >51:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+3E intcodelo CODE >53:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+42 intcodelo CODE >54:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+44 intcodelo CODE >56:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
+8 intcode CODE >16199:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
 8 intcode CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 9BE intcode_body CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 9BE intcode_body CODE >32:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
@@ -205,34 +205,34 @@ B76 text13 CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\ADC.c
 B84 text13 CODE >31:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\ADC.c
 B88 text13 CODE >34:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\ADC.c
 B8A text13 CODE >35:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\ADC.c
-A12 text12 CODE >11:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A12 text12 CODE >13:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A50 text12 CODE >14:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A52 text12 CODE >15:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A56 text12 CODE >16:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A58 text12 CODE >17:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A58 text12 CODE >19:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-A5A text12 CODE >20:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-BBE text11 CODE >22:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-BBE text11 CODE >24:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-BC0 text11 CODE >25:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-BC2 text11 CODE >26:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A12 text12 CODE >12:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A12 text12 CODE >14:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A50 text12 CODE >15:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A52 text12 CODE >16:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A56 text12 CODE >17:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A58 text12 CODE >18:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A58 text12 CODE >20:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+A5A text12 CODE >21:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+BBE text11 CODE >23:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+BBE text11 CODE >25:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+BC0 text11 CODE >26:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+BC2 text11 CODE >27:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 B1E text10 CODE >74:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 B1E text10 CODE >75:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 B22 text10 CODE >76:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 B26 text10 CODE >77:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 B2A text10 CODE >79:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 B3C text10 CODE >80:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-7EA text9 CODE >28:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 7EA text9 CODE >29:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-81A text9 CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-81E text9 CODE >31:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-820 text9 CODE >32:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-856 text9 CODE >33:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-85A text9 CODE >34:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-876 text9 CODE >35:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-89A text9 CODE >38:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
-8AC text9 CODE >39:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+7EA text9 CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+81A text9 CODE >31:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+81E text9 CODE >32:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+820 text9 CODE >33:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+856 text9 CODE >34:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+85A text9 CODE >35:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+876 text9 CODE >36:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+89A text9 CODE >39:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
+8AC text9 CODE >40:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 35A text8 CODE >38:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LEDarray.c
 35C text8 CODE >43:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LEDarray.c
 37C text8 CODE >44:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LEDarray.c
@@ -351,48 +351,48 @@ B58 text6 CODE >49:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\timers.c
 562 text1 CODE >64:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 562 text1 CODE >67:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 574 text1 CODE >68:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
-20C text0 CODE >42:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-20C text0 CODE >48:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-214 text0 CODE >49:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-218 text0 CODE >50:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-21C text0 CODE >51:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-220 text0 CODE >52:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-224 text0 CODE >53:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-228 text0 CODE >54:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-22C text0 CODE >55:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-230 text0 CODE >56:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-234 text0 CODE >57:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-238 text0 CODE >60:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-23C text0 CODE >61:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-240 text0 CODE >62:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-244 text0 CODE >63:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-25A text0 CODE >64:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-270 text0 CODE >65:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-274 text0 CODE >66:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-278 text0 CODE >67:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-27C text0 CODE >75:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-27C text0 CODE >76:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-28C text0 CODE >77:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-2B0 text0 CODE >78:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-2B4 text0 CODE >79:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-2C8 text0 CODE >80:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-2EC text0 CODE >81:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-2F0 text0 CODE >84:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-300 text0 CODE >85:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-324 text0 CODE >86:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-328 text0 CODE >89:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-34C text0 CODE >94:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
-BA0 cinit CODE >12076:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA0 cinit CODE >12078:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA0 cinit CODE >12081:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA0 cinit CODE >12099:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA2 cinit CODE >12100:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA4 cinit CODE >12101:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA6 cinit CODE >12107:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA6 cinit CODE >12109:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BA8 cinit CODE >12110:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BAA cinit CODE >12111:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
-BAC cinit CODE >12112:C:\Users\amand\AppData\Local\Temp\xcAsl04.s
+20C text0 CODE >7:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+20C text0 CODE >13:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+214 text0 CODE >14:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+218 text0 CODE >15:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+21C text0 CODE >16:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+220 text0 CODE >17:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+224 text0 CODE >18:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+228 text0 CODE >19:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+22C text0 CODE >20:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+230 text0 CODE >21:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+234 text0 CODE >22:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+238 text0 CODE >25:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+23C text0 CODE >26:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+240 text0 CODE >27:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+244 text0 CODE >28:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+25A text0 CODE >29:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+270 text0 CODE >30:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+274 text0 CODE >31:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+278 text0 CODE >32:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+27C text0 CODE >40:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+27C text0 CODE >41:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+28C text0 CODE >42:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+2B0 text0 CODE >43:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+2B4 text0 CODE >44:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+2C8 text0 CODE >45:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+2EC text0 CODE >46:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+2F0 text0 CODE >49:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+300 text0 CODE >50:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+324 text0 CODE >51:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+328 text0 CODE >54:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+34C text0 CODE >58:C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
+BA0 cinit CODE >12076:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA0 cinit CODE >12078:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA0 cinit CODE >12081:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA0 cinit CODE >12099:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA2 cinit CODE >12100:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA4 cinit CODE >12101:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA6 cinit CODE >12107:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA6 cinit CODE >12109:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BA8 cinit CODE >12110:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BAA cinit CODE >12111:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
+BAC cinit CODE >12112:C:\Users\amand\AppData\Local\Temp\xcAshu4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -413,14 +413,14 @@ __Hspace_1 2D 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __Hspace_4 60000C 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\mini-proj-amwLEE.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\mini-proj-amwLEE.X.production.o
 __end_of_LowISR 54 0 CODE 0 intcodelo dist/default/production\mini-proj-amwLEE.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\mini-proj-amwLEE.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+___sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 _main 20C 0 CODE 0 text0 dist/default/production\mini-proj-amwLEE.X.production.o
 btemp 2C 0 COMRAM 1 temp dist/default/production\mini-proj-amwLEE.X.production.o
-start 54 0 CODE 0 init C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+start 54 0 CODE 0 init C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 daylightsavingstime_toggle@current 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
@@ -434,11 +434,11 @@ ttemp6 30 0 COMRAM 1 temp dist/default/production\mini-proj-amwLEE.X.production.
 ttemp7 34 0 COMRAM 1 temp dist/default/production\mini-proj-amwLEE.X.production.o
 __size_of_ADC_init 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 _LEDarray_init AD2 0 CODE 0 text7 dist/default/production\mini-proj-amwLEE.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-intlevel0 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-intlevel1 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-intlevel2 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-intlevel3 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+__accesstop 60 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+intlevel0 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+intlevel1 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+intlevel2 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+intlevel3 0 0 CODE 0 text C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __end_of_LCD_init 956 0 CODE 0 text14 dist/default/production\mini-proj-amwLEE.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
 __end_of_DAC_init BA0 0 CODE 0 text20 dist/default/production\mini-proj-amwLEE.X.production.o
@@ -456,8 +456,8 @@ _ADRESH F64 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __size_of_daylightsavingstime_toggle 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __end_of_Interrupts_init A9E 0 CODE 0 text18 dist/default/production\mini-proj-amwLEE.X.production.o
 ___awdiv@dividend 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\mini-proj-amwLEE.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\mini-proj-amwLEE.X.production.o
 _CM1CON0bits ED0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
@@ -497,7 +497,7 @@ _ADREFbits F58 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 _IPR0bits E1F 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 _IPR2bits E21 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 main@current 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+isa$xinst 0 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __size_of_sun_sync 0 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 ADC_getval@tmpval 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
 __end_of_LCD_E_TOG BBE 0 CODE 0 text17 dist/default/production\mini-proj-amwLEE.X.production.o
@@ -542,7 +542,7 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/production\mini-proj-amwLEE.X.production
 __Hbank13 0 0 ABS 0 bank13 dist/default/production\mini-proj-amwLEE.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\mini-proj-amwLEE.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\mini-proj-amwLEE.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __end_of_HighISR A12 0 CODE 0 intcode_body dist/default/production\mini-proj-amwLEE.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\mini-proj-amwLEE.X.production.o
 __Hconfig 30000C 0 CONFIG 4 config dist/default/production\mini-proj-amwLEE.X.production.o
@@ -671,10 +671,10 @@ _LATHbits F80 0 ABS 0 - dist/default/production\mini-proj-amwLEE.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\mini-proj-amwLEE.X.production.o
 sun_sync@solarnoon_hour 18 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\mini-proj-amwLEE.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+isa$std 1 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 LED_toggle@current 10 0 COMRAM 1 cstackCOMRAM dist/default/production\mini-proj-amwLEE.X.production.o
-stackhi DE9 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAsl04.o
-stacklo 60 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+stackhi DE9 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAshu4.o
+stacklo 60 0 ABS 0 - C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\mini-proj-amwLEE.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\mini-proj-amwLEE.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\mini-proj-amwLEE.X.production.o
@@ -726,7 +726,7 @@ __Ltext18 0 0 ABS 0 text18 dist/default/production\mini-proj-amwLEE.X.production
 __Ltext19 0 0 ABS 0 text19 dist/default/production\mini-proj-amwLEE.X.production.o
 __Ltext20 0 0 ABS 0 text20 dist/default/production\mini-proj-amwLEE.X.production.o
 __Ltext21 0 0 ABS 0 text21 dist/default/production\mini-proj-amwLEE.X.production.o
-__ramtop E00 0 RAM 0 ramtop C:\Users\amand\AppData\Local\Temp\xcAsl04.o
+__ramtop E00 0 RAM 0 ramtop C:\Users\amand\AppData\Local\Temp\xcAshu4.o
 _HighISR 8 0 CODE 0 intcode dist/default/production\mini-proj-amwLEE.X.production.o
 __Lpowerup 54 0 CODE 0 powerup dist/default/production\mini-proj-amwLEE.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\mini-proj-amwLEE.X.production.o

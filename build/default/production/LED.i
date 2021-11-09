@@ -24219,17 +24219,10 @@ dateandtime LED_toggle (dateandtime current);
 void ADC_init(void);
 unsigned char ADC_getval(void);
 # 3 "LED.c" 2
-
-
-
-
-
-
-
-
+# 12 "LED.c"
 void LED1_init(dateandtime current) {
 
-    if ((ADC_getval()>222) && (current.hour<1||current.hour>=5)) {
+    if ((ADC_getval()>=222) && (current.hour<1||current.hour>=5)) {
         LATDbits.LATD7 = 1;
     } else {
         LATDbits.LATD7 = 0;
@@ -24240,7 +24233,7 @@ void LED1_init(dateandtime current) {
 
 void LED2_init(void) {
 
-    LATHbits.LATH3 = 0;
+    LATHbits.LATH3 = 1;
     TRISHbits.TRISH3 = 0;
 }
 
@@ -24250,7 +24243,7 @@ dateandtime LED_toggle (dateandtime current) {
         LATDbits.LATD7 = 0;
     } else if (current.hour==5 && current.minute==0 && current.second==0) {
         PIE2bits.C1IE = 1;
-        if (ADC_getval()>222) {LATDbits.LATD7 = 1;}
+        if (ADC_getval()>=222) {LATDbits.LATD7 = 1;}
         else {current=sunrise(current);}
     }
 

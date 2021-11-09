@@ -22,7 +22,7 @@ void LED1_init(dateandtime current) {
 
 void LED2_init(void) {
     // Set up pin for output (connected to LED)
-    LATHbits.LATH3 = 0;             // Set initial output state for LED on RH3 (low/off)
+    LATHbits.LATH3 = 1;             // Set initial output state for LED on RH3 (high/on)
     TRISHbits.TRISH3 = 0;           // Set TRIS value for RH3 pin (output)
 }
 

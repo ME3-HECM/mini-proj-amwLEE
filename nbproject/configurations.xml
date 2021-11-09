@@ -12,6 +12,7 @@
       <itemPath>LCD.h</itemPath>
       <itemPath>LED.h</itemPath>
       <itemPath>dateandtime.h</itemPath>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

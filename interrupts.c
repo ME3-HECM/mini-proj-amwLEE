@@ -39,27 +39,7 @@ void __interrupt(high_priority) HighISR() {
 
 
 /*****************************************************************
- * High priority interrupt service routine
- * Make sure all enabled interrupts are checked and flags cleared
-*****************************************************************/
-/*
-volatile unsigned char time_flag;
-
-void __interrupt(low_priority) LowISR() {
-	// Add your ISR code here i.e. check the flag, do something (i.e. toggle an LED), clear the flag...
-    if (PIR0bits.TMR0IF) {                  // Check the interrupt source
-        TMR0H = 0b1011;                     // Write to TMR0H first (start the timer at 3035 to improve accuracy, see timers.c for explanation)
-        TMR0L = 0b11011011;                 // Then write to TMR0L (start the timer at 3035 to improve accuracy, see timers.c for explanation)
-        
-        time_flag = 1;
-        PIR0bits.TMR0IF = 0;                // Clear the interrupt flag
-    }
-}
- */
-
-
-/*****************************************************************
- * High priority interrupt service routine
+ * Low priority interrupt service routine
  * Make sure all enabled interrupts are checked and flags cleared
 *****************************************************************/
 volatile unsigned char time_flag;
@@ -67,8 +47,8 @@ volatile unsigned char time_flag;
 void __interrupt(low_priority) LowISR() {
 	// Add your ISR code here i.e. check the flag, do something (i.e. toggle an LED), clear the flag...
     if (PIR0bits.TMR0IF) {                  // Check the interrupt source
-        TMR0H = 0b11101110;                 // Write to TMR0H first (start the timer at 3035 to improve accuracy, see timers.c for explanation)
-        TMR0L = 0b10100011;                 // Then write to TMR0L (start the timer at 3035 to improve accuracy, see timers.c for explanation)
+        TMR0H = TMR0H_bits;                 // Write to TMR0H first (start the timer at 3035 to improve accuracy, see timers.c for explanation)
+        TMR0L = TMR0L_bits;                 // Then write to TMR0L (start the timer at 3035 to improve accuracy, see timers.c for explanation)
         
         time_flag = 1;
         PIR0bits.TMR0IF = 0;                // Clear the interrupt flag

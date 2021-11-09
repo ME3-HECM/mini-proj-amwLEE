@@ -7,20 +7,6 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = EXTOSC_4PLL
-
-
-
-
-
-
-#pragma config WDTE = OFF
-# 28 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24189,8 +24175,20 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\\pic\\include\\xc.h" 2 3
-# 28 "main.c" 2
+# 1 "main.c" 2
 
+# 1 "./main.h" 1
+# 10 "./main.h"
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = EXTOSC_4PLL
+
+
+
+
+
+
+#pragma config WDTE = OFF
+# 34 "./main.h"
 # 1 "./dateandtime.h" 1
 
 
@@ -24210,44 +24208,61 @@ dateandtime daylightsavingstime_toggle(dateandtime current);
 dateandtime date_check(dateandtime current);
 dateandtime sunrise(dateandtime current);
 dateandtime sun_sync(dateandtime current);
-# 29 "main.c" 2
+# 34 "./main.h" 2
 
 # 1 "./ADC.h" 1
 # 10 "./ADC.h"
 void ADC_init(void);
 unsigned char ADC_getval(void);
-# 30 "main.c" 2
+# 35 "./main.h" 2
 
 # 1 "./comparator.h" 1
 # 10 "./comparator.h"
 void DAC_init(void);
 void Comp1_init(void);
-# 31 "main.c" 2
+# 36 "./main.h" 2
 
 # 1 "./timers.h" 1
-# 11 "./timers.h"
+
+
+
+
+
+
+# 1 "./main.h" 1
+# 7 "./timers.h" 2
+# 22 "./timers.h"
 void Timer0_init(void);
-# 32 "main.c" 2
+# 37 "./main.h" 2
 
 # 1 "./interrupts.h" 1
-# 11 "./interrupts.h"
+
+
+
+
+
+
+
+# 1 "./main.h" 1
+# 8 "./interrupts.h" 2
+# 20 "./interrupts.h"
 void Interrupts_init(dateandtime current);
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 void __attribute__((picinterrupt(("low_priority")))) LowISR();
-# 33 "main.c" 2
+# 38 "./main.h" 2
 
 # 1 "./LED.h" 1
 # 12 "./LED.h"
 void LED1_init(dateandtime current);
 void LED2_init(void);
 dateandtime LED_toggle (dateandtime current);
-# 34 "main.c" 2
+# 39 "./main.h" 2
 
 # 1 "./LEDarray.h" 1
 # 11 "./LEDarray.h"
 void LEDarray_init(void);
 void LEDarray_disp_bin(signed char number);
-# 35 "main.c" 2
+# 40 "./main.h" 2
 
 # 1 "./LCD.h" 1
 # 19 "./LCD.h"
@@ -24260,8 +24275,8 @@ void LCD_sendstring(char *string);
 void LCD_scroll(void);
 void LCD_clear(void);
 void ADC2String(char *buf, unsigned int number);
-# 36 "main.c" 2
-
+# 41 "./main.h" 2
+# 2 "main.c" 2
 
 
 
@@ -24315,7 +24330,6 @@ void main(void) {
         }
 
         current = LED_toggle(current);
-
 
 
 
