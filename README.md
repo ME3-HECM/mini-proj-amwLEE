@@ -14,8 +14,10 @@
 
 ## Program structure
 My program has been structured as follows:
-1. "main.c/h"
-    This file ...
+1. ```"main.c/h"```
+
+    This file contains the main function.
+
 1. "dateandtime.c/h"
 1. "ADC.c/h"
 1. "comparator.c/h"
