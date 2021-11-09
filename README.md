@@ -18,15 +18,25 @@ My program has been structured as follows:
 
     The header file contains a useful line ```#define _TESTING_MODE``` which allows us to enter a "testing mode", where we pretend that a day lasts 24 seconds (instead of 24 hours). To switch back to the "normal mode", simply comment out this line ```// #define _TESTING_MODE```. We also configure our oscillators and windowed watchdog timer here. All other header files used in this project are included here too. 
 
-    The source file contains our main function. We start by manually inputting the date and time when the device is first programmed. The sunrise time on the day that the device is first programmed can also be manually inputted too if known, or left to the default timing of 07:00:00 if unknown. We then proceed to initialise all our hardware modules. The program then runs indefinitely in an infinite while loop (or more realistically, until the hardware fails). During each iteration:
-    - we check whether the sunrise/sunset flag has been toggled (by our high priority interrupt) and turn the street light off/on as required;
-    - we check whether the time flag has been toggled (by our low priority interrupt) and increment our time for every second that passes by;
-    - we switch off the street light from 1am-5am and disable the high priority interrupt (to prevent accidentally switching on the street light);
-    - we display the current hour in binary on the LED array.
+    The source file contains our main function. We start by manually inputting the date and time when the device is first programmed. The sunrise time on the day that the device is first programmed can also be manually inputted too if known, or left to the default timing of 7am if unknown. We then proceed to initialise all our hardware modules. The program then runs indefinitely in an infinite while loop (or more realistically, until the hardware fails). During each iteration:
+    * we check whether the sunrise/sunset flag has been toggled (by our high priority interrupt) and turn the street light off/on as required;
+    * we check whether the time flag has been toggled (by our low priority interrupt) and increment our time for every second that passes by;
+    * we switch off the street light from 1am-5am and disable the high priority interrupt (to prevent accidentally switching on the street light);
+    * we display the current hour in binary on the LED array.
 
 1. ```"dateandtime.c/h"```
 
-    xx
+    The header file defines a structure ```dateandtime``` which is used throughout the project:
+    ```
+    typedef struct {
+        signed int year;
+        signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
+    } dateandtime;
+    ```
+    
+    The source file contains 2 key functions:
+    * ```time_incre``` which updates our current time every second, functions to check for clock changes due to daylight savings and changes to the date, month and year are also called here;
+    * ```sunrise_sunset``` which synchronises our time with the sun indefinitely.
 
 1. ```"ADC.c/h"```
 
