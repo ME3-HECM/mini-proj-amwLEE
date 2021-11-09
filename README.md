@@ -31,6 +31,9 @@ My hardware has been set up as in Lab 4:
 
 
 ## Demonstration video
+My video demonstrates operation of the street light during daylight savings change of clock (note that the clocks changed on 31 October 2021 (Sunday) at 2am - it turned back 1 hour to 1am):
+- The video begins 
+
 https://youtu.be/aipM7BNAiSA
 
 
@@ -74,23 +77,27 @@ My program has been structured as follows:
 
 1. ```"timers.c/h"```
 
-    xx
+    The header file defines the prescaler values and Timer0 initial bits for both the "testing mode" and "normal mode".
+    
+    The source file initialises Timer0 to be used in the low priority interrupt (to increment out time each second).
 
 1. ```"interrupts.c/h"```
 
-    xx
+    The source file turns on interrupts, and defines:
+    - a high priority interrupt every time sunrise or sunset occurs;
+    - a low priority interrupt every time the timer overflows (1 second has passed).
 
 1. ```"LED.c/h"```
 
-    xx
+    The source file contains functions to initialise LED1 and LED2.
 
 1. ```"LEDarray.c/h"```
 
-    xx
+    The source file contains functions to initialise the LED array.
 
 1. ```"LCD.c/h"```
 
-    xx
+    The source contains functions to initialise the LCD screen.
 
 
 ## Learning outcomes
