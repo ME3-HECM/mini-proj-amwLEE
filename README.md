@@ -16,9 +16,13 @@
 My program has been structured as follows:
 1. ```"main.c/h"```
 
-    ```#define _TESTING_MODE``` in the header file allows us to enter a "testing mode", which pretends that a day lasts 24 seconds.
+    The header file contains a useful line ```#define _TESTING_MODE``` which allows us to enter a "testing mode", where we pretend that a day lasts 24 seconds (instead of 24 hours). To switch back to the "normal mode", simply comment out this line ```// #define _TESTING_MODE```. We also configure our oscillators and windowed watchdog timer here. All other header files used in this project are included here too. 
 
-    The source file contains our main function.
+    The source file contains our main function. We start by manually inputting the date and time when the device is first programmed. The sunrise time on the day that the device is first programmed can also be manually inputted too if known, or left to the default timing of 07:00:00 if unknown. We then proceed to initialise all our hardware modules. The program then runs indefinitely in an infinite while loop (or more realistically, until the hardware fails). During each iteration:
+    - we check whether the sunrise/sunset flag has been toggled (by our high priority interrupt) and turn the street light off/on as required;
+    - we check whether the time flag has been toggled (by our low priority interrupt) and increment our time for every second that passes by;
+    - we switch off the street light from 1am-5am and disable the high priority interrupt (to prevent accidentally switching on the street light);
+    - we display the current hour in binary on the LED array.
 
 1. ```"dateandtime.c/h"```
 
@@ -67,6 +71,10 @@ My program uses the following standard libraries:
 
 ## Hardware setup
 My hardware has been set up as in Lab 4.
+- LED1 (on pin RH3) is used as the street light.
+- LED2 (on pin RF7) is used as the minute indicator (it flashes every minute).
+- The LED array is used as the hour indicator (it displays the hour in binary).
+- The LCD screen is used as the date and time indicator during "testing mode" (it displays the date and time in decimal).
 
 
 ## Demonstration video
