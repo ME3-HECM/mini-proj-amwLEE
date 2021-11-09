@@ -24190,27 +24190,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-# 1 "./dateandtime.h" 1
-# 7 "./LCD.h" 2
-# 20 "./LCD.h"
-void LCD_E_TOG(void);
-void LCD_sendnibble(unsigned char number);
-void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
-void LCD_setline (char line);
-void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
-# 7 "./dateandtime.h" 2
-
 
 
 typedef struct {

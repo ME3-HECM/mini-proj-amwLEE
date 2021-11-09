@@ -115,16 +115,16 @@ void LCD_setline (char line)
 void LCD_sendstring(char *string)
 {
 	// Code here to send a string to LCD using pointers and LCD_sendbyte function
-    //char counter1=0, counter2;              // Initialise counter variables
+    char counter1=0, counter2;              // Initialise counter variables
     while (*string != 0) {                  // While the data pointed to isn't a 0x00 do below (strings in C must end with a NULL byte)
         LCD_sendbyte(*string++,1);          // Send out the current byte pointed to and increment the pointer
-        //counter1++;                         // Count the number of characters in the string
+        counter1++;                         // Count the number of characters in the string
     }
     
-    //for (counter2=0; counter2<(counter1-16); counter2++) {
-    //    __delay_ms(500);                    // Delay so eyes can see change
-    //    LCD_scroll();                       // Scroll text on LCD screen
-    //}
+    for (counter2=0; counter2<(counter1-16); counter2++) {
+        __delay_ms(500);                    // Delay so eyes can see change
+        LCD_scroll();                       // Scroll text on LCD screen
+    }
 }
 
 /***************************************

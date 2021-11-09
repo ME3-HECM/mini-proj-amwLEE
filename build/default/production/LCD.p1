@@ -81,6 +81,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29884
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29884: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF85)));
 [v _TRISEbits `VS1386 ~T0 @X0 0 e@3973 ]
+"26 ./LCD.h
+[; ;./LCD.h: 26: void LCD_scroll(void);
+[v _LCD_scroll `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 54: __asm("PPSLOCK equ 0DEFh");
 [; <" PPSLOCK equ 0DEFh ;# ">
@@ -2329,6 +2332,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116
 [; ;LCD.c: 116: {
 [f ]
+"118
+[; ;LCD.c: 118:     char counter1=0, counter2;
+[v _counter1 `uc ~T0 @X0 1 a ]
+[e = _counter1 -> -> 0 `i `uc ]
+[v _counter2 `uc ~T0 @X0 1 a ]
 "119
 [; ;LCD.c: 119:     while (*string != 0) {
 [e $U 2038  ]
@@ -2337,6 +2345,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "120
 [; ;LCD.c: 120:         LCD_sendbyte(*string++,1);
 [e ( _LCD_sendbyte (2 , -> *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x `uc -> -> 1 `i `uc ]
+"121
+[; ;LCD.c: 121:         counter1++;
+[e ++ _counter1 -> -> 1 `i `uc ]
 "122
 [; ;LCD.c: 122:     }
 }
@@ -2345,6 +2356,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 119:     while (*string != 0) {
 [e $ != -> *U _string `i -> 0 `i 2039  ]
 [e :U 2040 ]
+"124
+[; ;LCD.c: 124:     for (counter2=0; counter2<(counter1-16); counter2++) {
+{
+[e = _counter2 -> -> 0 `i `uc ]
+[e $U 2044  ]
+[e :U 2041 ]
+{
+"125
+[; ;LCD.c: 125:         _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"126
+[; ;LCD.c: 126:         LCD_scroll();
+[e ( _LCD_scroll ..  ]
+"127
+[; ;LCD.c: 127:     }
+}
+[e ++ _counter2 -> -> 1 `i `uc ]
+[e :U 2044 ]
+[e $ < -> _counter2 `i - -> _counter1 `i -> 16 `i 2041  ]
+[e :U 2042 ]
+}
 "128
 [; ;LCD.c: 128: }
 [e :UE 2037 ]
@@ -2365,5 +2397,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 45 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "138
 [; ;LCD.c: 138: }
-[e :UE 2041 ]
+[e :UE 2045 ]
 }

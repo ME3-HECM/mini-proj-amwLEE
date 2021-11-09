@@ -8,6 +8,6 @@
 
 // Function prototypes
 void LEDarray_init(void);
-void LEDarray_disp_bin(char number);
+void LEDarray_disp_bin(signed char number);
 
 #endif	/* _LEDarray_H */

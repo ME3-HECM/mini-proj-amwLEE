@@ -24191,9 +24191,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-# 1 "./LCD.h" 1
-# 7 "./dateandtime.h" 2
-
 
 
 typedef struct {
@@ -24335,16 +24332,16 @@ void LCD_setline (char line)
 void LCD_sendstring(char *string)
 {
 
-
+    char counter1=0, counter2;
     while (*string != 0) {
         LCD_sendbyte(*string++,1);
-
+        counter1++;
     }
 
-
-
-
-
+    for (counter2=0; counter2<(counter1-16); counter2++) {
+        _delay((unsigned long)((500)*(64000000/4000.0)));
+        LCD_scroll();
+    }
 }
 
 

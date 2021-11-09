@@ -24201,27 +24201,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-# 1 "./dateandtime.h" 1
-# 7 "./LCD.h" 2
-# 20 "./LCD.h"
-void LCD_E_TOG(void);
-void LCD_sendnibble(unsigned char number);
-void LCD_sendbyte(unsigned char Byte, char type);
-void LCD_init(void);
-void LCD_setline (char line);
-void LCD_sendstring(char *string);
-void LCD_scroll(void);
-void LCD_clear(void);
-void ADC2String(char *buf, unsigned int number);
-# 7 "./dateandtime.h" 2
-
 
 
 typedef struct {
@@ -24283,8 +24262,21 @@ dateandtime LED_toggle (dateandtime current);
 # 1 "./LEDarray.h" 1
 # 10 "./LEDarray.h"
 void LEDarray_init(void);
-void LEDarray_disp_bin(char number);
+void LEDarray_disp_bin(signed char number);
 # 36 "./main.h" 2
+
+# 1 "./LCD.h" 1
+# 20 "./LCD.h"
+void LCD_E_TOG(void);
+void LCD_sendnibble(unsigned char number);
+void LCD_sendbyte(unsigned char Byte, char type);
+void LCD_init(void);
+void LCD_setline (char line);
+void LCD_sendstring(char *string);
+void LCD_scroll(void);
+void LCD_clear(void);
+void ADC2String(char *buf, unsigned int number);
+# 37 "./main.h" 2
 # 2 "main.c" 2
 
 
@@ -24317,6 +24309,12 @@ void main(void) {
     LED2_init();
     LEDarray_init();
     LCD_init();
+
+
+    char buf2[40];
+    LCD_setline(1);
+    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
+    LCD_sendstring(buf2);
 
 
     while (1) {

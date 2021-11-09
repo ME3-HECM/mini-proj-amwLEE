@@ -1,6 +1,8 @@
 #include <xc.h>
+#include <stdio.h>
 #include "dateandtime.h"
 #include "interrupts.h"
+#include "LCD.h"
 
 /********************
  * Check for daylight savings time
@@ -44,7 +46,13 @@ dateandtime date_check(dateandtime current) {
  *******************************/
 dateandtime time_incre(dateandtime current){
     if (time_flag==1) { // If the timer has just overflowed
-        current.second = current.second+1;    
+        current.second = current.second+1;
+        
+        char buf1[40];
+        LCD_setline(2);
+        sprintf(buf1,"%02d:%02d:%02d",current.hour,current.minute,current.second);
+        LCD_sendstring(buf1);
+        
         if (current.second>59) {
             LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
             current.second = 0;
@@ -56,7 +64,13 @@ dateandtime time_incre(dateandtime current){
                 if (current.hour>23) {
                     current.hour = 0;
                     current.date = current.date+1;
-                    current = date_check(current);                
+                    current = date_check(current);
+                    
+                    char buf2[40];
+                    LCD_setline(1);
+                    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
+                    LCD_sendstring(buf2);
+                    
                     current.day = current.day+1;
                     if (current.day>7) {
                         current.day = 1;
@@ -106,7 +120,9 @@ dateandtime sun_sync(dateandtime current) {
     return current;
 }
 
-
+/*******************
+ * Function to check for sunrise and sunset
+ *****************/
 dateandtime sunrise_sunset(dateandtime current) {
     if (sunrise_flag==1) {                  // If sunrise has just occurred,
     current=sunrise(current);           // update today's sunrise timing in the structure "current"

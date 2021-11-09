@@ -20,7 +20,7 @@ void main(void) {
     current.sunrise_hour = 7;       // The hour that sunrise occurred today (4am==4, ..., 8am==8)
     current.sunrise_minute = 0;     // The minute that sunrise occurred today (0, ..., 59)
     current.sunrise_second = 0;     // The second that sunrise occurred today (0, ..., 59)
-    
+          
     // Call your initialisation functions to set up the hardware modules
     ADC_init();                     // Function to initialise ADC module and set it up to sample on pin RF7
     Comp1_init();                   // Function to set up comparator to compare RF7 to the DAC output voltage
@@ -30,6 +30,12 @@ void main(void) {
     LED2_init();                    // Function to initialise pins to drive LED2 (the minute indicator - flashes every minute)
     LEDarray_init();                // Function to initialise pins to drive the LED array (the hour indicator - displays the hour in binary)
     LCD_init();                     // Function to initialise the LCD after power on (the date and time indicator - displays the date and time digitally on the screen)
+    
+    // Display today's date on
+    char buf2[40];
+    LCD_setline(1);
+    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
+    LCD_sendstring(buf2);
     
     // Infinite while loop (program runs indefinitely - or more realistically, until the hardware fails)
     while (1) {

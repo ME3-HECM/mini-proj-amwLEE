@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"10 ./dateandtime.h
-[; ;./dateandtime.h: 10: typedef struct {
+"9 ./dateandtime.h
+[; ;./dateandtime.h: 9: typedef struct {
 [s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
 [n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "4646 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h

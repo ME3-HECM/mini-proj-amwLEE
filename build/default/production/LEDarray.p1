@@ -2142,11 +2142,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 2019 ]
 }
 "37
-[; ;LEDarray.c: 37: void LEDarray_disp_bin(char number) {
-[v _LEDarray_disp_bin `(v ~T0 @X0 1 ef1`uc ]
+[; ;LEDarray.c: 37: void LEDarray_disp_bin(signed char number) {
+[v _LEDarray_disp_bin `(v ~T0 @X0 1 ef1`c ]
 {
 [e :U _LEDarray_disp_bin ]
-[v _number `uc ~T0 @X0 1 r1 ]
+[v _number `c ~T0 @X0 1 r1 ]
 [f ]
 "40
 [; ;LEDarray.c: 40:     if (number & 0b000000001) {LATGbits.LATG0 = 1;} else {LATGbits.LATG0 = 0;}

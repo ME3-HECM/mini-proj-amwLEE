@@ -34,7 +34,7 @@ void LEDarray_init(void) {
  * LEDarray_disp_bin
  * Function used to display a number on the LED array in binary
  **************************************************************/
-void LEDarray_disp_bin(char number) {
+void LEDarray_disp_bin(signed char number) {
 	// Some code to turn on/off the pins connected to the LED array
 	// If statements and bit masks can be used to determine if a particular pin should be on/off
     if (number & 0b000000001) {LATGbits.LATG0 = 1;} else {LATGbits.LATG0 = 0;}
