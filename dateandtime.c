@@ -58,37 +58,40 @@ dateandtime date_check(dateandtime current) { // Take current date and time as i
  **********************************************************************************************/
 dateandtime time_incre(dateandtime current){ // Take current date and time as input
     
-    if (time_flag==1) {                     // If the timer has just overflowed
-        current.second = current.second+1;  // Increment the second by 1              
-        if (current.second>59) {                // 
-            LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
-            current.second = 0;
-            current.minute = current.minute+1;
-            if (current.minute>59) {
-                current.minute = 0;
-                current.hour = current.hour+1;
-                current = daylightsavingstime_toggle(current);
-                if (current.hour>23) {
-                    current.hour = 0;
-                    current.date = current.date+1;
-                    current = date_check(current);
+    if (time_flag==1) { // If the timer has just overflowed
+        
+        current.second = current.second+1;      // Increment the second by 1              
+        if (current.second>59) {                // If the full minute has passed
+            LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the to indicate a minute
+            current.second = 0;                 // Reset the second to 0
+            
+            current.minute = current.minute+1;  // Increment the minute by 1
+            if (current.minute>59) {            // If the full hour has passed
+                current.minute = 0;             // Reset the minute to 0
+                
+                current.hour = current.hour+1;                  // Increment the hour by 1
+                current = daylightsavingstime_toggle(current);  // Check whether we should change clocks for daylight savings time
+                if (current.hour>23) {                          // If the full day has passed
+                    current.hour = 0;                           // Reset the hour to 0
+                    current.date = current.date+1;              // Increment the date by 1
+                    current = date_check(current);              // Check whether it's time to move on to the next month
                     
-                    char buf1[40];
-                    LCD_setline(1);
-                    sprintf(buf1,"%04d-%02d-%02d",current.year,current.month,current.date);
-                    LCD_sendstring(buf1);
+                    char buf1[40];  // Create a data memory buffer to store our output
+                    LCD_setline(1); // Set to line 1 on LCD screen
+                    sprintf(buf1,"%04d-%02d-%02d",current.year,current.month,current.date); // Format our date as YYYY-MM-DD
+                    LCD_sendstring(buf1);                                                   // Send string to LCD screen for display
                     
-                    current.day = current.day+1;
-                    if (current.day>7) {
-                        current.day = 1;
+                    current.day = current.day+1;    // Increment the day by 1
+                    if (current.day>7) {            // If the full week has passed
+                        current.day = 1;            // Reset the day to 1 (Monday)
                     }
                 }
             }
         }
-        char buf2[40]; // Display current time on LCD screen
-        LCD_setline(2);
-        sprintf(buf2,"%02d:%02d:%02d",current.hour,current.minute,current.second);
-        LCD_sendstring(buf2);
+        char buf2[40];  // Create a data memory buffer to store our output
+        LCD_setline(2); // Set to line 1 on LCD screen
+        sprintf(buf2,"%02d:%02d:%02d",current.hour,current.minute,current.second);  // Format out time as hh:mm:ss
+        LCD_sendstring(buf2);                                                       // Send string to LCD screen for display
         
         time_flag=0; // Reset the timer flag
     }

@@ -3,9 +3,9 @@
 
 ## Table of contents
 - [Instructions to users](#instructions-to-users)
-- [Program structure](#program-structure)
 - [Hardware setup](#hardware-setup)
 - [Demonstration video](#demonstration-video)
+- [Program structure](#program-structure)
 - [Learning outcomes](#learning-outcomes)
 - [Project brief](#project-brief)
 - [Project specification](#project-specification)
@@ -16,7 +16,22 @@
 Please follow the following procedures to set up your energy saving automatic outside light:
 1. Set up your hardware as detailed in [Hardware setup](#hardware-setup);
 1. Manually input the date (required), time (required) and sunrise timing (optional) in ```main.c```;
-1. Select "testing mode"/"normal mode" by simply keeping/commenting-out ```#define _TESTING_MODE``` in ```main.h```.
+1. Select "testing mode"/"normal mode" by simply keeping/commenting-out ```#define _TESTING_MODE``` in ```main.h```;
+1. If operating in "normal mode", please disable the LCD display as it delays the program (also real street lights don't usually have LCD displays!). :rofl:
+
+
+## Hardware setup
+My hardware has been set up as in Lab 4:
+- The **LED on pin RH3** is used as the street light (it switches on at dusk and off at dawn (it is off from 1am-5am too to save energy));
+- The **LED on pin RF7** is used as the minute indicator (it flashes every minute);
+- The **LED array** is used as the hour indicator (it displays the hour in binary);
+- The **LCD screen** is used as the date and time indicator during "testing mode" (it displays the date and time in decimal).
+
+![Amanda ECM kit](gifs/amanda-ecm-kit.jpg)
+
+
+## Demonstration video
+https://youtu.be/aipM7BNAiSA
 
 
 ## Program structure
@@ -76,20 +91,6 @@ My program has been structured as follows:
 1. ```"LCD.c/h"```
 
     xx
-
-
-## Hardware setup
-My hardware has been set up as in Lab 4:
-- The **LED on pin RH3** is used as the street light (it switches on at dusk and off at dawn (it is off from 1am-5am too to save energy));
-- The **LED on pin RF7** is used as the minute indicator (it flashes every minute);
-- The **LED array** is used as the hour indicator (it displays the hour in binary);
-- The **LCD screen** is used as the date and time indicator during "testing mode" (it displays the date and time in decimal).
-
-![Amanda ECM kit](gifs/amanda-ecm-kit.jpg)
-
-
-## Demonstration video
-https://youtu.be/aipM7BNAiSA
 
 
 ## Learning outcomes
