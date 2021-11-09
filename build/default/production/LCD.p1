@@ -51,7 +51,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
 [s S2021 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2021 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
+[n S2021 . year month date day dst hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "29629 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29629:     struct {
 [s S1379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]

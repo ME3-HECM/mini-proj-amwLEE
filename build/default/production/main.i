@@ -24198,7 +24198,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 12 "./dateandtime.h"
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second,dst;
+    signed char month,date,day,dst,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
 
 
@@ -24284,13 +24284,13 @@ void main(void) {
     current.month = 10;
     current.date = 30;
     current.day = 6;
-    current.hour = 20;
+    current.dst = 1;
+    current.hour = 18;
     current.minute = 0;
     current.second = 0;
     current.sunrise_hour = 7;
     current.sunrise_minute = 0;
     current.sunrise_second = 0;
-    current.dst = 1;
 
 
     ADC_init();

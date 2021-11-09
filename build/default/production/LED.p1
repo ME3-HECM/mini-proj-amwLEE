@@ -2,7 +2,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
 [s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
+[n S2019 . year month date day dst hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "11 ./ADC.h
 [; ;./ADC.h: 11: unsigned char ADC_getval(void);
 [v _ADC_getval `(uc ~T0 @X0 0 ef ]
@@ -2075,7 +2075,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "18
 [; ;LED.c: 18:     if ((current.hour<1||current.hour>=5) && (ADC_getval()>=0b11011110)) {
-[e $ ! && || < -> . _current 4 `i -> 1 `i >= -> . _current 4 `i -> 5 `i >= -> ( _ADC_getval ..  `i -> 222 `i 2021  ]
+[e $ ! && || < -> . _current 5 `i -> 1 `i >= -> . _current 5 `i -> 5 `i >= -> ( _ADC_getval ..  `i -> 222 `i 2021  ]
 {
 "19
 [; ;LED.c: 19:         LATDbits.LATD7 = 1;
@@ -2121,7 +2121,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "41
 [; ;LED.c: 41:     if (current.hour==1 && current.minute==0 && current.second==0) {
-[e $ ! && && == -> . _current 4 `i -> 1 `i == -> . _current 5 `i -> 0 `i == -> . _current 6 `i -> 0 `i 2025  ]
+[e $ ! && && == -> . _current 5 `i -> 1 `i == -> . _current 6 `i -> 0 `i == -> . _current 7 `i -> 0 `i 2025  ]
 {
 "42
 [; ;LED.c: 42:         PIE2bits.C1IE = 0;
@@ -2134,7 +2134,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 2026  ]
 [e :U 2025 ]
-[e $ ! && && == -> . _current 4 `i -> 5 `i == -> . _current 5 `i -> 0 `i == -> . _current 6 `i -> 0 `i 2027  ]
+[e $ ! && && == -> . _current 5 `i -> 5 `i == -> . _current 6 `i -> 0 `i == -> . _current 7 `i -> 0 `i 2027  ]
 {
 "45
 [; ;LED.c: 45:         PIE2bits.C1IE = 1;

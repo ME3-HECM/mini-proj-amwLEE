@@ -70,28 +70,28 @@
 "24
 [v _Comp1_init Comp1_init `(v  1 e 1 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "13 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "32 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _date_check date_check `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "59 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _time_incre time_incre `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"104 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"103 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sunrise sunrise `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"120 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"119 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sun_sync sun_sync `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"149 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"148 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sunrise_sunset sunrise_sunset `(S24  1 e 12 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
@@ -116,7 +116,7 @@
 "29
 [v _LED2_init LED2_init `(v  1 e 1 0 ]
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "40 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 [v _LED_toggle LED_toggle `(S24  1 e 12 0 ]
 "9 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LEDarray.c
@@ -687,26 +687,26 @@
 "7 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "12
 [v main@current current `S24  1 a 12 128 ]
 "52
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "59 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _time_incre time_incre `(S24  1 e 12 0 ]
 {
-"82
-[v time_incre@buf2 buf2 `[40]uc  1 a 40 88 ]
-"64
+"76
 [v time_incre@buf1 buf1 `[40]uc  1 a 40 48 ]
+"88
+[v time_incre@buf2 buf2 `[40]uc  1 a 40 88 ]
 "59
 [v time_incre@current current `S24  1 p 12 36 ]
-"98
+"97
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "13 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _daylightsavingstime_toggle daylightsavingstime_toggle `(S24  1 e 12 0 ]
 {
@@ -714,7 +714,7 @@
 "24
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "32 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _date_check date_check `(S24  1 e 12 0 ]
 {
@@ -722,27 +722,27 @@
 "52
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"149 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"148 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sunrise_sunset sunrise_sunset `(S24  1 e 12 0 ]
 {
 [v sunrise_sunset@current current `S24  1 p 12 27 ]
-"160
+"159
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"120 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"119 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sun_sync sun_sync `(S24  1 e 12 0 ]
 {
-"124
-[v sun_sync@solarnoon_second solarnoon_second `c  1 a 1 26 ]
 "123
-[v sun_sync@solarnoon_minute solarnoon_minute `c  1 a 1 25 ]
+[v sun_sync@solarnoon_second solarnoon_second `c  1 a 1 26 ]
 "122
+[v sun_sync@solarnoon_minute solarnoon_minute `c  1 a 1 25 ]
+"121
 [v sun_sync@solarnoon_hour solarnoon_hour `c  1 a 1 24 ]
-"120
+"119
 [v sun_sync@current current `S24  1 p 12 12 ]
-"143
+"142
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -777,7 +777,7 @@
 "49
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "40 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 [v _LED_toggle LED_toggle `(S24  1 e 12 0 ]
 {
@@ -785,12 +785,12 @@
 "51
 } 0
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X/dateandtime.h
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
-"104 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
+"103 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\dateandtime.c
 [v _sunrise sunrise `(S24  1 e 12 0 ]
 {
 [v sunrise@current current `S24  1 p 12 4 ]
-"111
+"110
 } 0
 "29 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\LED.c
 [v _LED2_init LED2_init `(v  1 e 1 0 ]
@@ -800,7 +800,7 @@
 "10
 [v _LED1_init LED1_init `(v  1 e 1 0 ]
 {
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 [v LED1_init@current current `S24  1 p 12 5 ]
 "23
 } 0
@@ -816,7 +816,7 @@
 {
 "98
 [v LCD_init@buf buf `[40]uc  1 a 40 48 ]
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 "56
 [v LCD_init@current current `S24  1 p 12 36 ]
 "102
@@ -1028,7 +1028,7 @@
 "12 C:\Users\amand\MPLABXProjects\mini-proj-amwLEE.X\interrupts.c
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
 {
-[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 hour 1 5 `c 1 minute 1 6 `c 1 second 1 7 `c 1 sunrise_hour 1 8 `c 1 sunrise_minute 1 9 `c 1 sunrise_second 1 10 `c 1 dst 1 11 ]
+[s S24 . 12 `i 1 year 2 0 `c 1 month 1 2 `c 1 date 1 3 `c 1 day 1 4 `c 1 dst 1 5 `c 1 hour 1 6 `c 1 minute 1 7 `c 1 second 1 8 `c 1 sunrise_hour 1 9 `c 1 sunrise_minute 1 10 `c 1 sunrise_second 1 11 ]
 [v Interrupts_init@current current `S24  1 p 12 4 ]
 "24
 } 0

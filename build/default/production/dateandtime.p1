@@ -2,18 +2,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
 [s S2021 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2021 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
+[n S2021 . year month date day dst hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "13 ./interrupts.h
 [; ;./interrupts.h: 13: extern volatile unsigned char time_flag;
 [v _time_flag `Vuc ~T0 @X0 0 e ]
-"23 ./LCD.h
-[; ;./LCD.h: 23: void LCD_setline (char line);
-[v _LCD_setline `(v ~T0 @X0 0 ef1`uc ]
-"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"24 ./LCD.h
-[; ;./LCD.h: 24: void LCD_sendstring(char *string);
-[v _LCD_sendstring `(v ~T0 @X0 0 ef1`*uc ]
 "29280 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29280:     struct {
 [s S1364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -45,6 +37,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29309
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f67k40.h: 29309: extern volatile LATHbits_t LATHbits __attribute__((address(0xF80)));
 [v _LATHbits `VS1363 ~T0 @X0 0 e@3968 ]
+"23 ./LCD.h
+[; ;./LCD.h: 23: void LCD_setline (char line);
+[v _LCD_setline `(v ~T0 @X0 0 ef1`uc ]
+"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"24 ./LCD.h
+[; ;./LCD.h: 24: void LCD_sendstring(char *string);
+[v _LCD_sendstring `(v ~T0 @X0 0 ef1`*uc ]
 "11 ./interrupts.h
 [; ;./interrupts.h: 11: extern volatile unsigned char sunrise_flag;
 [v _sunrise_flag `Vuc ~T0 @X0 0 e ]
@@ -2034,27 +2034,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "15
 [; ;dateandtime.c: 15:     if (current.month==3 && (current.date+7)>31 && current.day==7 && current.hour==1 && current.dst==0) {
-[e $ ! && && && && == -> . _current 1 `i -> 3 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 4 `i -> 1 `i == -> . _current 10 `i -> 0 `i 2023  ]
+[e $ ! && && && && == -> . _current 1 `i -> 3 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 5 `i -> 1 `i == -> . _current 4 `i -> 0 `i 2023  ]
 {
 "16
 [; ;dateandtime.c: 16:         current.hour = current.hour+1;
-[e = . _current 4 -> + -> . _current 4 `i -> 1 `i `c ]
+[e = . _current 5 -> + -> . _current 5 `i -> 1 `i `c ]
 "17
 [; ;dateandtime.c: 17:         current.dst = 1;
-[e = . _current 10 -> -> 1 `i `c ]
+[e = . _current 4 -> -> 1 `i `c ]
 "18
 [; ;dateandtime.c: 18:     } else if (current.month==10 && (current.date+7)>31 && current.day==7 && current.hour==2 && current.dst==1) {
 }
 [e $U 2024  ]
 [e :U 2023 ]
-[e $ ! && && && && == -> . _current 1 `i -> 10 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 4 `i -> 2 `i == -> . _current 10 `i -> 1 `i 2025  ]
+[e $ ! && && && && == -> . _current 1 `i -> 10 `i > + -> . _current 2 `i -> 7 `i -> 31 `i == -> . _current 3 `i -> 7 `i == -> . _current 5 `i -> 2 `i == -> . _current 4 `i -> 1 `i 2025  ]
 {
 "19
 [; ;dateandtime.c: 19:         current.hour = current.hour-1;
-[e = . _current 4 -> - -> . _current 4 `i -> 1 `i `c ]
+[e = . _current 5 -> - -> . _current 5 `i -> 1 `i `c ]
 "20
 [; ;dateandtime.c: 20:         current.dst = 0;
-[e = . _current 10 -> -> 0 `i `c ]
+[e = . _current 4 -> -> 0 `i `c ]
 "21
 [; ;dateandtime.c: 21:     }
 }
@@ -2126,242 +2126,242 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "62
 [; ;dateandtime.c: 62:         current.second = current.second+1;
-[e = . _current 6 -> + -> . _current 6 `i -> 1 `i `c ]
+[e = . _current 7 -> + -> . _current 7 `i -> 1 `i `c ]
+"63
+[; ;dateandtime.c: 63:         if (current.second>59) {
+[e $ ! > -> . _current 7 `i -> 59 `i 2031  ]
+{
 "64
-[; ;dateandtime.c: 64:         char buf1[40];
-[v _buf1 `uc ~T0 @X0 -> 40 `i a ]
-"65
-[; ;dateandtime.c: 65:         LCD_setline(2);
-[e ( _LCD_setline (1 -> -> 2 `i `uc ]
-"66
-[; ;dateandtime.c: 66:         sprintf(buf1,"%02d:%02d:%02d",current.hour,current.minute,current.second);
-[e ( _sprintf (1 , , , (. , &U _buf1 :s 1C -> . _current 4 `i -> . _current 5 `i -> . _current 6 `i ]
-"67
-[; ;dateandtime.c: 67:         LCD_sendstring(buf1);
-[e ( _LCD_sendstring (1 &U _buf1 ]
-"69
-[; ;dateandtime.c: 69:         if (current.second>59) {
-[e $ ! > -> . _current 6 `i -> 59 `i 2031  ]
-{
-"70
-[; ;dateandtime.c: 70:             LATHbits.LATH3 = !LATHbits.LATH3;
+[; ;dateandtime.c: 64:             LATHbits.LATH3 = !LATHbits.LATH3;
 [e = . . _LATHbits 0 3 -> -> ! != -> . . _LATHbits 0 3 `i -> 0 `i `i `uc ]
-"71
-[; ;dateandtime.c: 71:             current.second = 0;
+"65
+[; ;dateandtime.c: 65:             current.second = 0;
+[e = . _current 7 -> -> 0 `i `c ]
+"66
+[; ;dateandtime.c: 66:             current.minute = current.minute+1;
+[e = . _current 6 -> + -> . _current 6 `i -> 1 `i `c ]
+"67
+[; ;dateandtime.c: 67:             if (current.minute>59) {
+[e $ ! > -> . _current 6 `i -> 59 `i 2032  ]
+{
+"68
+[; ;dateandtime.c: 68:                 current.minute = 0;
 [e = . _current 6 -> -> 0 `i `c ]
-"72
-[; ;dateandtime.c: 72:             current.minute = current.minute+1;
+"69
+[; ;dateandtime.c: 69:                 current.hour = current.hour+1;
 [e = . _current 5 -> + -> . _current 5 `i -> 1 `i `c ]
-"73
-[; ;dateandtime.c: 73:             if (current.minute>59) {
-[e $ ! > -> . _current 5 `i -> 59 `i 2032  ]
-{
-"74
-[; ;dateandtime.c: 74:                 current.minute = 0;
-[e = . _current 5 -> -> 0 `i `c ]
-"75
-[; ;dateandtime.c: 75:                 current.hour = current.hour+1;
-[e = . _current 4 -> + -> . _current 4 `i -> 1 `i `c ]
-"76
-[; ;dateandtime.c: 76:                 current = daylightsavingstime_toggle(current);
+"70
+[; ;dateandtime.c: 70:                 current = daylightsavingstime_toggle(current);
 [e = _current ( _daylightsavingstime_toggle (1 _current ]
-"77
-[; ;dateandtime.c: 77:                 if (current.hour>23) {
-[e $ ! > -> . _current 4 `i -> 23 `i 2033  ]
+"71
+[; ;dateandtime.c: 71:                 if (current.hour>23) {
+[e $ ! > -> . _current 5 `i -> 23 `i 2033  ]
 {
-"78
-[; ;dateandtime.c: 78:                     current.hour = 0;
-[e = . _current 4 -> -> 0 `i `c ]
-"79
-[; ;dateandtime.c: 79:                     current.date = current.date+1;
+"72
+[; ;dateandtime.c: 72:                     current.hour = 0;
+[e = . _current 5 -> -> 0 `i `c ]
+"73
+[; ;dateandtime.c: 73:                     current.date = current.date+1;
 [e = . _current 2 -> + -> . _current 2 `i -> 1 `i `c ]
-"80
-[; ;dateandtime.c: 80:                     current = date_check(current);
+"74
+[; ;dateandtime.c: 74:                     current = date_check(current);
 [e = _current ( _date_check (1 _current ]
-"82
-[; ;dateandtime.c: 82:                     char buf2[40];
-[v _buf2 `uc ~T0 @X0 -> 40 `i a ]
-"83
-[; ;dateandtime.c: 83:                     LCD_setline(1);
+"76
+[; ;dateandtime.c: 76:                     char buf1[40];
+[v _buf1 `uc ~T0 @X0 -> 40 `i a ]
+"77
+[; ;dateandtime.c: 77:                     LCD_setline(1);
 [e ( _LCD_setline (1 -> -> 1 `i `uc ]
-"84
-[; ;dateandtime.c: 84:                     sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
-[e ( _sprintf (1 , , , (. , &U _buf2 :s 2C . _current 0 -> . _current 1 `i -> . _current 2 `i ]
-"85
-[; ;dateandtime.c: 85:                     LCD_sendstring(buf2);
-[e ( _LCD_sendstring (1 &U _buf2 ]
-"87
-[; ;dateandtime.c: 87:                     current.day = current.day+1;
+"78
+[; ;dateandtime.c: 78:                     sprintf(buf1,"%04d-%02d-%02d",current.year,current.month,current.date);
+[e ( _sprintf (1 , , , (. , &U _buf1 :s 1C . _current 0 -> . _current 1 `i -> . _current 2 `i ]
+"79
+[; ;dateandtime.c: 79:                     LCD_sendstring(buf1);
+[e ( _LCD_sendstring (1 &U _buf1 ]
+"81
+[; ;dateandtime.c: 81:                     current.day = current.day+1;
 [e = . _current 3 -> + -> . _current 3 `i -> 1 `i `c ]
-"88
-[; ;dateandtime.c: 88:                     if (current.day>7) {
+"82
+[; ;dateandtime.c: 82:                     if (current.day>7) {
 [e $ ! > -> . _current 3 `i -> 7 `i 2034  ]
 {
-"89
-[; ;dateandtime.c: 89:                         current.day = 1;
+"83
+[; ;dateandtime.c: 83:                         current.day = 1;
 [e = . _current 3 -> -> 1 `i `c ]
-"90
-[; ;dateandtime.c: 90:                     }
+"84
+[; ;dateandtime.c: 84:                     }
 }
 [e :U 2034 ]
-"91
-[; ;dateandtime.c: 91:                 }
+"85
+[; ;dateandtime.c: 85:                 }
 }
 [e :U 2033 ]
-"92
-[; ;dateandtime.c: 92:             }
+"86
+[; ;dateandtime.c: 86:             }
 }
 [e :U 2032 ]
-"93
-[; ;dateandtime.c: 93:         }
+"87
+[; ;dateandtime.c: 87:         }
 }
 [e :U 2031 ]
-"94
-[; ;dateandtime.c: 94:         time_flag=0;
+"88
+[; ;dateandtime.c: 88:         char buf2[40];
+[v _buf2 `uc ~T0 @X0 -> 40 `i a ]
+"89
+[; ;dateandtime.c: 89:         LCD_setline(2);
+[e ( _LCD_setline (1 -> -> 2 `i `uc ]
+"90
+[; ;dateandtime.c: 90:         sprintf(buf2,"%02d:%02d:%02d",current.hour,current.minute,current.second);
+[e ( _sprintf (1 , , , (. , &U _buf2 :s 2C -> . _current 5 `i -> . _current 6 `i -> . _current 7 `i ]
+"91
+[; ;dateandtime.c: 91:         LCD_sendstring(buf2);
+[e ( _LCD_sendstring (1 &U _buf2 ]
+"93
+[; ;dateandtime.c: 93:         time_flag=0;
 [e = _time_flag -> -> 0 `i `uc ]
-"95
-[; ;dateandtime.c: 95:     }
+"94
+[; ;dateandtime.c: 94:     }
 }
 [e :U 2030 ]
-"97
-[; ;dateandtime.c: 97:     return current;
+"96
+[; ;dateandtime.c: 96:     return current;
 [e ) _current ]
 [e $UE 2029  ]
-"98
-[; ;dateandtime.c: 98: }
+"97
+[; ;dateandtime.c: 97: }
 [e :UE 2029 ]
 }
-"104
-[; ;dateandtime.c: 104: dateandtime sunrise(dateandtime current) {
+"103
+[; ;dateandtime.c: 103: dateandtime sunrise(dateandtime current) {
 [v _sunrise `(S2021 ~T0 @X0 1 ef1`S2021 ]
 {
 [e :U _sunrise ]
 [v _current `S2021 ~T0 @X0 1 r1 ]
 [f ]
-"106
-[; ;dateandtime.c: 106:     current.sunrise_hour = current.hour;
-[e = . _current 7 . _current 4 ]
-"107
-[; ;dateandtime.c: 107:     current.sunrise_minute = current.minute;
+"105
+[; ;dateandtime.c: 105:     current.sunrise_hour = current.hour;
 [e = . _current 8 . _current 5 ]
-"108
-[; ;dateandtime.c: 108:     current.sunrise_second = current.second;
+"106
+[; ;dateandtime.c: 106:     current.sunrise_minute = current.minute;
 [e = . _current 9 . _current 6 ]
-"110
-[; ;dateandtime.c: 110:     return current;
+"107
+[; ;dateandtime.c: 107:     current.sunrise_second = current.second;
+[e = . _current 10 . _current 7 ]
+"109
+[; ;dateandtime.c: 109:     return current;
 [e ) _current ]
 [e $UE 2035  ]
-"111
-[; ;dateandtime.c: 111: }
+"110
+[; ;dateandtime.c: 110: }
 [e :UE 2035 ]
 }
-"120
-[; ;dateandtime.c: 120: dateandtime sun_sync(dateandtime current) {
+"119
+[; ;dateandtime.c: 119: dateandtime sun_sync(dateandtime current) {
 [v _sun_sync `(S2021 ~T0 @X0 1 ef1`S2021 ]
 {
 [e :U _sun_sync ]
 [v _current `S2021 ~T0 @X0 1 r1 ]
 [f ]
-"122
-[; ;dateandtime.c: 122:     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
+"121
+[; ;dateandtime.c: 121:     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;
 [v _solarnoon_hour `c ~T0 @X0 1 a ]
-[e = _solarnoon_hour -> / + -> . _current 7 `i -> . _current 4 `i -> 2 `i `c ]
-"123
-[; ;dateandtime.c: 123:     signed char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
+[e = _solarnoon_hour -> / + -> . _current 8 `i -> . _current 5 `i -> 2 `i `c ]
+"122
+[; ;dateandtime.c: 122:     signed char solarnoon_minute = (current.sunrise_minute + current.minute)/2;
 [v _solarnoon_minute `c ~T0 @X0 1 a ]
-[e = _solarnoon_minute -> / + -> . _current 8 `i -> . _current 5 `i -> 2 `i `c ]
-"124
-[; ;dateandtime.c: 124:     signed char solarnoon_second = (current.sunrise_second + current.second)/2;
+[e = _solarnoon_minute -> / + -> . _current 9 `i -> . _current 6 `i -> 2 `i `c ]
+"123
+[; ;dateandtime.c: 123:     signed char solarnoon_second = (current.sunrise_second + current.second)/2;
 [v _solarnoon_second `c ~T0 @X0 1 a ]
-[e = _solarnoon_second -> / + -> . _current 9 `i -> . _current 6 `i -> 2 `i `c ]
+[e = _solarnoon_second -> / + -> . _current 10 `i -> . _current 7 `i -> 2 `i `c ]
+"125
+[; ;dateandtime.c: 125:     current.second = current.second - (solarnoon_second-0);
+[e = . _current 7 -> - -> . _current 7 `i - -> _solarnoon_second `i -> 0 `i `c ]
 "126
-[; ;dateandtime.c: 126:     current.second = current.second - (solarnoon_second-0);
-[e = . _current 6 -> - -> . _current 6 `i - -> _solarnoon_second `i -> 0 `i `c ]
-"127
-[; ;dateandtime.c: 127:     if (current.second<0) {
-[e $ ! < -> . _current 6 `i -> 0 `i 2037  ]
+[; ;dateandtime.c: 126:     if (current.second<0) {
+[e $ ! < -> . _current 7 `i -> 0 `i 2037  ]
 {
+"127
+[; ;dateandtime.c: 127:         current.second = current.second+60;
+[e = . _current 7 -> + -> . _current 7 `i -> 60 `i `c ]
 "128
-[; ;dateandtime.c: 128:         current.second = current.second+60;
-[e = . _current 6 -> + -> . _current 6 `i -> 60 `i `c ]
+[; ;dateandtime.c: 128:         current.minute = current.minute-1;
+[e = . _current 6 -> - -> . _current 6 `i -> 1 `i `c ]
 "129
-[; ;dateandtime.c: 129:         current.minute = current.minute-1;
-[e = . _current 5 -> - -> . _current 5 `i -> 1 `i `c ]
-"130
-[; ;dateandtime.c: 130:     }
+[; ;dateandtime.c: 129:     }
 }
 [e :U 2037 ]
+"130
+[; ;dateandtime.c: 130:     current.minute = current.minute - (solarnoon_minute-0);
+[e = . _current 6 -> - -> . _current 6 `i - -> _solarnoon_minute `i -> 0 `i `c ]
 "131
-[; ;dateandtime.c: 131:     current.minute = current.minute - (solarnoon_minute-0);
-[e = . _current 5 -> - -> . _current 5 `i - -> _solarnoon_minute `i -> 0 `i `c ]
-"132
-[; ;dateandtime.c: 132:     if (current.minute<0) {
-[e $ ! < -> . _current 5 `i -> 0 `i 2038  ]
+[; ;dateandtime.c: 131:     if (current.minute<0) {
+[e $ ! < -> . _current 6 `i -> 0 `i 2038  ]
 {
+"132
+[; ;dateandtime.c: 132:         current.minute = current.minute+60;
+[e = . _current 6 -> + -> . _current 6 `i -> 60 `i `c ]
 "133
-[; ;dateandtime.c: 133:         current.minute = current.minute+60;
-[e = . _current 5 -> + -> . _current 5 `i -> 60 `i `c ]
+[; ;dateandtime.c: 133:         current.hour = current.hour-1;
+[e = . _current 5 -> - -> . _current 5 `i -> 1 `i `c ]
 "134
-[; ;dateandtime.c: 134:         current.hour = current.hour-1;
-[e = . _current 4 -> - -> . _current 4 `i -> 1 `i `c ]
-"135
-[; ;dateandtime.c: 135:     }
+[; ;dateandtime.c: 134:     }
 }
 [e :U 2038 ]
-"136
-[; ;dateandtime.c: 136:     current.hour = current.hour - (solarnoon_hour-12);
-[e = . _current 4 -> - -> . _current 4 `i - -> _solarnoon_hour `i -> 12 `i `c ]
-"142
-[; ;dateandtime.c: 142:     return current;
+"135
+[; ;dateandtime.c: 135:     current.hour = current.hour - (solarnoon_hour-12);
+[e = . _current 5 -> - -> . _current 5 `i - -> _solarnoon_hour `i -> 12 `i `c ]
+"141
+[; ;dateandtime.c: 141:     return current;
 [e ) _current ]
 [e $UE 2036  ]
-"143
-[; ;dateandtime.c: 143: }
+"142
+[; ;dateandtime.c: 142: }
 [e :UE 2036 ]
 }
-"149
-[; ;dateandtime.c: 149: dateandtime sunrise_sunset(dateandtime current) {
+"148
+[; ;dateandtime.c: 148: dateandtime sunrise_sunset(dateandtime current) {
 [v _sunrise_sunset `(S2021 ~T0 @X0 1 ef1`S2021 ]
 {
 [e :U _sunrise_sunset ]
 [v _current `S2021 ~T0 @X0 1 r1 ]
 [f ]
-"151
-[; ;dateandtime.c: 151:     if (sunrise_flag==1) {
+"150
+[; ;dateandtime.c: 150:     if (sunrise_flag==1) {
 [e $ ! == -> _sunrise_flag `i -> 1 `i 2040  ]
 {
-"152
-[; ;dateandtime.c: 152:     current=sunrise(current);
+"151
+[; ;dateandtime.c: 151:     current=sunrise(current);
 [e = _current ( _sunrise (1 _current ]
-"153
-[; ;dateandtime.c: 153:     sunrise_flag=0;
+"152
+[; ;dateandtime.c: 152:     sunrise_flag=0;
 [e = _sunrise_flag -> -> 0 `i `uc ]
-"154
-[; ;dateandtime.c: 154:     } else if (sunset_flag==1) {
+"153
+[; ;dateandtime.c: 153:     } else if (sunset_flag==1) {
 }
 [e $U 2041  ]
 [e :U 2040 ]
 [e $ ! == -> _sunset_flag `i -> 1 `i 2042  ]
 {
-"155
-[; ;dateandtime.c: 155:         current=sun_sync(current);
+"154
+[; ;dateandtime.c: 154:         current=sun_sync(current);
 [e = _current ( _sun_sync (1 _current ]
-"156
-[; ;dateandtime.c: 156:         sunset_flag=0;
+"155
+[; ;dateandtime.c: 155:         sunset_flag=0;
 [e = _sunset_flag -> -> 0 `i `uc ]
-"157
-[; ;dateandtime.c: 157:     }
+"156
+[; ;dateandtime.c: 156:     }
 }
 [e :U 2042 ]
 [e :U 2041 ]
-"159
-[; ;dateandtime.c: 159:     return current;
+"158
+[; ;dateandtime.c: 158:     return current;
 [e ) _current ]
 [e $UE 2039  ]
-"160
-[; ;dateandtime.c: 160: }
+"159
+[; ;dateandtime.c: 159: }
 [e :UE 2039 ]
 }
 [p f _sprintf 8421508 ]
-[a 1C 37 48 50 100 58 37 48 50 100 58 37 48 50 100 0 ]
-[a 2C 37 48 52 100 45 37 48 50 100 45 37 48 50 100 0 ]
+[a 2C 37 48 50 100 58 37 48 50 100 58 37 48 50 100 0 ]
+[a 1C 37 48 52 100 45 37 48 50 100 45 37 48 50 100 0 ]

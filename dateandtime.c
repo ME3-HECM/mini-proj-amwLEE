@@ -59,14 +59,8 @@ dateandtime date_check(dateandtime current) { // Take current date and time as i
 dateandtime time_incre(dateandtime current){ // Take current date and time as input
     
     if (time_flag==1) {                     // If the timer has just overflowed
-        current.second = current.second+1;  // Increment the second by 1
-        
-        char buf1[40];                      // Declare a variable buffer to hold the position of 
-        LCD_setline(2);
-        sprintf(buf1,"%02d:%02d:%02d",current.hour,current.minute,current.second);
-        LCD_sendstring(buf1);
-        
-        if (current.second>59) {
+        current.second = current.second+1;  // Increment the second by 1              
+        if (current.second>59) {                // 
             LATHbits.LATH3 = !LATHbits.LATH3;   // Toggle the LED on RH3 when the LDR goes from light to dark
             current.second = 0;
             current.minute = current.minute+1;
@@ -79,10 +73,10 @@ dateandtime time_incre(dateandtime current){ // Take current date and time as in
                     current.date = current.date+1;
                     current = date_check(current);
                     
-                    char buf2[40];
+                    char buf1[40];
                     LCD_setline(1);
-                    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
-                    LCD_sendstring(buf2);
+                    sprintf(buf1,"%04d-%02d-%02d",current.year,current.month,current.date);
+                    LCD_sendstring(buf1);
                     
                     current.day = current.day+1;
                     if (current.day>7) {
@@ -91,10 +85,15 @@ dateandtime time_incre(dateandtime current){ // Take current date and time as in
                 }
             }
         }
+        char buf2[40]; // Display current time on LCD screen
+        LCD_setline(2);
+        sprintf(buf2,"%02d:%02d:%02d",current.hour,current.minute,current.second);
+        LCD_sendstring(buf2);
+        
         time_flag=0; // Reset the timer flag
     }
     
-    return current;
+    return current; // Update the current time
 }
 
 /*****************************************************

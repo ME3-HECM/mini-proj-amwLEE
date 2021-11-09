@@ -24321,7 +24321,7 @@ char *tempnam(const char *, const char *);
 # 12 "./dateandtime.h"
 typedef struct {
     signed int year;
-    signed char month,date,day,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second,dst;
+    signed char month,date,day,dst,hour,minute,second,sunrise_hour,sunrise_minute,sunrise_second;
 } dateandtime;
 
 
@@ -24412,12 +24412,6 @@ dateandtime time_incre(dateandtime current){
 
     if (time_flag==1) {
         current.second = current.second+1;
-
-        char buf1[40];
-        LCD_setline(2);
-        sprintf(buf1,"%02d:%02d:%02d",current.hour,current.minute,current.second);
-        LCD_sendstring(buf1);
-
         if (current.second>59) {
             LATHbits.LATH3 = !LATHbits.LATH3;
             current.second = 0;
@@ -24431,10 +24425,10 @@ dateandtime time_incre(dateandtime current){
                     current.date = current.date+1;
                     current = date_check(current);
 
-                    char buf2[40];
+                    char buf1[40];
                     LCD_setline(1);
-                    sprintf(buf2,"%04d-%02d-%02d",current.year,current.month,current.date);
-                    LCD_sendstring(buf2);
+                    sprintf(buf1,"%04d-%02d-%02d",current.year,current.month,current.date);
+                    LCD_sendstring(buf1);
 
                     current.day = current.day+1;
                     if (current.day>7) {
@@ -24443,6 +24437,11 @@ dateandtime time_incre(dateandtime current){
                 }
             }
         }
+        char buf2[40];
+        LCD_setline(2);
+        sprintf(buf2,"%02d:%02d:%02d",current.hour,current.minute,current.second);
+        LCD_sendstring(buf2);
+
         time_flag=0;
     }
 
@@ -24461,7 +24460,7 @@ dateandtime sunrise(dateandtime current) {
 
     return current;
 }
-# 120 "dateandtime.c"
+# 119 "dateandtime.c"
 dateandtime sun_sync(dateandtime current) {
 
     signed char solarnoon_hour = (current.sunrise_hour + current.hour)/2;

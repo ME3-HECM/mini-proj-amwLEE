@@ -3,7 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 ./dateandtime.h
 [; ;./dateandtime.h: 12: typedef struct {
 [s S2019 `i 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 `c 1 ]
-[n S2019 . year month date day hour minute second sunrise_hour sunrise_minute sunrise_second dst ]
+[n S2019 . year month date day dst hour minute second sunrise_hour sunrise_minute sunrise_second ]
 "10 ./ADC.h
 [; ;./ADC.h: 10: void ADC_init(void);
 [v _ADC_init `(v ~T0 @X0 0 ef ]
@@ -2043,26 +2043,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 16:     current.day = 6;
 [e = . _current 3 -> -> 6 `i `c ]
 "17
-[; ;main.c: 17:     current.hour = 20;
-[e = . _current 4 -> -> 20 `i `c ]
+[; ;main.c: 17:     current.dst = 1;
+[e = . _current 4 -> -> 1 `i `c ]
 "18
-[; ;main.c: 18:     current.minute = 0;
-[e = . _current 5 -> -> 0 `i `c ]
+[; ;main.c: 18:     current.hour = 18;
+[e = . _current 5 -> -> 18 `i `c ]
 "19
-[; ;main.c: 19:     current.second = 0;
+[; ;main.c: 19:     current.minute = 0;
 [e = . _current 6 -> -> 0 `i `c ]
 "20
-[; ;main.c: 20:     current.sunrise_hour = 7;
-[e = . _current 7 -> -> 7 `i `c ]
+[; ;main.c: 20:     current.second = 0;
+[e = . _current 7 -> -> 0 `i `c ]
 "21
-[; ;main.c: 21:     current.sunrise_minute = 0;
-[e = . _current 8 -> -> 0 `i `c ]
+[; ;main.c: 21:     current.sunrise_hour = 7;
+[e = . _current 8 -> -> 7 `i `c ]
 "22
-[; ;main.c: 22:     current.sunrise_second = 0;
+[; ;main.c: 22:     current.sunrise_minute = 0;
 [e = . _current 9 -> -> 0 `i `c ]
 "23
-[; ;main.c: 23:     current.dst = 1;
-[e = . _current 10 -> -> 1 `i `c ]
+[; ;main.c: 23:     current.sunrise_second = 0;
+[e = . _current 10 -> -> 0 `i `c ]
 "26
 [; ;main.c: 26:     ADC_init();
 [e ( _ADC_init ..  ]
@@ -2102,7 +2102,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _current ( _LED_toggle (1 _current ]
 "50
 [; ;main.c: 50:         LEDarray_disp_bin(current.hour);
-[e ( _LEDarray_disp_bin (1 . _current 4 ]
+[e ( _LEDarray_disp_bin (1 . _current 5 ]
 "51
 [; ;main.c: 51:     }
 }
