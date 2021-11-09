@@ -1,10 +1,21 @@
 # Amanda's individual project - Energy saving automatic outside light
 
 
+## Table of contents
+- [Program structure](#program-structure)
+- [Hardware setup](#hardware-setup)
+- [Demonstration video](#demonstration-video)
+- [Related documentation](#related-documentation)
+- [Learning outcomes](#learning-outcomes)
+- [Project brief](#project-brief)
+- [Project specification](#project-specification)
+- [Supplementary information and help](#supplementary-information-and-help)
+
+
 ## Program structure
 My program has been structured as follows:
 1. "main.c/h"
-This file ...
+    This file ...
 1. "dateandtime.c/h"
 1. "ADC.c/h"
 1. "comparator.c/h"
@@ -19,7 +30,11 @@ My program uses the following standard libraries:
 1. <stdio.h>
 
 
-## Demo video
+## Hardware setup
+
+
+
+## Demonstration video
 xx
 
 
